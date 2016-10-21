@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<title> Register </title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	
+	<body class="myback2">
+		<h1><img src="images\earth_logo.jpg" align="top" border="2"/>Travel Experts - Register</h1>
+		
+		<!-- NAVIGATION BAR -->
+		<nav class="menu_border">
+			<a href="index.html">Home</a>
+			<a href="register.html">Register</a>
+			<a href="contact.html">Contact</a>
+			<a href="navbar.html">NavBar</a>
+		</nav>
+		
+		<form method="get" action="bouncer.php">
+			<table>
+				<tr>
+					<td> First Name: </td>
+					<td> <input type="text" name="firstname" value="Enter firstname"/> </td>
+				</tr>
+				<tr>
+					<td> Last Name: </td>
+					<td> <input type="text" name="lastname" value="Enter lastname"/> </td>
+				</tr>
+				<tr>
+					<td> Email: </td>
+					<td> <input type="text" name="email" value="Enter email"/> </td>
+				</tr>
+			
+				<tr>
+					<td><label for="pw">Password:</label></td>
+					<td><input type="password" name="pw" id="pw" /></td>
+				</tr>
+				
+				<tr>
+					<td><label for="spam">Send me spam:</label></td>
+					<td><input type="checkbox" name="spam" id="spam" checked="unchecked" /></td>
+				</tr>
+				
+				<tr>
+					<td><label for="gender">Male:</label></td>
+					<td><input type="radio" name="gender" id="male" value="male" /></td>
+				</tr>
+				<tr>
+					<td><label for="gender">Female:</label></td>
+					<td><input type="radio" name="gender" id="female" value="female" checked="checked" /></td>
+				</tr>
+				
+				<tr>
+					<td><label for="age">Age:</label></td>
+					<td><input type="number" name="age" id="age" min="18" max="100" /></td>
+					<td>Must be at least 18 years old</td>
+				</tr>
+				
+				<tr>
+					<td><label for="form_num"></label></td>
+					<td><input type="hidden" name="form_num" id="form_num" value="form1" /></td>
+				</tr>
+				
+				<tr>
+					<td><label for="dest">Favorite Vacation Destination:</label></td>
+					<td>
+						<select id="dest" name="destination">
+							<option value="nil">&lt;-- pick here --&gt;</option>
+							<option value="HI">Hawaii</option>
+							<option value="PR">Paris</option>
+							<option value="GR">Greenland</option>
+						</select>
+				</tr>
+			
+				<tr>
+					<td><label for="about">Tell us about yourself</label></td>
+					<td><textarea name="about" id="about" rows="4" cols="40" wrap="hard" /></textarea></td>
+				</tr>
+			
+				<tr>
+					<td> <input type="submit" value="Send" /> </td>
+					<td> <input type="reset" value="Reset" /> </td>
+				</tr>
+			</table>
+		
+		</form>
+	</body>
+</html>
