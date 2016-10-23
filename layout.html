@@ -1,53 +1,118 @@
 <!DOCTYPE html>
 <html>
 	<head>	
-		<title> my title </title>		<!--TAB ON BROWSER-->		
-		<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+		<meta charset="UTF-8">
+		<meta name="description" content="Travel Agency Project">
+		<meta name="keywords" content="travel, destination, html, css">
+		<meta name="author" content="Dean Jones">
 		
+		<!-- W3SCHOOLS ANIMATION -->
+<!-- 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
+		
+		<title> Travel Experts </title>		<!--TAB ON BROWSER-->		
+		<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 	<style>
 	header, footer {
+		height: 50%;
 		padding: 1em;
 		color: white;
 		background-color: black;
 		clear: left;
+		font-family: "Jokerman", "Helvetica Rounded", "Arial Rounded MT Bold", Arial, sans-serif;
+		font-size: 1em;
 		text-align: center;
-		font-family: "Jokerman", "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
-		font-size: 1.6em;
+		<!-- text-shadow: 2px 2px #ccccb3; -->
 	}
 
-	nav ul {
+	nav {
+	text-indent: 1em;
     list-style-type: none;
-    padding: 0;
+	background-color: gray;
+	text-align: left;
+    padding: 0.125em;
+	font-family: "Helvetica Rounded", "Arial Rounded MT Bold", Arial, sans-serif;
+	border: 2px solid #ffffff; 
 	}
-   
-	nav ul a {
-		text-decoration: none;
+	.navbar {
+	padding-left: 1em;
+	padding-right: 1em;
 	}
-
+	/* Hover Control */
+	.navbar:hover { 
+		background-color: #ff00ff;;
+		<!--FLICKERS font-size: 1.1em; -->
+	}
+	p {
+	
+	}
 	article {
-		margin-left: 170px;
+		margin-left: 0;
 		border-left: 1px solid gray;
-		padding: 1em;
+		padding: 2em;
 		color: black;
 		background-color: gray;
 		overflow: hidden;
 		font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
 		font-size: 1.2em;
 	}
+	#header-left {
+		float: left;
+		width: 160px;
+		height: 240px;
+		<!-- margin: 10px; -->
+		margin-left: auto;
+		margin-right: auto;
+		border: 2px solid #ffffff; 
+	}
+	#header-right {
+		float: right;
+		width: 160px;
+		height: 240px;
+		<!-- margin: 10px; -->
+		margin-left: auto;
+		margin-right: auto;
+		border: 2px solid #ffffff; 
+	}
+	
+	#slogan {
+	color: #ff00ff;
+	padding: 0.1em;
+	font-size: 0.75em;
+	}
 	</style>
 	</head>
 		<body>
-			<nav>
-				<label>Home</label>
-				<label>Register</label>
-				<label>Contact Us</label>
-			</nav>
 			<header>
-				<h1>Welcome to TRAVEL EXPERTS<h1>
-			</header>
-			<article>
-				There once was a girl from nantucket...
+				<img src="images/01bridge.jpg" id="header-left" alt="01bridge.jpg">
+				<img src="images/02sunset.jpg" id="header-right" alt="02sunset.jpg"><!--  width="161.8" height="100" -->
+				<img src="images/treelogo.gif" alt="treelogo.gif" width="161.8" height="100">
+				<h1>Welcome to TRAVEL EXPERTS<h1> <!-- TITLE TO THE LEFT OF LOGO? -->
+				<div id="slogan">love knows no borders</div>
 				
+			</header>
+			
+			<nav>
+				<a href="index.html" class="navbar">Home</a>
+				<a href="register.html" class="navbar">Register</a>
+				<a href="contact.html" class="navbar">Contact</a>
+<!-- 				<label>Home</label>
+				<label>Register</label>
+				<label>Contact Us</label> -->
+			</nav>
+			<article>
+				<p>Travel Experts has been bringing you great deals all around the world!</p>
+				<p>Book your travel getaway today!</p>
+				<p>...</p>
+				
+			
+
+					<a href="contact.html">
+						<img src="images/contact.jpg" alt="contact.jpg" border="2" width="100" height="100" />
+					</a>
+					<a href="register.html">
+						<img src="images/register.jpg" alt="register.jpg" border="2" width="100" height="100" />
+					</a>
 			</article>
 			<footer>
 				<h4>Copyright 2016 &copy;<h4>
