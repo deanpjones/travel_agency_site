@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<title> my title on tab </title>		<!--TAB ON BROWSER-->
+		
+		<link rel="stylesheet" type="text/css" href="style.css">	<!--LINK TO CSS FILE (fastest option on multiple pages-->
+																	<!--OR-->
+		<script type="text/JavaScript" src="myfirstjavascript.js"></script>
+		
+		<script> alert("asdafdsf");</script>
+		<script>
+			var x = 12;
+		</script>
+		
+		<style>			<!--STYLE DEFINITION-->
+
+		</style>
+	</head>
+		<body>		
+			<h1>this is above</h1>
+			<script>
+				document.write("<h1>this was printed from javascript</h1>");
+				document.write(++x);
+				if(x == 13)
+				{
+					document.write("x is equal to 13");
+				}
+				else
+				{
+					document.write("x is NOT EQUAL to 13");
+				}
+			</script>
+			<script>
+				for (var i=1; i<=6; i++)
+				{
+					document.write("<br/><h" + i + ">heading" + i + "</h" + i + ">");
+				}
+			</script>
+			<script>
+				document.write("<table border='1'>");				//PUT DIFFERENT QUOTES WITHIN QUOTES (DOUBLE THEN SINGLE)
+				//DO I HAVE TO USE DIFFERENT LETTERS?, FROM OTHER SCRIPTS?
+					for (var j=1; j<=6; j++)
+					{		
+						document.write("<tr>");
+						for (var k=1; k<=3; k++)
+						{
+							document.write("<td>xxx</td>");
+						}
+						document.write("</tr>");
+					}
+				document.write("</table>");	
+			</script>
+			
+			<script>
+				var x = 1;
+				while (x <= 10)
+				{
+					document.write("<br/>Hello World");
+					x++;
+				}
+			</script>
+			
+			<script>
+				if(confirm("answer yes"))
+				{
+					document.write("YOU SAID YES");
+				}
+			</script>
+			<script>
+				function validate()
+				{
+					var myfname = document.getElementById("fname");	//LOOKS UP id="fname"
+					if (myfname.value == "")
+					{
+						alert("first name is not filled in");
+						return false;
+					}
+					else
+					{
+						return true;
+					}
+						
+				}
+			</script>
+			<h1>this is below</h1>
+
+	</body>
+</html>
