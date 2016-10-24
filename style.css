@@ -1,49 +1,107 @@
-
-
-
-	#upleft { width:20%; height: 20%; background:red; float:left; }
-	#upright { width:80%; height:20%; background:blue; float:left }
-	#below { height:80%; width:100%; background:green; clear:both }
-	#area1 { height:100%; width:100%; background:green; clear:both }
-	
-	body {
-		font-size: 100%;
-		background: black;
-		/* background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); */
+	header, footer {
+		height: 50%;
+		padding: 1em;
+		color: white;
+		background-color: black;
+		font-size: 1em;
+		text-align: center;
+		/* text-shadow: 2px 2px #ccccb3; */
+		clear: both;
 	}
-	
+	header {
+		font-family: "Jokerman", "Helvetica Rounded", "Arial Rounded MT Bold", Arial, sans-serif;
+	}
+	footer {
+		font-family: "Helvetica Rounded", "Arial Rounded MT Bold", Arial, sans-serif;
+	}
+
 	nav {
-		font-size: 1.2em;
+	text-indent: 1em;
+    list-style-type: none;
+	background-color: #669999;
+	text-align: left;
+    padding: 0.125em;
+	font-family: "Helvetica Rounded", "Arial Rounded MT Bold", Arial, sans-serif;
+	border: 2px solid #ffffff; 
 	}
-
-	h1 {
- 		font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
-		/* font-size: 60px; */
-		font-size: 3.2em;
-		font-style: bold;
-		text-shadow: 2px 2px #ffffb3;
-	}
-
-	h2 {
-		font-size: 1.6em;
-	}
-
-	p {
-		font-size: 1.0em;
-		color: blue;
+	.navbar {
+	padding-left: 1em;
+	padding-right: 1em;
 	}
 	/* Hover Control */
-	a:hover { 
+	.navbar:hover { 
+		background-color: #ff00ff;;
+		/* FLICKERS font-size: 1.1em; */
+	}
+	p {
+		clear: left;
+	}
+	article, address {
+		margin-left: 0;
+		border-left: 1px solid gray;
+		padding: 2em;
+		color: black;
+		background-color: gray;
+		overflow: hidden;
+		font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+		font-size: 1.2em;
+		clear: right;
+	}
+	form {
+		margin-left: 0;
+		border-left: 1px solid gray;
+		padding: 2em;
+		color: black;
+		background-color: #66a3ff;
+		overflow: hidden;
+		font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+		font-size: 1em;
+		clear: right;
+	}
+	.left {
+		position: absolute;
+		height: 200px;
+		width: 50%;
+		background-color: powderblue;
+		float: left;
+	}
+	.right {
+		position: relative;
+		height: 200px;
+		width: 50%;
 		background-color: pink;
-		
+		float: right
 	}
-	/* Animate */
-	.anim {
-		-webkit-animation-delay: 3s; 
-		animation-delay: 3s;
+	#header-left {
+		float: left;
+		width: 160px;
+		height: 240px;
+		/* margin: 10px; */
+		margin-left: auto;
+		margin-right: auto;
+		border: 2px solid #ffffff; 
 	}
-	
-	/* Navbar */
-	.menu_border{border-style: groove;}
-	.general_border{border-style: solid;}	/* General Border */
-	.t_border{border-style: dotted;}		/* Test Border */
+	#header-right {
+		float: right;
+		width: 160px;
+		height: 240px;
+		/* margin: 10px; */
+		margin-left: auto;
+		margin-right: auto;
+		border: 2px solid #ffffff; 
+	}
+	#footer-left {
+		float: left;
+		width: 100px;
+		height: 100px;
+		/* margin: 10px; */
+		margin-left: auto;
+		margin-right: auto;
+		/* border: 2px solid #ffffff; */ 
+		padding: 1em;
+	}
+	#slogan {
+	color: #ff00ff;
+	padding: 0.1em;
+	font-size: 0.75em;
+	}
