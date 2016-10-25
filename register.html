@@ -39,12 +39,13 @@
 					<tr>
 					
 						<td> First Name: </td>
-						<td> <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname" oninput="validate()" /> </td> <!--NEED THIS? value=""  -->
+						<td> <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname" oninput="myvalidate()" /> </td> <!--NEED THIS? value=""  -->
 						<!--USE EMPTY DATA TO SHOW CONFIRMATION <td id="fname"> </td> -->
 					</tr>
 					<tr>
 						<td> Last Name: </td>
-						<td> <input type="text" id="lastname" name="lastname" placeholder="Enter Lastname"/> </td>
+						<td> <input type="text" id="lastname" name="lastname" placeholder="Enter Lastname" oninput="myvalidate2()" />  </td>
+						<td id="comment2"></td>
 					</tr>
 					
 					<!-- ADDRESS -->
@@ -84,6 +85,10 @@
 					<tr>
 						<td> Postal Code: </td>
 						<td> <input type="text" name="postalcode" placeholder="T2B 2J5" />
+					</tr>
+					<tr>
+						<td> Phone: </td>
+						<td> <input type="text" name="phone" placeholder="555-5555" />
 					</tr>
 					<!-- PHONE NUMBER? -->
 				</table>
@@ -197,19 +202,44 @@
 				{
 					//CHECK AGAINST ALL FIELDS NEXT
 					//PUT UP RED X, OR RED BORDER AROUND THE FIELD THAT NEED FILLING IN?
+					var status = true;
 					var myfname = document.getElementById("firstname");	//LOOKS UP id="firstname"
-					var mylname = document.getElementById("lastname");	//LOOKS UP id="lastname"
-					if (myfname.value != "")
+					if (myfname.value == "")
+					{
+						alert("The FIRST NAME box is not filled in correctly");
+						myfname.style.backgroundColor = "red";
+						status = false;
+						//return false;
+					}
+					return status;
+					/*else
 					{
 						//alert("SUBMITTING");
 						return true;
+					}*/
+					//-------------
+				}
+			</script>
+			<script>
+				var resetclr = mylname.style.backgroundColor;	//NEED TO BE GLOBAL OTHERWISE IT WILL KEEP RESETING BEFORE IF-STATEMENT.
+				function myvalidate2()
+				{
+					var status = true;
+					
+					var mylname = document.getElementById("lastname");	//LOOKS UP id="lastname"
+					if (mylname.value == "")
+					{
+						mylname.style.backgroundColor = "red";
+						document.getElementById("comment2").innerHTML = "Please fill in your last name.";
+						status = false;
 					}
 					else
 					{
-						alert("The FIRST NAME box is not filled in correctly");
-						return false;
+						mylname.style.backgroundColor = resetclr;
+						//document.getElementById("comment2").innerHTML = "";
+						//status = true;
 					}
-						
+					return status;
 				}
 			</script>
 	</body>

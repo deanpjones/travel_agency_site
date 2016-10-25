@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<title> MAIN PAGE </title>		<!--TAB ON BROWSER-->
+		
+		<link rel="stylesheet" type="text/css" href="style.css">	<!--LINK TO CSS FILE (fastest option on multiple pages-->
+																	<!--OR-->
+		<script>
+			//var cars = ["Saab", "Volvo", "BMW"];
+			var month = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+			var dayofweek = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"];
+			var today = new Date();
+			var birthdate = new Date(2005, 10, 2);
+		</script>
+
+	</head>
+	<body>							<!--ENTIRE BODY OF BROWSER-->
+			
+		<p id="demo"></p>
+		<script>
+			//alert(dayofweek[today.getDay()] + ", " + month[today.getMonth()] + "/" + today.getDate() + ", " + today.getFullYear())
+			//alert(birthdate.toString());
+			console.log(birthdate.toString());
+			
+			var myweekdays = dayofweek.join(" | ");
+			console.log(myweekdays);
+			
+			var x1 = dayofweek.sort().join(" , ");
+			console.log(x1);
+			
+			var str = "How are you doing today?";
+			var res = str.split(" ");
+			document.getElementById("demo").innerHTML = res;
+			<br />
+			
+		</script>
+	</body>
+</html>

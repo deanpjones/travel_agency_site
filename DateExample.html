@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<title> MAIN PAGE </title>		<!--TAB ON BROWSER-->
+		
+		<link rel="stylesheet" type="text/css" href="style.css">	<!--LINK TO CSS FILE (fastest option on multiple pages-->
+																	<!--OR-->
+		<script>
+			var d1 = new Date();
+		</script>
+
+	</head>
+	<body>							<!--ENTIRE BODY OF BROWSER-->
+
+
+		<script>
+			document.write("Date now: " + Date.now() + "<br />");
+			document.write("Date object: " + d1.getTime() + "<br />");
+			document.write("Date: " + d1.toString() + "<br />");		//Date: Tue Oct 25 2016 11:33:25 GMT-0600 (Mountain Daylight Time)
+		</script>
+	</body>
+</html>

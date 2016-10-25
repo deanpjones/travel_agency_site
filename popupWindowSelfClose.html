@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<title> MAIN PAGE </title>		<!--TAB ON BROWSER-->
+		
+		<link rel="stylesheet" type="text/css" href="style.css">	<!--LINK TO CSS FILE (fastest option on multiple pages-->
+																	<!--OR-->
+		<script>
+		function OpenWindow
+		{
+			myWindow = window.open("test.html")
+			myWindow = window.open();
+			
+			myWindow = window.write("<html>");
+			myWindow = window.write("<head>");
+			myWindow = window.write("<title>example</title>");
+			myWindow = window.write("</head>");
+			myWindow = window.write("<body onload='setTimeout(\"self.close();\", 5000);'>");
+		}	
+		</script>
+
+	</head>
+	<body>							<!--ENTIRE BODY OF BROWSER-->
+		MY BODY...
+						<!-- SUBMIT BUTTON -->
+						<td> <input type="button" value="OpenWindow" onclick="OpenWindow()"  /> </td>	
+	</body>
+</html>
