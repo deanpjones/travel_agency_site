@@ -5,6 +5,7 @@
 		<meta name="Description" content="Travel Agency Project - Register">
 		<meta name="Keywords" content="travel, contact, destination, html, css">
 		<meta name="Author" content="Dean Jones">
+		<!-- DATE OTHER META TYPE DATA? -->
 		
 		<!-- W3SCHOOLS ANIMATION -->
 <!-- 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,22 +35,68 @@
 
 				<form method="get" action="bouncer.php">
 				<table>
+					<!-- NAME -->
 					<tr>
+					
 						<td> First Name: </td>
-						<td> <input type="text" name="firstname" placeholder="Enter firstname" /> </td> <!-- value="enter firstname" -->
+						<td> <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname" oninput="validate()" /> </td> <!--NEED THIS? value=""  -->
+						<!--USE EMPTY DATA TO SHOW CONFIRMATION <td id="fname"> </td> -->
 					</tr>
 					<tr>
 						<td> Last Name: </td>
-						<td> <input type="text" name="lastname" placeholder="Enter lastname"/> </td>
+						<td> <input type="text" id="lastname" name="lastname" placeholder="Enter Lastname"/> </td>
+					</tr>
+					
+					<!-- ADDRESS -->
+					<tr>
+						<td> Address: </td>
+						<td> <input type="text" name="addressBox" placeholder="PO Box# or Unit#" />
 					</tr>
 					<tr>
+						<td></td>
+						<td> <input type="text" name="addressStreet" placeholder="Street Address" />
+					</tr>
+					<tr>
+						<td> City: </td>
+						<td> <input type="text" name="city" placeholder="City" />
+					</tr>
+					<tr>
+						<td> Province: </td>
+						<td>
+							<select id="prov" name="province">
+								<option value="nil">&lt;  Select Province  &gt;</option>
+								<option value="AB">Alberta</option>
+								<option value="BC">British Columbia</option>
+								<option value="MB">Manitoba</option>								
+								<option value="NB">New Brunswick</option>
+								<option value="NL">Newfoundland and Labrador</option>
+								<option value="NT">Northwest Territories</option>
+								<option value="NS">Nova Scotia</option>
+								<option value="NU">Nunavut</option>
+								<option value="ON">Ontario</option>
+								<option value="PE">Prince Edward Island</option>
+								<option value="QC">Quebec</option>
+								<option value="SK">Saskatchewan</option>
+								<option value="YT">Yukon</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td> Postal Code: </td>
+						<td> <input type="text" name="postalcode" placeholder="T2B 2J5" />
+					</tr>
+					<!-- PHONE NUMBER? -->
+				</table>
+				<hr />
+				<table>
+					<tr>
 						<td> Email: </td>
-						<td> <input type="text" name="email" placeholder="Enter email"/> </td>
+						<td> <input type="text" name="email" placeholder="Enter Email"/> </td>
 					</tr>
 				
 					<tr>
 						<td><label for="pw">Password:</label></td>
-						<td><input type="password" name="pw" id="pw" /></td>
+						<td><input type="password" name="pw" id="pw" placeholder="Enter Password" /></td>
 					</tr>
 					
 					<tr>
@@ -58,18 +105,20 @@
 					</tr>
 					
 					<tr>
+						<td><label for="gender">Gender:</label></td>
 						<td><label for="gender">Male:</label></td>
-						<td><input type="radio" name="gender" id="male" value="male" /></td>
+						<td><label for="gender">Female:</label></td>
 					</tr>
 					<tr>
-						<td><label for="gender">Female:</label></td>
+						<td></td>
+						<td><input type="radio" name="gender" id="male" value="male" /></td>
 						<td><input type="radio" name="gender" id="female" value="female" /></td> <!-- checked="checked" -->
 					</tr>
 					
 					<tr>
 						<td><label for="age">Age:</label></td>
 						<td><input type="number" name="age" id="age" min="18" max="100" /></td>
-						<td>Must be at least 18 years old</td>
+						<td>Must be at least 18 years or older</td>
 					</tr>
 					
 					<tr>
@@ -81,12 +130,13 @@
 						<td><label for="dest">Favorite Vacation Destination:</label></td>
 						<td>
 							<select id="dest" name="destination">
-								<option value="nil">&lt;  pick location  &gt;</option>
+								<option value="nil">&lt;  Pick a Destination  &gt;</option>
 								<option value="GR">Greenland</option>
 								<option value="HI">Hawaii</option>
 								<option value="PR">Paris</option>
 								<option value="UK">Ucluelet/Tofino</option>
 							</select>
+						</td>
 					</tr>
 				
 					<tr>
@@ -95,11 +145,16 @@
 					</tr>
 				
 					<tr>
-						<td> <input type="submit" value="Send" /> </td>
-						<td> <input type="reset" value="Reset" /> </td>
+						<!-- <td> <input type="submit" value="Send" /> </td> -->
+						<!-- SUBMIT BUTTON -->
+						<td> <input type="submit" value="Send" onclick="return validate()" id="submit" /> </td>	
+						<!-- <td> <input type="reset" value="Reset" /> </td> -->
+						<!-- RESET BUTTON -->
+						<td> <input type="reset" value="Reset" onclick="return confirm('Are you sure you want to RESET this form?')" /> </td>
 					</tr>
 				</table>
 				
+				<!-- MOVE DOWN TO HEADER -->
 				<a href="register.html" id="footer-left">
 					<img src="images/register.jpg" alt="register.jpg" border="2" width="100" height="100" />
 				</a>
@@ -111,5 +166,51 @@
 			<footer>
 				<h4>Register - Copyright 2016 &copy;<h4>
 			</footer>
+			
+			<!-- JAVASCRIPT -->
+			<script>
+				//CONFIRMATION FUNCTION
+				/*function myFunction() {
+					var x = document.getElementById("myInput").value;
+					document.getElementById("demo").innerHTML = "You wrote: " + x;
+				}*/
+				/*function validate()
+				{
+					var x = document.getElementById("firstname");	//LOOKS UP id="firstname"
+					if (x.value == "")
+					{
+						//alert("FALSE, first name is not filled in");
+						//RED X
+						x.value = Please fill in your first name
+						return false;
+					}
+					else
+					{
+						//GREEN CHECK
+						alert("TRUE");
+						return true;
+					}	
+				}*/
+				
+				//VALIDATION FOR SUBMIT
+				function validate()
+				{
+					//CHECK AGAINST ALL FIELDS NEXT
+					//PUT UP RED X, OR RED BORDER AROUND THE FIELD THAT NEED FILLING IN?
+					var myfname = document.getElementById("firstname");	//LOOKS UP id="firstname"
+					var mylname = document.getElementById("lastname");	//LOOKS UP id="lastname"
+					if (myfname.value != "")
+					{
+						//alert("SUBMITTING");
+						return true;
+					}
+					else
+					{
+						alert("The FIRST NAME box is not filled in correctly");
+						return false;
+					}
+						
+				}
+			</script>
 	</body>
 </html>
