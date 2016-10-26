@@ -34,7 +34,35 @@
 				height:20%;
 				width:100%;
 			}
+			tr {
+				height:10%;
+				width:10%;
+			}
 		</style>
+			<!-- SCRIPTS -->
+			<!-- CREATE TWO ARRAYS -->
+			<!-- ARRAY 1 [IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5] -->
+			<!-- ARRAY 2 [DESC1, DESC2, DESC3, DESC4, DESC5] -->
+			<!-- HOW DO YOU PUT THE SCRIPT WHERE YOU WANT? -->
+		<script>
+					//------------------------------------
+					//------------------------------------
+					var images = ["01bridge_sm.jpg", "02sunset_sm.jpg", "03lake_sm.jpg", "04waterfall_sm.jpg", "05arctic_sm.jpg", "06river_sm.jpg"];
+					var img_desc = ["Is a bridge", "Is a sunset", "Is a lake", "Is a waterfall", "Is very cold", "Is a river"];
+					
+					document.write("<table border='1'>");
+					for (var j=0; j<=5; j++)
+					{		
+						document.write("<tr>");
+							//<img src="images/01bridge.jpg" id="header-left" alt="01bridge.jpg">
+							document.write("<td><img src='images/" + images[j] + "'></td>");
+							document.write("<td>" + img_desc[j] + "</td>");
+						document.write("</tr>");
+					}
+					document.write("</table>");
+					//------------------------------------
+					//------------------------------------
+		</script>
 	</head>
 	<body>	
 			<header>

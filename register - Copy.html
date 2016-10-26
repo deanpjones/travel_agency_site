@@ -40,22 +40,23 @@
 					<tr>
 					
 						<td> First Name: </td>
-						<td> <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname" /> </td> 	<!-- oninput="myvalidate()"  -->
+						<td> <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname" oninput="myvalidate()" /> </td> <!--NEED THIS? value=""  -->
 						<!--USE EMPTY DATA TO SHOW CONFIRMATION <td id="fname"> </td> -->
 					</tr>
 					<tr>
 						<td> Last Name: </td>
-						<td> <input type="text" id="lastname" name="lastname" placeholder="Enter Lastname" />  </td>	<!-- oninput="myvalidate2()"  -->																								<!-- <td id="comment2"></td> -->
+						<td> <input type="text" id="lastname" name="lastname" placeholder="Enter Lastname" oninput="myvalidate2()" />  </td>
+						<td id="comment2"></td>
 					</tr>
 					
 					<!-- ADDRESS -->
 					<tr>
 						<td> Address: </td>
-						<td> <input type="text" name="addressBox" placeholder="PO Box# or Unit#" /> </td>
+						<td> <input type="text" name="addressBox" placeholder="PO Box# or Unit#" />
 					</tr>
 					<tr>
 						<td></td>
-						<td> <input type="text" name="addressStreet" placeholder="Street Address" /> </td>
+						<td> <input type="text" name="addressStreet" placeholder="Street Address" />
 					</tr>
 					<tr>
 						<td> City: </td>
@@ -86,12 +87,11 @@
 						<td> Postal Code: </td>
 						<td> <input type="text" name="postalcode" placeholder="T2B 2J5" />
 					</tr>
-					
-					<!-- PHONE NUMBER? -->
 					<tr>
 						<td> Phone: </td>
 						<td> <input type="text" name="phone" placeholder="555-5555" />
 					</tr>
+					<!-- PHONE NUMBER? -->
 				</table>
 				<hr />
 				<table>
@@ -175,40 +175,43 @@
 			
 			<!-- JAVASCRIPT -->
 			<script>
+				//CONFIRMATION FUNCTION
+				/*function myFunction() {
+					var x = document.getElementById("myInput").value;
+					document.getElementById("demo").innerHTML = "You wrote: " + x;
+				}*/
+				/*function validate()
+				{
+					var x = document.getElementById("firstname");	//LOOKS UP id="firstname"
+					if (x.value == "")
+					{
+						//alert("FALSE, first name is not filled in");
+						//RED X
+						x.value = Please fill in your first name
+						return false;
+					}
+					else
+					{
+						//GREEN CHECK
+						alert("TRUE");
+						return true;
+					}	
+				}*/
+				
 				//VALIDATION FOR SUBMIT
 				function validate_send()
 				{
 					//CHECK AGAINST ALL FIELDS NEXT
 					//PUT UP RED X, OR RED BORDER AROUND THE FIELD THAT NEED FILLING IN?
 					var status = true;
-					var myfname = document.getElementById("firstname");			//LOOKS UP id="firstname"
-					var mylname = document.getElementById("lastname");			//LOOKS UP id="lastname"
-					/*var myaddrBox = document.getElementById("addressBox");*/		//LOOKS UP id="addressBox"
-					/*var myaddrSt = document.getElementById("addressStreet");*/	//LOOKS UP id="addressStreet"
+					var myfname = document.getElementById("firstname");	//LOOKS UP id="firstname"
 					if (myfname.value == "")
 					{
 						alert("The FIRST NAME box is not filled in correctly");
 						myfname.style.backgroundColor = "red";
 						status = false;
+						//return false;
 					}
-					else if (mylname.value == "")
-					{
-						alert("The LAST NAME box is not filled in correctly");
-						mylname.style.backgroundColor = "red";
-						status = false;
-					}
-					/* else if (myaddrBox.value == "")
-					{
-						alert("The ADDRESS box is not filled in correctly");
-						myaddrBox.style.backgroundColor = "red";
-						status = false;
-					}
-					else if (myaddrSt.value == "")
-					{
-						alert("The ADDRESS box is not filled in correctly");
-						myaddrSt.style.backgroundColor = "red";
-						status = false;
-					} */
 					return status;
 					/*else
 					{
@@ -216,6 +219,33 @@
 						return true;
 					}*/
 					//-------------
+				}
+			</script>
+			<script>
+				//var myID = ["firstname", "lastname"];	
+				for (i=0; i<5; i++) {
+					x = x + "The number is " + i + "<br>";
+					myvalidate2()
+				}
+				
+				var resetclr = mylname.style.backgroundColor;	//NEED TO BE GLOBAL OTHERWISE IT WILL KEEP RESETING BEFORE IF-STATEMENT.
+				function myvalidate2(myID)
+				{
+					var status = true;
+					var mylname = document.getElementById(myID);	//LOOKS UP id="lastname"
+					if (mylname.value == "")
+					{
+						mylname.style.backgroundColor = "red";
+						document.getElementById("comment2").innerHTML = "Please fill in your last name.";
+						status = false;
+					}
+					else
+					{
+						mylname.style.backgroundColor = resetclr;
+						//document.getElementById("comment2").innerHTML = "";
+						//status = true;
+					}
+					return status;
 				}
 			</script>
 	</body>
