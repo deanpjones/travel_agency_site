@@ -1,19 +1,11 @@
-	
+	html {
+		width:100%;
+	}
 	body {
-		/* background-image: url(images/Junk/UkeePanorama.jpg); */
-		/* background-repeat: ...; */
-		/* background-color: black; */
+		width:100%;
+		height:100%;
 	}
-	body.myopacity {											/* ADD IMAGE (LIGHT) TO HEADER */
-/* 		background-image: url(images/Junk/UkeePanorama.jpg);
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: auto;
-		opacity: 0.6;
-		visibility: hidden; */
-	}
+
 	header, footer {
 		position: static;
 		width: 100%;
@@ -25,6 +17,11 @@
 		text-align: center;
 		/* text-shadow: 2px 2px #ccccb3; */
 		clear: both;
+			/* IMAGE BACKGROUND */
+			/* DOESN'T WORK WITH LOGO? */
+			/*background-image: url("images/texture.jpg");*/
+			/*background-blend-mode: color-dodge;*/
+			/*opacity: 0.9;*/
 	}
 	header {
 		font-family: "Jokerman", "Helvetica Rounded", "Arial Rounded MT Bold", Arial, sans-serif;
@@ -70,8 +67,6 @@
 	
 	p {
 		clear: left;
-		/* z-index: */
-		/* visibility: */
 	}
 	p.normal {
 		font-weight: normal;
@@ -79,7 +74,7 @@
 	p.thick {
 		font-weight: bold;
 	}
-	article, address {
+	article, address, table {
 		margin-left: 0;
 		border-left: 1px solid gray;
 		padding: 2em;
@@ -89,8 +84,12 @@
 		font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
 		font-size: 1.2em;
 		clear: right;
+		
 	}
-	form {
+	.img:hover {
+		border: 1px solid #777;
+	}
+	form, table {
 		margin-left: 0;
 		border-left: 1px solid gray;
 		padding: 2em;
@@ -101,31 +100,6 @@
 		font-size: 1em;
 		clear: right;
 	}
-	/* aside {
-		margin-left: 0;
-		border-left: 1px solid gray;
-		padding: 2em;
-		color: black;
-		background-color: #66a3ff;
-		overflow: hidden;
-		font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
-		font-size: 1em;
-		clear: right;
-	} */
-/* 	.left {
-		position: absolute;
-		height: 200px;
-		width: 50%;
-		background-color: powderblue;
-		float: left;
-	}
-	.right {
-		position: relative;
-		height: 200px;
-		width: 50%;
-		background-color: pink;
-		float: right
-	} */
 	#header-left {
 		float: left;
 		width: 160px;

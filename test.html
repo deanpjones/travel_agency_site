@@ -47,7 +47,7 @@
 		<script>
 					//------------------------------------
 					//------------------------------------
-					var images = ["01bridge_sm.jpg", "02sunset_sm.jpg", "03lake_sm.jpg", "04waterfall_sm.jpg", "05arctic_sm.jpg", "06river_sm.jpg"];
+					/*var images = ["01bridge_sm.jpg", "02sunset_sm.jpg", "03lake_sm.jpg", "04waterfall_sm.jpg", "05arctic_sm.jpg", "06river_sm.jpg"];
 					var img_desc = ["Is a bridge", "Is a sunset", "Is a lake", "Is a waterfall", "Is very cold", "Is a river"];
 					
 					document.write("<table border='1'>");
@@ -59,24 +59,54 @@
 							document.write("<td>" + img_desc[j] + "</td>");
 						document.write("</tr>");
 					}
-					document.write("</table>");
+					document.write("</table>");*/
 					//------------------------------------
 					//------------------------------------
+										//------------------------------------
+					//------------------------------------
+					/*
+					var images = ["01bridge_sm.jpg", "02sunset_sm.jpg", "03lake_sm.jpg", "04waterfall_sm.jpg", "05arctic_sm.jpg", "06river_sm.jpg"];
+					var img_desc = ["Is a bridge", "Is a sunset", "Is a lake", "Is a waterfall", "Is very cold", "Is a river"];
+					
+					console.log("<table border='1'>");
+					for (var j=0; j<=5; j++)
+					{		
+						console.log("<tr>");
+							//<img src="images/01bridge.jpg" id="header-left" alt="01bridge.jpg">
+							console.log("<td><img src='images/" + images[j] + "'></td>");
+							console.log("<td>" + img_desc[j] + "</td>");
+						console.log("</tr>");
+					}
+					console.log("</table>");
+					*/
+					//------------------------------------
+					//------------------------------------
+					//HARVEY SOLUTION TO EXERCISE (ARRAY IMAGES)
+					var myimages = ["images/01bridge_sm.jpg", "images/02sunset_sm.jpg", "images/03lake_sm.jpg", "images/04waterfall_sm.jpg", "images/05arctic_sm.jpg", "images/06river_sm.jpg"];
+					var mydescs = ["This frog was on a pyramid in Mexico", "A horse on mainstreet in Mexico", "A gator in a zoo", "This was something else", "Another desc", "Last one"];
+					
+					
+					
+					
 		</script>
 	</head>
 	<body>	
-			<header>
-			</header>
-			
-			<nav>
-			</nav>
-			
-			<main>
-			</main>
-			
-			<footer>
-			</footer>
-
-		<script></script>
+		<table>
+			<script>
+				for (var i=0; i<myimages.length; i++)
+				{
+					document.write("<tr>");
+						//How to test to see if STRING is correct?
+						var test = "<td><img src='" + myimages[i] + "'/></td><td>" + mydescs[i] + "</td>"
+						alert(test);
+						console.log(test);
+						document.write("<td><img src='" + myimages[i] + "'/></td><td>" + mydescs[i] + "</td>");
+					document.write("</tr>");
+					
+				}
+				
+				
+			</script>
+		</table>
 	</body>
 </html>

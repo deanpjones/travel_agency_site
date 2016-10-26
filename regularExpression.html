@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<title> my title on tab </title>		<!--TAB ON BROWSER-->
+		
+		<link rel="stylesheet" type="text/css" href="style.css">	<!--LINK TO CSS FILE (fastest option on multiple pages-->
+																	<!--OR-->
+		<script>
+		function harveyfun(event) 
+							{
+								downx = event.pageX;
+								downy = event.pageY;
+								document.getElementById("myP").innerHTML = "x: " + downx + "y: " + downy;
+								console.log("hhh");
+							}
+		</script>
+	</head>
+		<body onmousedown="harveyfun(event)">							<!--ENTIRE BODY OF BROWSER-->
+		<p id="myP" >mousedown, click anywhere</p>
+		
+		
+		
+		my body
+		<p id="demo"></p>
+		<p id="demo2"></p>
+		<br />
+		
+		<script>
+			//var str = "my test string";
+			//var str = "my email is harvey.peters@sait.ca at SAIT";
+			var str = "my email is harvey.peters@sait.ca or fred.smith@sait.ca or maybe john.doe@sait.ca";
+			var regexp = /\b\w+\.[A-Za-z0-9_]+@([A-Za-z]+\.ca)\b/ig;		//FINDS THE EMAIL
+			var n = regexp.exec(str);
+			console.log(n);
+			document.getElementById("demo").innerHTML = n;
+			
+			var str2 = "T2H 3J4" //.toUpperCase();
+			var regexp2 = /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/i;
+			var n2 = regexp2.exec(str2);
+			console.log(n2);
+			document.getElementById("demo2").innerHTML = n2;
+			
+			var imgObjects = [];
+			imgObjects[0] = new Image();
+			imgObjects[0].src = "images/01bridge_sm.jpg";
+			imgObjects[1] = new Image();
+			imgObjects[1].src = "images/04waterfall_sm.jpg";
+			imgObjects[2] = new Image();
+			imgObjects[2].src = "images/05arctic_sm.jpg";
+			console.log(imgObjects);
+			
+			function displayimg(index)
+			{
+				var img2 = document.getElementById("myimg2")
+				img2.src = imgObjects[index];
+			}
+			window.open("https://www.mysait.ca/cp/home/displaylogin", "newWindow", "width=100, height=100");
+			
+			
+							
+				//POP-UP BLOCKED?
+		</script>
+	</body>
+</html>

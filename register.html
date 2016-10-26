@@ -15,7 +15,20 @@
 	
 	<!-- SCRIPTS -->
 	<script>
-		
+		function myinfoON(y)
+		{
+			//x.style.background = "yellow";
+			document.getElementById(y).innerHTML = "Please fill in the <strong>" + y + "</strong> box.";
+			//document.getElementById("add1info").innerHTML = "Please fill in the address box";
+			//document.getElementById("info").innerHTML = "Please fill in the address box";
+			//HOW TO TURN OFF INFO AFTER IT IS FILLED IN...
+		}
+		function myinfoOFF(x)
+		{
+			document.getElementById(x).innerHTML = "";
+			//document.getElementById("add1info").innerHTML = "";
+			//document.getElementById("info").innerHTML = "";
+		}
 	</script>
 	</head>
 		<body>
@@ -40,26 +53,31 @@
 					<tr>
 					
 						<td> First Name: </td>
-						<td> <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname" /> </td> 	<!-- oninput="myvalidate()"  -->
+						<td> <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname" onfocus="myinfoON('FirstName')" onfocusout="myinfoOFF('FirstName')" /> </td> 	<!-- oninput="myvalidate()"  -->
+						<td id="FirstName"></td>
 						<!--USE EMPTY DATA TO SHOW CONFIRMATION <td id="fname"> </td> -->
 					</tr>
 					<tr>
 						<td> Last Name: </td>
-						<td> <input type="text" id="lastname" name="lastname" placeholder="Enter Lastname" />  </td>	<!-- oninput="myvalidate2()"  -->																								<!-- <td id="comment2"></td> -->
+						<td> <input type="text" id="lastname" name="lastname" placeholder="Enter Lastname" onfocus="myinfoON('LastName')" onfocusout="myinfoOFF('LastName')" />  </td>	<!-- oninput="myvalidate2()"  -->																								<!-- <td id="comment2"></td> -->
+						<td id="LastName"></td>
 					</tr>
 					
 					<!-- ADDRESS -->
 					<tr>
 						<td> Address: </td>
-						<td> <input type="text" name="addressBox" placeholder="PO Box# or Unit#" /> </td>
+						<td> <input type="text" name="addressBox" placeholder="PO Box# or Unit#" onfocus="myinfoON('Address1')" onfocusout="myinfoOFF('Address1')" /> </td>
+						<td id="Address1"></td>
 					</tr>
 					<tr>
 						<td></td>
-						<td> <input type="text" name="addressStreet" placeholder="Street Address" /> </td>
+						<td> <input type="text" name="addressStreet" placeholder="Street Address" onfocus="myinfoON('Address2')" onfocusout="myinfoOFF('Address2')" /> </td>
+						<td id="Address2"></td>
 					</tr>
 					<tr>
 						<td> City: </td>
-						<td> <input type="text" name="city" placeholder="City" />
+						<td> <input type="text" name="city" placeholder="City" onfocus="myinfoON('City')" onfocusout="myinfoOFF('City')" />
+						<td id="City"></td>
 					</tr>
 					<tr>
 						<td> Province: </td>
@@ -84,13 +102,15 @@
 					</tr>
 					<tr>
 						<td> Postal Code: </td>
-						<td> <input type="text" name="postalcode" placeholder="T2B 2J5" />
+						<td> <input type="text" name="postalcode" placeholder="T2B 2J5" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
+						<td id="PostalCode"></td>
 					</tr>
 					
 					<!-- PHONE NUMBER? -->
 					<tr>
 						<td> Phone: </td>
-						<td> <input type="text" name="phone" placeholder="555-5555" />
+						<td> <input type="text" name="phone" placeholder="555-5555" onfocus="myinfoON('Phone')" onfocusout="myinfoOFF('Phone')" />
+						<td id="Phone"></td>
 					</tr>
 				</table>
 				<hr />
