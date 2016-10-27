@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<title> my title on tab </title>		<!--TAB ON BROWSER-->
+		
+		<link rel="stylesheet" type="text/css" href="style.css">	<!--LINK TO CSS FILE (fastest option on multiple pages-->
+																	<!--OR-->
+		<script></script>
+		<style>			<!--STYLE DEFINITION-->
+
+		</style>
+		<script>
+			//timer1 IS A REFERENCE TO A (TIMER OBJECT) PROCESS RUNNING IN THE BACKGROUND
+			//var timer1 = setTimeout("warnUser1()", 5000);			//RUNS ONCE ONLY
+			//var timer1 = setInterval("warnUser1()", 5000);		//RUNS EVERY 5 SECONDS
+			
+			//DIGITAL CLOCK
+			var timer2 = setInterval(function(){		//ANONYMOUS FUNCTION
+				var d1 = new Date();
+				document.getElementById("clock").value = 
+					d1.getHours() + 
+					":" +
+					d1.getMinutes() + 
+					":" +
+					d1.getSeconds();
+			}, 1000);
+			//var myfunction = function(){};						//PASS FUNCTION (IN VARIABLE) TO OTHER FUNCTIONS
+			
+			function warnUser1()
+			{
+				alert("5 seconds has passed");
+			}
+		</script>
+	</head>
+	<body>							<!--ENTIRE BODY OF BROWSER-->
+			<button onclick="clearInterval(timer1)">Stop Warnings</button>
+			<input type="text" id="clock" />
+	</body>
+</html>

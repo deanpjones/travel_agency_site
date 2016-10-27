@@ -11,60 +11,143 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	<style>
 		<!-- SEE STYLE.CSS FOR STYLES -->
+<!--day6-->			
+		input[value='a']{
+			background-color: pink;
+		}
+<!--day6-->			
+		.info {
+			position: absolute;
+			right:10%;
+			top:10%
+			width:50%;
+			
+		}
 	</style>
 	
 	<!-- SCRIPTS -->
-	<script>
-		function myinfoON(y)
-		{
-			//x.style.background = "yellow";
-			document.getElementById(y).innerHTML = "Please fill in the <strong>" + y + "</strong> box.";
-			//document.getElementById("add1info").innerHTML = "Please fill in the address box";
-			//document.getElementById("info").innerHTML = "Please fill in the address box";
-			//HOW TO TURN OFF INFO AFTER IT IS FILLED IN...
-		}
-		function myinfoOFF(x)
-		{
-			document.getElementById(x).innerHTML = "";
-			//document.getElementById("add1info").innerHTML = "";
-			//document.getElementById("info").innerHTML = "";
-		}
-		
-		//VALIDATE FOR PHONE# NUMBER OF DIGITS AND DASH?
-		//VALIDATION FOR POSTAL CODE FORMAT (CHANGES TEXT TO RED IF INCORRECT)
-		function validate_postal_code()
-		{
-			var status = true;
-			var mypcode = document.getElementById("postalcode");			//LOOKS UP id="postalcode"
-			var regexp = /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/;						//PATTERN TO MATCH (/i leave off because we want capitalized)
-			//mypcode.value.toUpperCase();									//?CHANGE TEXT TO UPPERCASE?
-			if (regexp.test(mypcode.value))									
+		<script>
+			function myinfoON(y)
+			{
+				document.getElementById(y).innerHTML = "Please fill in the <strong>" + y + "</strong> box.";
+				//document.getElementById("info").innerHTML = "Please fill in the address box";
+
+			}
+			function myinfoOFF(x)
+			{
+				document.getElementById(x).innerHTML = "";
+				//document.getElementById("info").innerHTML = "";
+			}
+			
+			//VALIDATE FOR PHONE# NUMBER OF DIGITS AND DASH?
+			//VALIDATION FOR POSTAL CODE FORMAT (CHANGES TEXT TO RED IF INCORRECT)
+			function validate_postal_code()
+			{
+				var status = true;
+				var mypcode = document.getElementById("postalcode");			//LOOKS UP id="postalcode"
+				//var regexp = /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/i;					//PATTERN TO MATCH (/i leave off because we want capitalized)
+				var regexp = /^[a-z]\d[a-z]\s?\d[a-z]\d$/i;						//HARVEY's version (\s? difference on SPACE)
+				//mypcode.value.toUpperCase();									//?CHANGE TEXT TO UPPERCASE?
+				mypcode.value = mypcode.value.toUpperCase().trim();				//convert to UPPERCASE AND TRIM SPACES
+				if (regexp.test(mypcode.value))									//TEST method OF REGEXP in IF-statement								
+					{
+						
+						mypcode.style.color = "black";
+						status = true;
+						console.log("status: " + status);
+						console.log("text" + mypcode.value);
+					}
+					else
+					{
+						mypcode.style.color = "red";
+						status = false;
+						console.log("status: " + status);
+						console.log("text" + mypcode.value);
+					}
+					return status;
+				//document.getElementById("postalcode").innerHTML = n2;
+				//console.log(postalcode.name[0]);
+			}
+			/*var str2 = "T2H 3J4" //.toUpperCase();
+				var regexp2 = /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/i;
+						//	  /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/
+				var n2 = regexp2.exec(str2);
+				console.log("regexp: " + regexp2);
+				console.log("exec: " + n2);
+				console.log(/[a]+/g.exec('deaaan apple ask'));
+			*/		
+			
+<!-- day6 -->
+			function showHideInfo (id, visCode)
+			{
+				document.getElementById(id).style.visibility = visCode;
+			}
+		</script>
+		<script>		
+			//VALIDATION FOR SUBMIT
+			function validate_send()
+			{
+				//CHECK AGAINST ALL FIELDS NEXT
+				//PUT UP RED X, OR RED BORDER AROUND THE FIELD THAT NEED FILLING IN?
+				var status = true;
+				var myfname = document.getElementById("firstname");			//LOOKS UP id="firstname"
+				var mylname = document.getElementById("lastname");			//LOOKS UP id="lastname"
+				var myaddr1 = document.getElementById("addr1");				//LOOKS UP id="addr1"
+				var myaddr2 = document.getElementById("addr2");				//LOOKS UP id="addr2"
+				
+				if (myfname.value == "")
 				{
-					mypcode.style.color = "black";
-					status = true;
-					console.log("status: " + status);
-					console.log("text" + mypcode.value);
-				}
-				else
-				{
-					mypcode.style.color = "red";
+					alert("The FIRST NAME box is not filled in correctly");
+					myfname.style.backgroundColor = "red";
 					status = false;
-					console.log("status: " + status);
-					console.log("text" + mypcode.value);
 				}
+				if (mylname.value == "")
+				{
+					alert("The LAST NAME box is not filled in correctly");
+					mylname.style.backgroundColor = "red";
+					status = false;
+				}
+				if (myaddr1.value == "")
+				{
+					status = false;
+					alert("The ADDRESS1 box is not filled in correctly");
+					myaddr1.style.backgroundColor = "red";
+					
+				}
+				if (myaddr2.value == "")
+				{
+					status = false;
+					alert("The ADDRESS2 box is not filled in correctly");
+					myaddr2.style.backgroundColor = "red";
+				}
+
+				<!-- CONFIRMATION -->
+				/*if (status)		//Only does function if STATUS is already TRUE
+				{
+					return confirm ("Please CONFIRM to SUBMIT?");
+				}*/
 				return status;
-			//document.getElementById("postalcode").innerHTML = n2;
-			//console.log(postalcode.name[0]);
-		}
-		/*var str2 = "T2H 3J4" //.toUpperCase();
-			var regexp2 = /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/i;
-					//	  /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/
-			var n2 = regexp2.exec(str2);
-			console.log("regexp: " + regexp2);
-			console.log("exec: " + n2);
-			console.log(/[a]+/g.exec('deaaan apple ask'));
-		*/		
-	</script>
+				/* else if (myaddrBox.value == "")
+				{
+					alert("The ADDRESS box is not filled in correctly");
+					myaddrBox.style.backgroundColor = "red";
+					status = false;
+				}
+				else if (myaddrSt.value == "")
+				{
+					alert("The ADDRESS box is not filled in correctly");
+					myaddrSt.style.backgroundColor = "red";
+					status = false;
+				} */
+				
+				/*else
+				{
+					//alert("SUBMITTING");
+					return true;
+				}*/
+				//-------------
+			}
+		</script>
 	</head>
 		<body>
 			<header>
@@ -89,25 +172,25 @@
 					<tr>
 					
 						<td> First Name: </td>
-						<td> <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname" onfocus="myinfoON('FirstName')" onfocusout="myinfoOFF('FirstName')" /> </td> 	<!-- oninput="myvalidate()"  -->
+						<td> <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname" onfocus="myinfoON('FirstName')" onfocusout="myinfoOFF('FirstName')" /></td> 	<!-- oninput="myvalidate()"  -->
 						<td id="FirstName"></td>
 						<!--USE EMPTY DATA TO SHOW CONFIRMATION <td id="fname"> </td> -->
 					</tr>
 					<tr>
 						<td> Last Name: </td>
-						<td> <input type="text" id="lastname" name="lastname" placeholder="Enter Lastname" onfocus="myinfoON('LastName')" onfocusout="myinfoOFF('LastName')" />  </td>	<!-- oninput="myvalidate2()"  -->																								<!-- <td id="comment2"></td> -->
+						<td> <input type="text" id="lastname" value="name" name="lastname" placeholder="Enter Lastname" onfocus="myinfoON('LastName')" onfocusout="myinfoOFF('LastName')" /></td>	<!-- oninput="myvalidate2()"  -->																								<!-- <td id="comment2"></td> -->
 						<td id="LastName"></td>
 					</tr>
 					
 					<!-- ADDRESS -->
 					<tr>
 						<td> Address: </td>
-						<td> <input type="text" name="addressBox" placeholder="PO Box# or Unit#" onfocus="myinfoON('Address1')" onfocusout="myinfoOFF('Address1')" /> </td>
+						<td> <input type="text" id="addr1" name="address1" placeholder="PO Box# or Unit#" onfocus="myinfoON('Address1')" onfocusout="myinfoOFF('Address1')" /></td>
 						<td id="Address1"></td>
 					</tr>
 					<tr>
-						<td></td>
-						<td> <input type="text" name="addressStreet" placeholder="Street Address" onfocus="myinfoON('Address2')" onfocusout="myinfoOFF('Address2')" /> </td>
+						<td> </td>
+						<td> <input type="text" id="addr2" name="address2" placeholder="Street Address" onfocus="myinfoON('Address2')" onfocusout="myinfoOFF('Address2')" /></td>
 						<td id="Address2"></td>
 					</tr>
 					<tr>
@@ -141,6 +224,16 @@
 						<td> Postal Code: </td>
 						<td> <input type="text" id="postalcode" name="postalcode" placeholder="T2B 2J5" oninput="validate_postal_code()" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
 						<td id="PostalCode"></td>
+					</tr>
+<!--day6-->					
+					<tr>
+					<!-- onfocus="document.getElementById("fn").style.visible = 'visible'" -->
+					<!-- or -->
+					<!-- onfocus="showHideInfo('fn', 'visible')" -->
+					<!-- onblur="showHideInfo('fn', 'hidden')" -->
+						<td> Postal Code/ZIP: </td>
+						<td> <input type="text" id="postalzipcode" name="postalzipcode" placeholder="T2B 2J5" oninput="validate_postal_code()" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
+						<td id="PostalZipCode"></td>
 					</tr>
 					
 					<!-- PHONE NUMBER -->
@@ -216,7 +309,7 @@
 						<td> <input type="reset" value="Reset" onclick="return confirm('Are you sure you want to RESET this form?')" /> </td>
 					</tr>
 				</table>
-				
+
 				<!-- MOVE DOWN TO HEADER -->
 				<a href="register.html" id="footer-left">
 					<img src="images/register.jpg" alt="register.jpg" border="2" width="100" height="100" />
@@ -230,52 +323,5 @@
 				<h4>Register - Copyright 2016 &copy;<h4>
 			</footer>
 			
-			<!-- JAVASCRIPT -->
-			<script>
-//MOVE UP TO <head>		
-				//VALIDATION FOR SUBMIT
-				function validate_send()
-				{
-					//CHECK AGAINST ALL FIELDS NEXT
-					//PUT UP RED X, OR RED BORDER AROUND THE FIELD THAT NEED FILLING IN?
-					var status = true;
-					var myfname = document.getElementById("firstname");			//LOOKS UP id="firstname"
-					var mylname = document.getElementById("lastname");			//LOOKS UP id="lastname"
-					/*var myaddrBox = document.getElementById("addressBox");*/		//LOOKS UP id="addressBox"
-					/*var myaddrSt = document.getElementById("addressStreet");*/	//LOOKS UP id="addressStreet"
-					if (myfname.value == "")
-					{
-						alert("The FIRST NAME box is not filled in correctly");
-						myfname.style.backgroundColor = "red";
-						status = false;
-					}
-					else if (mylname.value == "")
-					{
-						alert("The LAST NAME box is not filled in correctly");
-						mylname.style.backgroundColor = "red";
-						status = false;
-					}
-					return status;
-					/* else if (myaddrBox.value == "")
-					{
-						alert("The ADDRESS box is not filled in correctly");
-						myaddrBox.style.backgroundColor = "red";
-						status = false;
-					}
-					else if (myaddrSt.value == "")
-					{
-						alert("The ADDRESS box is not filled in correctly");
-						myaddrSt.style.backgroundColor = "red";
-						status = false;
-					} */
-					
-					/*else
-					{
-						//alert("SUBMITTING");
-						return true;
-					}*/
-					//-------------
-				}
-			</script>
 	</body>
 </html>

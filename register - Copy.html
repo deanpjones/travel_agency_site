@@ -11,12 +11,143 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	<style>
 		<!-- SEE STYLE.CSS FOR STYLES -->
+<!--day6-->			
+		input[value='a']{
+			background-color: pink;
+		}
+<!--day6-->			
+		.info {
+			position: absolute;
+			right:10%;
+			top:10%
+			width:50%;
+			
+		}
 	</style>
 	
 	<!-- SCRIPTS -->
-	<script>
-		
-	</script>
+		<script>
+			function myinfoON(y)
+			{
+				document.getElementById(y).innerHTML = "Please fill in the <strong>" + y + "</strong> box.";
+				//document.getElementById("info").innerHTML = "Please fill in the address box";
+
+			}
+			function myinfoOFF(x)
+			{
+				document.getElementById(x).innerHTML = "";
+				//document.getElementById("info").innerHTML = "";
+			}
+			
+			//VALIDATE FOR PHONE# NUMBER OF DIGITS AND DASH?
+			//VALIDATION FOR POSTAL CODE FORMAT (CHANGES TEXT TO RED IF INCORRECT)
+			function validate_postal_code()
+			{
+				var status = true;
+				var mypcode = document.getElementById("postalcode");			//LOOKS UP id="postalcode"
+				//var regexp = /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/i;					//PATTERN TO MATCH (/i leave off because we want capitalized)
+				var regexp = /^[a-z]\d[a-z]\s?\d[a-z]\d$/i;						//HARVEY's version (\s? difference on SPACE)
+				//mypcode.value.toUpperCase();									//?CHANGE TEXT TO UPPERCASE?
+				mypcode.value = mypcode.value.toUpperCase().trim();				//convert to UPPERCASE AND TRIM SPACES
+				if (regexp.test(mypcode.value))									//TEST method OF REGEXP in IF-statement								
+					{
+						
+						mypcode.style.color = "black";
+						status = true;
+						console.log("status: " + status);
+						console.log("text" + mypcode.value);
+					}
+					else
+					{
+						mypcode.style.color = "red";
+						status = false;
+						console.log("status: " + status);
+						console.log("text" + mypcode.value);
+					}
+					return status;
+				//document.getElementById("postalcode").innerHTML = n2;
+				//console.log(postalcode.name[0]);
+			}
+			/*var str2 = "T2H 3J4" //.toUpperCase();
+				var regexp2 = /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/i;
+						//	  /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/
+				var n2 = regexp2.exec(str2);
+				console.log("regexp: " + regexp2);
+				console.log("exec: " + n2);
+				console.log(/[a]+/g.exec('deaaan apple ask'));
+			*/		
+			
+<!-- day6 -->
+			function showHideInfo (id, visCode)
+			{
+				document.getElementById(id).style.visibility = visCode;
+			}
+		</script>
+		<script>		
+			//VALIDATION FOR SUBMIT
+			function validate_send()
+			{
+				//CHECK AGAINST ALL FIELDS NEXT
+				//PUT UP RED X, OR RED BORDER AROUND THE FIELD THAT NEED FILLING IN?
+				var status = true;
+				var myfname = document.getElementById("firstname");			//LOOKS UP id="firstname"
+				var mylname = document.getElementById("lastname");			//LOOKS UP id="lastname"
+				var myaddr1 = document.getElementById("addr1");				//LOOKS UP id="addr1"
+				var myaddr2 = document.getElementById("addr2");				//LOOKS UP id="addr2"
+				
+				if (myfname.value == "")
+				{
+					alert("The FIRST NAME box is not filled in correctly");
+					myfname.style.backgroundColor = "red";
+					status = false;
+				}
+				if (mylname.value == "")
+				{
+					alert("The LAST NAME box is not filled in correctly");
+					mylname.style.backgroundColor = "red";
+					status = false;
+				}
+				if (myaddr1.value == "")
+				{
+					status = false;
+					alert("The ADDRESS1 box is not filled in correctly");
+					myaddr1.style.backgroundColor = "red";
+					
+				}
+				if (myaddr2.value == "")
+				{
+					status = false;
+					alert("The ADDRESS2 box is not filled in correctly");
+					myaddr2.style.backgroundColor = "red";
+				}
+
+				<!-- CONFIRMATION -->
+				/*if (status)		//Only does function if STATUS is already TRUE
+				{
+					return confirm ("Please CONFIRM to SUBMIT?");
+				}*/
+				return status;
+				/* else if (myaddrBox.value == "")
+				{
+					alert("The ADDRESS box is not filled in correctly");
+					myaddrBox.style.backgroundColor = "red";
+					status = false;
+				}
+				else if (myaddrSt.value == "")
+				{
+					alert("The ADDRESS box is not filled in correctly");
+					myaddrSt.style.backgroundColor = "red";
+					status = false;
+				} */
+				
+				/*else
+				{
+					//alert("SUBMITTING");
+					return true;
+				}*/
+				//-------------
+			}
+		</script>
 	</head>
 		<body>
 			<header>
@@ -35,32 +166,37 @@
 			</nav>
 				
 				<form method="get" action="bouncer.php">
+				
 				<table>
 					<!-- NAME -->
 					<tr>
 					
 						<td> First Name: </td>
-						<td> <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname" oninput="myvalidate()" /> </td> <!--NEED THIS? value=""  -->
+						<td> <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname" onfocus="myinfoON('FirstName')" onfocusout="myinfoOFF('FirstName')" /></td> 	<!-- oninput="myvalidate()"  -->
+						<td id="FirstName"></td>
 						<!--USE EMPTY DATA TO SHOW CONFIRMATION <td id="fname"> </td> -->
 					</tr>
 					<tr>
 						<td> Last Name: </td>
-						<td> <input type="text" id="lastname" name="lastname" placeholder="Enter Lastname" oninput="myvalidate2()" />  </td>
-						<td id="comment2"></td>
+						<td> <input type="text" id="lastname" name="lastname" placeholder="Enter Lastname" onfocus="myinfoON('LastName')" onfocusout="myinfoOFF('LastName')" /></td>	<!-- oninput="myvalidate2()"  -->																								<!-- <td id="comment2"></td> -->
+						<td id="LastName"></td>
 					</tr>
 					
 					<!-- ADDRESS -->
 					<tr>
 						<td> Address: </td>
-						<td> <input type="text" name="addressBox" placeholder="PO Box# or Unit#" />
+						<td> <input type="text" id="addr1" name="address1" placeholder="PO Box# or Unit#" onfocus="myinfoON('Address1')" onfocusout="myinfoOFF('Address1')" /></td>
+						<td id="Address1"></td>
 					</tr>
 					<tr>
-						<td></td>
-						<td> <input type="text" name="addressStreet" placeholder="Street Address" />
+						<td> </td>
+						<td> <input type="text" id="addr2" name="address2" placeholder="Street Address" onfocus="myinfoON('Address2')" onfocusout="myinfoOFF('Address2')" /></td>
+						<td id="Address2"></td>
 					</tr>
 					<tr>
 						<td> City: </td>
-						<td> <input type="text" name="city" placeholder="City" />
+						<td> <input type="text" name="city" placeholder="City" onfocus="myinfoON('City')" onfocusout="myinfoOFF('City')" />
+						<td id="City"></td>
 					</tr>
 					<tr>
 						<td> Province: </td>
@@ -83,15 +219,29 @@
 							</select>
 						</td>
 					</tr>
+					<!-- POSTAL CODE -->
 					<tr>
 						<td> Postal Code: </td>
-						<td> <input type="text" name="postalcode" placeholder="T2B 2J5" />
+						<td> <input type="text" id="postalcode" name="postalcode" placeholder="T2B 2J5" oninput="validate_postal_code()" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
+						<td id="PostalCode"></td>
 					</tr>
+<!--day6-->					
+					<tr>
+					<!-- onfocus="document.getElementById("fn").style.visible = 'visible'" -->
+					<!-- or -->
+					<!-- onfocus="showHideInfo('fn', 'visible')" -->
+					<!-- onblur="showHideInfo('fn', 'hidden')" -->
+						<td> Postal Code/ZIP: </td>
+						<td> <input type="text" id="postalzipcode" name="postalzipcode" placeholder="T2B 2J5" oninput="validate_postal_code()" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
+						<td id="PostalZipCode"></td>
+					</tr>
+					
+					<!-- PHONE NUMBER -->
 					<tr>
 						<td> Phone: </td>
-						<td> <input type="text" name="phone" placeholder="555-5555" />
+						<td> <input type="text" name="phone" placeholder="403-555-5555" onfocus="myinfoON('Phone')" onfocusout="myinfoOFF('Phone')" />
+						<td id="Phone"></td>
 					</tr>
-					<!-- PHONE NUMBER? -->
 				</table>
 				<hr />
 				<table>
@@ -159,7 +309,7 @@
 						<td> <input type="reset" value="Reset" onclick="return confirm('Are you sure you want to RESET this form?')" /> </td>
 					</tr>
 				</table>
-				
+
 				<!-- MOVE DOWN TO HEADER -->
 				<a href="register.html" id="footer-left">
 					<img src="images/register.jpg" alt="register.jpg" border="2" width="100" height="100" />
@@ -173,80 +323,5 @@
 				<h4>Register - Copyright 2016 &copy;<h4>
 			</footer>
 			
-			<!-- JAVASCRIPT -->
-			<script>
-				//CONFIRMATION FUNCTION
-				/*function myFunction() {
-					var x = document.getElementById("myInput").value;
-					document.getElementById("demo").innerHTML = "You wrote: " + x;
-				}*/
-				/*function validate()
-				{
-					var x = document.getElementById("firstname");	//LOOKS UP id="firstname"
-					if (x.value == "")
-					{
-						//alert("FALSE, first name is not filled in");
-						//RED X
-						x.value = Please fill in your first name
-						return false;
-					}
-					else
-					{
-						//GREEN CHECK
-						alert("TRUE");
-						return true;
-					}	
-				}*/
-				
-				//VALIDATION FOR SUBMIT
-				function validate_send()
-				{
-					//CHECK AGAINST ALL FIELDS NEXT
-					//PUT UP RED X, OR RED BORDER AROUND THE FIELD THAT NEED FILLING IN?
-					var status = true;
-					var myfname = document.getElementById("firstname");	//LOOKS UP id="firstname"
-					if (myfname.value == "")
-					{
-						alert("The FIRST NAME box is not filled in correctly");
-						myfname.style.backgroundColor = "red";
-						status = false;
-						//return false;
-					}
-					return status;
-					/*else
-					{
-						//alert("SUBMITTING");
-						return true;
-					}*/
-					//-------------
-				}
-			</script>
-			<script>
-				//var myID = ["firstname", "lastname"];	
-				for (i=0; i<5; i++) {
-					x = x + "The number is " + i + "<br>";
-					myvalidate2()
-				}
-				
-				var resetclr = mylname.style.backgroundColor;	//NEED TO BE GLOBAL OTHERWISE IT WILL KEEP RESETING BEFORE IF-STATEMENT.
-				function myvalidate2(myID)
-				{
-					var status = true;
-					var mylname = document.getElementById(myID);	//LOOKS UP id="lastname"
-					if (mylname.value == "")
-					{
-						mylname.style.backgroundColor = "red";
-						document.getElementById("comment2").innerHTML = "Please fill in your last name.";
-						status = false;
-					}
-					else
-					{
-						mylname.style.backgroundColor = resetclr;
-						//document.getElementById("comment2").innerHTML = "";
-						//status = true;
-					}
-					return status;
-				}
-			</script>
 	</body>
 </html>

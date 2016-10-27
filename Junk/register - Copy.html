@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<meta charset="UTF-8">
+		<meta name="Description" content="Travel Agency Project - Register">
+		<meta name="Keywords" content="travel, contact, destination, html, css">
+		<meta name="Author" content="Dean Jones">
+		<meta name="Date" content="Oct.27, 2016">
+
+		<title> Travel Experts - Register</title>			
+		<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+		<!-- SEE STYLE.CSS FOR STYLES -->
+	</style>
+	
+	<!-- SCRIPTS -->
+	<script>
+		
+	</script>
+	</head>
+		<body>
+			<header>
+				<img src="images/01bridge.jpg" id="header-left" alt="01bridge.jpg">
+				<img src="images/02sunset.jpg" id="header-right" alt="02sunset.jpg">
+				<img src="images/treelogo.gif" alt="treelogo.gif" width="161.8" height="100">
+				<h1>TRAVEL EXPERTS - Register<h1> 
+				<div id="slogan">love knows no borders</div>
+				
+			</header>
+			
+			<nav>
+				<a href="index.html" class="navbar">Home</a>
+				<a href="register.html" class="navbar">Register</a>
+				<a href="contact.html" class="navbar">Contact</a>
+			</nav>
+				
+				<form method="get" action="bouncer.php">
+				<table>
+					<!-- NAME -->
+					<tr>
+					
+						<td> First Name: </td>
+						<td> <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname" oninput="myvalidate()" /> </td> <!--NEED THIS? value=""  -->
+						<!--USE EMPTY DATA TO SHOW CONFIRMATION <td id="fname"> </td> -->
+					</tr>
+					<tr>
+						<td> Last Name: </td>
+						<td> <input type="text" id="lastname" name="lastname" placeholder="Enter Lastname" oninput="myvalidate2()" />  </td>
+						<td id="comment2"></td>
+					</tr>
+					
+					<!-- ADDRESS -->
+					<tr>
+						<td> Address: </td>
+						<td> <input type="text" name="addressBox" placeholder="PO Box# or Unit#" />
+					</tr>
+					<tr>
+						<td></td>
+						<td> <input type="text" name="addressStreet" placeholder="Street Address" />
+					</tr>
+					<tr>
+						<td> City: </td>
+						<td> <input type="text" name="city" placeholder="City" />
+					</tr>
+					<tr>
+						<td> Province: </td>
+						<td>
+							<select id="prov" name="province">
+								<option value="nil">&lt;  Select Province  &gt;</option>
+								<option value="AB">Alberta</option>
+								<option value="BC">British Columbia</option>
+								<option value="MB">Manitoba</option>								
+								<option value="NB">New Brunswick</option>
+								<option value="NL">Newfoundland and Labrador</option>
+								<option value="NT">Northwest Territories</option>
+								<option value="NS">Nova Scotia</option>
+								<option value="NU">Nunavut</option>
+								<option value="ON">Ontario</option>
+								<option value="PE">Prince Edward Island</option>
+								<option value="QC">Quebec</option>
+								<option value="SK">Saskatchewan</option>
+								<option value="YT">Yukon</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td> Postal Code: </td>
+						<td> <input type="text" name="postalcode" placeholder="T2B 2J5" />
+					</tr>
+					<tr>
+						<td> Phone: </td>
+						<td> <input type="text" name="phone" placeholder="555-5555" />
+					</tr>
+					<!-- PHONE NUMBER? -->
+				</table>
+				<hr />
+				<table>
+					<tr>
+						<td> Email: </td>
+						<td> <input type="text" name="email" placeholder="Enter Email"/> </td>
+					</tr>
+				
+					<tr>
+						<td><label for="pw">Password:</label></td>
+						<td><input type="password" name="pw" id="pw" placeholder="Enter Password" /></td>
+					</tr>
+					
+					<tr>
+						<td><label for="spam">Send me spam:</label></td>
+						<td><input type="checkbox" name="spam" id="spam" checked="unchecked" /></td>
+					</tr>
+					
+					<tr>
+						<td><label for="gender">Gender:</label></td>
+						<td><label for="gender">Male:</label></td>
+						<td><label for="gender">Female:</label></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="radio" name="gender" id="male" value="male" /></td>
+						<td><input type="radio" name="gender" id="female" value="female" /></td> <!-- checked="checked" -->
+					</tr>
+					
+					<tr>
+						<td><label for="age">Age:</label></td>
+						<td><input type="number" name="age" id="age" min="18" max="100" /></td>
+						<td>Must be at least 18 years or older</td>
+					</tr>
+					
+					<tr>
+						<td><label for="form_num"></label></td>
+						<td><input type="hidden" name="form_num" id="form_num" value="form1" /></td>
+					</tr>
+					
+					<tr>
+						<td><label for="dest">Favorite Vacation Destination:</label></td>
+						<td>
+							<select id="dest" name="destination">
+								<option value="nil">&lt;  Pick a Destination  &gt;</option>
+								<option value="GR">Greenland</option>
+								<option value="HI">Hawaii</option>
+								<option value="PR">Paris</option>
+								<option value="UK">Ucluelet/Tofino</option>
+							</select>
+						</td>
+					</tr>
+				
+					<tr>
+						<td><label for="about">Tell us about yourself</label></td>
+						<td><textarea name="about" id="about" rows="4" cols="40" wrap="hard" placeholder="tell us about yourself"/></textarea></td>
+					</tr>
+				
+					<tr>
+						<!-- <td> <input type="submit" value="Send" /> </td> -->
+						<!-- SUBMIT BUTTON -->
+						<td> <input type="submit" value="Send" onclick="return validate_send()" id="submit" /> </td>	
+						<!-- <td> <input type="reset" value="Reset" /> </td> -->
+						<!-- RESET BUTTON -->
+						<td> <input type="reset" value="Reset" onclick="return confirm('Are you sure you want to RESET this form?')" /> </td>
+					</tr>
+				</table>
+				
+				<!-- MOVE DOWN TO HEADER -->
+				<a href="register.html" id="footer-left">
+					<img src="images/register.jpg" alt="register.jpg" border="2" width="100" height="100" />
+				</a>
+				<a href="contact.html" id="footer-left">
+					<img src="images/contact.jpg" alt="contact.jpg" border="2" width="100" height="100" />
+				</a>
+			</form>
+
+			<footer>
+				<h4>Register - Copyright 2016 &copy;<h4>
+			</footer>
+			
+			<!-- JAVASCRIPT -->
+			<script>
+				//CONFIRMATION FUNCTION
+				/*function myFunction() {
+					var x = document.getElementById("myInput").value;
+					document.getElementById("demo").innerHTML = "You wrote: " + x;
+				}*/
+				/*function validate()
+				{
+					var x = document.getElementById("firstname");	//LOOKS UP id="firstname"
+					if (x.value == "")
+					{
+						//alert("FALSE, first name is not filled in");
+						//RED X
+						x.value = Please fill in your first name
+						return false;
+					}
+					else
+					{
+						//GREEN CHECK
+						alert("TRUE");
+						return true;
+					}	
+				}*/
+				
+				//VALIDATION FOR SUBMIT
+				function validate_send()
+				{
+					//CHECK AGAINST ALL FIELDS NEXT
+					//PUT UP RED X, OR RED BORDER AROUND THE FIELD THAT NEED FILLING IN?
+					var status = true;
+					var myfname = document.getElementById("firstname");	//LOOKS UP id="firstname"
+					if (myfname.value == "")
+					{
+						alert("The FIRST NAME box is not filled in correctly");
+						myfname.style.backgroundColor = "red";
+						status = false;
+						//return false;
+					}
+					return status;
+					/*else
+					{
+						//alert("SUBMITTING");
+						return true;
+					}*/
+					//-------------
+				}
+			</script>
+			<script>
+				//var myID = ["firstname", "lastname"];	
+				for (i=0; i<5; i++) {
+					x = x + "The number is " + i + "<br>";
+					myvalidate2()
+				}
+				
+				var resetclr = mylname.style.backgroundColor;	//NEED TO BE GLOBAL OTHERWISE IT WILL KEEP RESETING BEFORE IF-STATEMENT.
+				function myvalidate2(myID)
+				{
+					var status = true;
+					var mylname = document.getElementById(myID);	//LOOKS UP id="lastname"
+					if (mylname.value == "")
+					{
+						mylname.style.backgroundColor = "red";
+						document.getElementById("comment2").innerHTML = "Please fill in your last name.";
+						status = false;
+					}
+					else
+					{
+						mylname.style.backgroundColor = resetclr;
+						//document.getElementById("comment2").innerHTML = "";
+						//status = true;
+					}
+					return status;
+				}
+			</script>
+	</body>
+</html>
