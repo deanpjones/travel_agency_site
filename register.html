@@ -29,6 +29,41 @@
 			//document.getElementById("add1info").innerHTML = "";
 			//document.getElementById("info").innerHTML = "";
 		}
+		
+		//VALIDATE FOR PHONE# NUMBER OF DIGITS AND DASH?
+		//VALIDATION FOR POSTAL CODE FORMAT (CHANGES TEXT TO RED IF INCORRECT)
+		function validate_postal_code()
+		{
+			var status = true;
+			var mypcode = document.getElementById("postalcode");			//LOOKS UP id="postalcode"
+			var regexp = /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/;						//PATTERN TO MATCH (/i leave off because we want capitalized)
+			//mypcode.value.toUpperCase();									//?CHANGE TEXT TO UPPERCASE?
+			if (regexp.test(mypcode.value))									
+				{
+					mypcode.style.color = "black";
+					status = true;
+					console.log("status: " + status);
+					console.log("text" + mypcode.value);
+				}
+				else
+				{
+					mypcode.style.color = "red";
+					status = false;
+					console.log("status: " + status);
+					console.log("text" + mypcode.value);
+				}
+				return status;
+			//document.getElementById("postalcode").innerHTML = n2;
+			//console.log(postalcode.name[0]);
+		}
+		/*var str2 = "T2H 3J4" //.toUpperCase();
+			var regexp2 = /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/i;
+					//	  /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/
+			var n2 = regexp2.exec(str2);
+			console.log("regexp: " + regexp2);
+			console.log("exec: " + n2);
+			console.log(/[a]+/g.exec('deaaan apple ask'));
+		*/		
 	</script>
 	</head>
 		<body>
@@ -48,6 +83,7 @@
 			</nav>
 				
 				<form method="get" action="bouncer.php">
+				
 				<table>
 					<!-- NAME -->
 					<tr>
@@ -100,16 +136,17 @@
 							</select>
 						</td>
 					</tr>
+					<!-- POSTAL CODE -->
 					<tr>
 						<td> Postal Code: </td>
-						<td> <input type="text" name="postalcode" placeholder="T2B 2J5" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
+						<td> <input type="text" id="postalcode" name="postalcode" placeholder="T2B 2J5" oninput="validate_postal_code()" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
 						<td id="PostalCode"></td>
 					</tr>
 					
-					<!-- PHONE NUMBER? -->
+					<!-- PHONE NUMBER -->
 					<tr>
 						<td> Phone: </td>
-						<td> <input type="text" name="phone" placeholder="555-5555" onfocus="myinfoON('Phone')" onfocusout="myinfoOFF('Phone')" />
+						<td> <input type="text" name="phone" placeholder="403-555-5555" onfocus="myinfoON('Phone')" onfocusout="myinfoOFF('Phone')" />
 						<td id="Phone"></td>
 					</tr>
 				</table>
@@ -195,6 +232,7 @@
 			
 			<!-- JAVASCRIPT -->
 			<script>
+//MOVE UP TO <head>		
 				//VALIDATION FOR SUBMIT
 				function validate_send()
 				{
@@ -217,6 +255,7 @@
 						mylname.style.backgroundColor = "red";
 						status = false;
 					}
+					return status;
 					/* else if (myaddrBox.value == "")
 					{
 						alert("The ADDRESS box is not filled in correctly");
@@ -229,7 +268,7 @@
 						myaddrSt.style.backgroundColor = "red";
 						status = false;
 					} */
-					return status;
+					
 					/*else
 					{
 						//alert("SUBMITTING");
