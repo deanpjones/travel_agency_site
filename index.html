@@ -27,7 +27,32 @@
 		<style>
 			<!-- SEE STYLE.CSS FOR STYLES -->
 		</style>
-		
+		<script>	
+			//NEED TO FIX, THE IMAGES ARE ALL OVERLAPPING, 10X
+			function loadImages()
+			{
+				var path2 = "images/";
+				var images2 = ["101starsky.jpg","102mountains.jpg","103ocean.jpg","104autumn.jpg",
+					"105river.jpg","106ocean.jpg","107starsky.jpg","108ocean.jpg","109beach.jpg","110beach.jpg"];
+				var links2 = ["http://www.redhat.com", "http://www.redhat.com", "http://www.redhat.com", "http://www.redhat.com", "http://www.redhat.com",
+					"http://www.redhat.com", "http://www.redhat.com", "http://www.redhat.com", "http://www.redhat.com", "http://www.redhat.com"];
+				var imgString;
+				console.log(images2.length);
+				console.log(links2.length);
+				imgArrayId = document.getElementById('img-array');	//GETS THE PARENT(ID)
+				//BUILD LOOP FOR IMAGES TO LOAD.
+				for(i=0; i<images2.length; i++)
+				{
+					imgString = "<a href='" + links2[i] + "' target='_blank'>" + 
+						"<img class='resize' src='" + path2 + images2[i] + "' alt='" + images2[i] + "' /></a><br />";
+					console.log(imgString);
+				}
+				imgArrayId.innerHTML = imgString;
+				//<a href='http://www.redhat.com' target="_blank"><img class="resize" src="images/101starsky.jpg" alt="101starsky.jpg" /></a>
+					//WRITES THE STRING, NEED LOOP.
+			}
+			
+		</script>
 	</head>
 		<body>
 			<header>
@@ -45,7 +70,14 @@
 				<a href="register.html" class="navbar">Register</a>
 				<a href="contact.html" class="navbar">Contact</a>
 			</nav>
+			
 			<main>
+			<!-- <div id="img-array" onload="loadImages()"> -->
+			 <div id="img-array">
+					<!-- Click below -->
+					<!-- <a href='http://www.redhat.com' target="_blank"><img class="resize" src="images/101starsky.jpg" alt="101starsky.jpg" /></a> -->
+					<!-- <a href='http://www.redhat.com' target="_blank"><img class="resize" src="images/102mountains.jpg" alt="102mountains.jpg" /></a> -->
+			</div>
 				<article>
 					<p><strong>Travel Experts</strong> has been bringing you great deals all around the world!</p>
 					<p>Book your travel destination today!</p>
@@ -63,9 +95,11 @@
 					</a>
 					
 				</article>
+				
 				<script>
 					//------------------------------------
 					//------------------------------------
+					//IMAGES from Isleofskye.tumblr.com
 					var images = ["01bridge_sm.jpg", "02sunset_sm.jpg", "03lake_sm.jpg", "04waterfall_sm.jpg", "05arctic_sm.jpg", "06river_sm.jpg"];
 					var img_desc = ["A cyclist on a beautiful bridge on Minnow Lake.", 
 									"A sunset at dawn in Hawaii.", 
@@ -108,6 +142,9 @@
 					}*/
 					//------------------------------------
 					//------------------------------------
+				</script>
+				<script>
+					loadImages();	//LOAD FUNCTION.
 				</script>
 			</main>
 			

@@ -9,7 +9,19 @@
 		border: 0;
 		padding: 0;
 	}
-
+	#img-array {
+		position: absolute;
+		height: 15%;
+		width: 15%;
+		top: 55%;
+		right: 2%;
+		color: white;
+		background-color: black;
+	}
+	.resize {
+		height:100%;
+		width:100%;
+	}
 	header, footer {
 		position: static;
 		width: 100%;
