@@ -9,6 +9,8 @@
 		border: 0;
 		padding: 0;
 	}
+	
+	/* IMAGES LINKS TO RIGHT SIDE */
 	#img-array {
 		position: absolute;
 		height: 15%;
@@ -22,6 +24,7 @@
 		height:100%;
 		width:100%;
 	}
+	
 	header, footer {
 		position: static;
 		width: 100%;
@@ -106,14 +109,20 @@
 		border: 1px solid #777;
 	}
 	form, table {
+		min-height:100%;
+		width:100%;
+		margin: 0;
+		/* background-color: #66a3ff; */
+		/* border: 0; */
+		/* padding: 0; */
+		
 		margin-left: 0;
 		border-left: 1px solid gray;
 		padding: 2em;
 		color: black;
-		background-color: #66a3ff;
 		overflow: hidden;
 		font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
-		font-size: 1em;
+		/* font-size: 1em; */
 		clear: right;
 	}
 	#header-left {
