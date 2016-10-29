@@ -41,6 +41,7 @@
 				var imgString = "";	//NEED BLANK STRING TO START
 					console.log(images2.length);
 					console.log(links2.length);
+					//console.log(imgString.typeof)
 				imgArrayId = document.getElementById('img-array');	//GETS THE PARENT(ID)
 				//BUILD LOOP FOR IMAGES TO LOAD.
 				for(i=0; i<images2.length; i++)
@@ -91,15 +92,14 @@
 					<p>Book your travel destination today!</p>
 					<p>...</p>
 					<p>Book your destination <acronym title="as soon as possible">ASAP</acronym>!</p>
-					
-					<p class="img"></p>
+				
 					<!-- MOVE DOWN TO HEADER -->
 					
-					<a class="img" href="register.php">
-						<img src="images/register.jpg" alt="register.jpg" border="2" width="100" height="100" />
+					<a class="img-link" href="register.php">
+						<img src="images/register.jpg" alt="register.jpg" width="100" height="100" />
 					</a>
-					<a class="img" href="contact.php">
-						<img src="images/contact.jpg" alt="contact.jpg" border="2" width="100" height="100" />
+					<a class="img-link" href="contact.php">
+						<img src="images/contact.jpg" alt="contact.jpg" width="100" height="100" />
 					</a>
 					
 				</article>
