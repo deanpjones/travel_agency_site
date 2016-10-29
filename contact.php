@@ -62,7 +62,7 @@
 				
 				<!-- MOVE DOWN TO HEADER -->
 				<a href="register.php">
-					<img src="images/register.jpg" alt="register.jpg" border="2" width="100" height="100" />
+					<img class="img-link" src="images/register.jpg" alt="register.jpg" width="100" height="100" />
 				</a>
 			</address>
 
