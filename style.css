@@ -24,6 +24,9 @@
 		height:100%;
 		width:100%;
 	}
+	img {
+		border: solid black 3px;
+	}
 	
 	header, footer {
 		position: static;
@@ -105,8 +108,9 @@
 		clear: right;
 		
 	}
-	.img:hover {
-		border: 1px solid #777;
+	/*HOVER FOR CONTACT AND REGISTER LINKS*/
+	.img-link:hover {
+		opacity: 0.6;
 	}
 	form, table {
 		min-height:100%;
