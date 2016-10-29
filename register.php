@@ -311,11 +311,11 @@
 				</table>
 
 				<!-- MOVE DOWN TO HEADER -->
-				<a href="register.php" id="footer-left">
-					<img src="images/register.jpg" alt="register.jpg" border="2" width="100" height="100" />
+				<a class="img-link" href="register.php" id="footer-left">
+					<img src="images/register.jpg" alt="register.jpg" width="100" height="100" />
 				</a>
-				<a href="contact.php" id="footer-left">
-					<img src="images/contact.jpg" alt="contact.jpg" border="2" width="100" height="100" />
+				<a class="img-link" href="contact.php" id="footer-left">
+					<img src="images/contact.jpg" alt="contact.jpg" width="100" height="100" />
 				</a>
 			</form>
 
