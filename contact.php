@@ -17,8 +17,10 @@
 			<header>
 				<img src="images/01bridge.jpg" id="header-left" alt="01bridge.jpg"/>
 				<img src="images/02sunset.jpg" id="header-right" alt="02sunset.jpg"/>
+				
+				<!--LOGO-->
 				<img src="images/treelogo.gif" alt="treelogo.gif" width="161.8" height="100"/>
-<!--FIX TAG-->				<h1>TRAVEL EXPERTS - Contact Us<h1> 
+				<h1>TRAVEL EXPERTS - Contact Us</h1> 
 				<div id="slogan">love knows no borders</div>
 				
 			</header>
