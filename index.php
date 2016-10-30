@@ -5,7 +5,9 @@
 		<!-- COLUMNS FIXED -->
 		<!-- TOOL TIPS for contact links, etc. -->
 		<!-- FIX (RED if BLANK) BOX AFTER THE BOX IS RE-FILLED IN -->
-
+	<!-- RESET FOR STYLE.CSS? -->
+	<!-- TABLE BORDER, AND ALIGN -->
+	
 <html>
 	<head>	
 		<meta charset="UTF-8"/>
@@ -14,11 +16,7 @@
 		<meta name="Author" content="Dean Jones"/>
 		<meta name="Date" content="Oct.27, 2016"/>
 		
-		<!-- W3SCHOOLS ANIMATION -->
-<!-- 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
-		
-		<!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->		<!-- RESET CSS -->
+		<!-- SEE STYLE.CSS FOR STYLES -->
 		<link rel="stylesheet" type="text/css" href="style.css">				<!-- DEFAULT CSS -->
 		<title> Travel Experts - Home </title>		<!--TAB ON BROWSER-->		
 		<style>
@@ -33,8 +31,8 @@
 				<img src="images/02sunset.jpg" id="header-right" alt="02sunset.jpg"/><!--  width="161.8" height="100" -->
 				
 				<!--LOGO-->
-				<img src="images/treelogo.gif" alt="treelogo.gif" width="161.8" height="100"/>
-				<h1>Welcome to TRAVEL EXPERTS</h1> <!-- TITLE TO THE LEFT OF LOGO? -->
+				<img id="logo" src="images/treelogo.gif" alt="treelogo.gif" width="161.8" height="100"/>
+				<h1>Welcome to TRAVEL EXPERTS</h1> 
 				<div id="slogan">love knows no borders</div>
 				
 			</header>
@@ -48,20 +46,11 @@
 			</nav>
 			
 			<main>
-			<!-- <div id="img-array" onload="loadImages()"> -->
-			<div id="img-array">
-				Click below
-				<script>
-					loadImages();	//LOAD FUNCTION.
-				</script>
-					<!-- Click below -->
-					<!-- <a href='http://www.redhat.com' target="_blank"><img class="resize" src="images/101starsky.jpg" alt="101starsky.jpg" /></a> -->
-					<!-- <a href='http://www.redhat.com' target="_blank"><img class="resize" src="images/102mountains.jpg" alt="102mountains.jpg" /></a> -->
-			</div>
+				
 				<article>
 					<p><strong>Travel Experts</strong> has been bringing you great deals all around the world!</p>
 					<p>Book your travel destination today!</p>
-					<p>...</p>
+					<p>Travel all over the world! Visit Hawaii, Austrailia, or even the West Coast of Canada!</p>
 					<p>Book your destination <acronym title="as soon as possible">ASAP</acronym>!</p>
 				
 					<!-- MOVE DOWN TO HEADER -->
@@ -72,9 +61,17 @@
 					<a class="img-link" href="contact.php">
 						<img src="images/contact.jpg" alt="contact.jpg" width="100" height="100" />
 					</a>
-					
-				</article>
-				
+				</article>	
+				<div id="img-array">
+					Click below
+					<script>
+						loadImages();	//LOAD FUNCTION.
+					</script>
+						<!-- Click below -->
+						<!-- <a href='http://www.redhat.com' target="_blank"><img class="resize" src="images/101starsky.jpg" alt="101starsky.jpg" /></a> -->
+						<!-- <a href='http://www.redhat.com' target="_blank"><img class="resize" src="images/102mountains.jpg" alt="102mountains.jpg" /></a> -->
+				</div>
+				<div id="img-table">
 				<script>
 					//------------------------------------
 					//------------------------------------
@@ -94,15 +91,8 @@
 
 					for (var j=0; j<images.length; j++)
 					{	
-						//console.log("len is " + images.length);
 						document.write("<tr>");
-								//FORMAT  <img src="images/01bridge.jpg" id="header-left" alt="01bridge.jpg">
-								//ALT TAG?
-								//var test = "<td><img src='images/" + images[j] + "'></td>" + "<td>" + img_desc[j] + "</td>"
-								//??var test = "<td onmouseover='alert(" + j + "')><img src='images/" + images[j] + "'></td>" + "<td>" + img_desc[j] + "</td>"
-								//???var test = "<td onmouseover='displayImage()'
-								//console.log(test);
-								//alert(test);
+
 							document.write("<td><img src='images/" + images[j] + "'></td>");
 							document.write("<td>" + img_desc[j] + "</td>");
 						document.write("</tr>");
@@ -114,19 +104,14 @@
 						var img = document.getElentById("myimg");
 						img.src = myimages[index];
 					}
-					//}
-					/*else
-					{
-						alert("Images table did not load");
-					}*/
-					//------------------------------------
-					//------------------------------------
+
 				</script>
+				</div>
 				
 			</main>
 			
 			<footer>
-				<h4>Home(php) - Copyright 2016 &copy;</h4>
+				<h4>Home - Travel Experts Inc. - Copyright 2016 &copy;</h4>
 			</footer>
 
 	</body>
