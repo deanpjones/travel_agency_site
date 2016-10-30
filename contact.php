@@ -19,7 +19,7 @@
 				<img src="images/02sunset.jpg" id="header-right" alt="02sunset.jpg"/>
 				
 				<!--LOGO-->
-				<img src="images/treelogo.gif" alt="treelogo.gif" width="161.8" height="100"/>
+				<img id="logo" src="images/treelogo.gif" alt="treelogo.gif" width="161.8" height="100"/>
 				<h1>TRAVEL EXPERTS - Contact Us</h1> 
 				<div id="slogan">love knows no borders</div>
 				
@@ -29,6 +29,7 @@
 				<a href="index.php" class="navbar">Home</a>
 				<a href="register.php" class="navbar">Register</a>
 				<a href="contact.php" class="navbar">Contact</a>
+				<a href="links.php" class="navbar">Links</a>
 			</nav>
 			<address>
 				<ul>
@@ -69,7 +70,7 @@
 			</address>
 
 			<footer>
-				<h4>Contact Us(php) - Copyright 2016 &copy;</h4>
+				<h4>Contact Us - Travel Experts Inc. - Copyright 2016 &copy;</h4>
 			</footer>
 	</body>
 </html>
