@@ -1,21 +1,21 @@
 <?php
-	$myname = "fred";
-	$mynum = 12;
+	/* VARIABLES */
 	
-	$total = 1234.56;
-	define("GST", 0.05);	#CONSTANT
-	#define("GST", 7);		#CANNOT CHANGE (ERROR)
-	#comment
-	//comment
-	/*
-		multiline comment
-	*/
 	
-	function hello($lname)
-	{	
-		#return $lname;
-		return ucfirst($lname . "xxx");
-	}
+/* ??	WHY IS <br> TAG LOOPING ABOVE TABLE?? */
+		/* FUNCTIONS */
+		function print_table()
+		{
+			print("<table>");
+				for ($i = 1; $i <= 6; $i++) 
+				{
+					print("<tr>");
+						print("<td> Row#" . $i . " </td>");
+						print("<td> <a href=\"links-page" . $i . ".php\">Page" . $i . "</a> </td>");
+					print("</tr>");
+				}
+			print("</table><br />");
+		}
 ?>
 
 
@@ -24,79 +24,57 @@
 	<head>	
 		<title> My PHP Template </title>		<!--TAB ON BROWSER-->
 		
+		<!--STYLE DEFINITION-->
+		<link rel="stylesheet" type="text/css" href="style.css">				<!-- DEFAULT CSS -->
 		
-		<style>			<!--STYLE DEFINITION-->
+		<style>			
 		</style>
 		<script></script>
 	</head>
-		<body>							
-			<?php
-				print("<h1>hello world</h1>");
-				print("<h1>hello $myname</h1>");
-				print("<h1>hello $mynum</h1>");
-				print("<h1>\$hello $myname " . hello("smith") . "</h1>");
-				print("<h1>line1 <br />line2</h1>");	#BREAK LINE
-				#print(`dir`);			#DUMPS (COMMANDLINE DIR COMMAND)
-				#print(`ls`);			#LISTS THE FILES IN CURRENT DIRECTORY (c:/wamp/www)
+		<body>	
+			<header>
+				<img src="images/01bridge.jpg" id="header-left" alt="01bridge.jpg"/>
+				<img src="images/02sunset.jpg" id="header-right" alt="02sunset.jpg"/><!--  width="161.8" height="100" -->
 				
-				#??? 
-				#$myC = `cd c:\`;		#CHANGES THE CURRENT DIRECTORY
-				#print($myC);
+				<!--LOGO-->
+				<img id="logo" src="images/treelogo.gif" alt="treelogo.gif" width="161.8" height="100"/>
+				<h1>TRAVEL EXPERTS - Links</h1> 
+				<div id="slogan">love knows no borders</div>
 				
-				#$dirlist = `dir`;
-				#print_r($dirlist);
+			</header>
+			
+			<nav>
+				<a href="index.php" class="navbar">Home</a>
+			</nav>		
+			<main>
+				<article>
+					<p color="blue">TABLE LOOP - PHP PAGE</p>
+				
+				<!-- RUN PRINT TABLE LOOP -->
+				<?php
+					print_table();
+				?>
+				</article>
+				<!-- <table>
+						<tr>
+							<td> Row#1 </td>
+							<td> <a href="links-page1.php">Page1</a> </td>
+						</tr>
+						<tr>
+							<td> Row#2 </td>
+							<td> <a href="links-page2.php">Page2</a> </td>
+						</tr>
+						<tr>
+							<td> Row#3 </td>
+							<td> <a href="links-page3.php">Page3</a> </td>
+						</tr>
 
-				print("GST tax rate is " . GST . "<br />");
-				print("Your total: \$" . $total . "<br />");
-				$tax = (GST * $total) + $total;
-				print("Your total + GST: \$" . $tax . "<br />");
-				printf("Your total + GST: \$%f<br />", $tax);
-				printf("GST: \$ %.2f <br />", GST);
-				
-				$number = 123;
-				printf("%f",$number);
-				print("<br />");
-				printf("what happens? %7.2f hey<br />", $myname);	#STRING, SHOWS AS 0.00
-				
-				$favcolor = "red";
-			switch ($favcolor) 
-			{
-			case "red":
-				echo "Your favorite color is red!<br />";
-				break;
-			case "blue":
-				echo "Your favorite color is blue!<br />";
-				break;
-			case "green":
-				echo "Your favorite color is green!<br />";
-				break;
-			default:
-				echo "Your favorite color is neither red, blue, nor green!<br />";
-			}
+				</table> -->
+			</main>
+			<footer>
+				<h4>Links - Travel Experts Inc. - Copyright 2016 &copy;</h4>
+			</footer>
 			
-			$x = 1; 
-			while($x <= 5) {
-				echo "The number is: $x <br />";
-				$x++;
-			}
-			
-			for ($x = 99; $x > 0; $x--) {
-				echo "$x bottles of beer!<br>";
-			} 
-			echo "No more bottles of beer anymore :(<br />";
-			
-			$links = array("mysql.com","php.net","www.apache.org");
-			#$empty = array();		#EMPTY ARRAY
-			#print($empty);
-			foreach($links as $link) {
-				echo "<a href=\"http://$link\">$link</a><br />";
-			}
-			?>
-			
-			
-
-		<script>
-		console.log(window.document);
-		</script>
+		<script></script>
 	</body>
 </html>
