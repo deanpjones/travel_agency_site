@@ -94,67 +94,77 @@
 				var mylname = document.getElementById("lastname");			//LOOKS UP id="lastname"
 				var myaddr1 = document.getElementById("addr1");				//LOOKS UP id="addr1"
 				var myaddr2 = document.getElementById("addr2");				//LOOKS UP id="addr2"
+				var mycity = document.getElementById("city");				//LOOKS UP id="city"
 				
-				if (myfname.value == "")
+				/* PROVINCE PULLDOWN */
+				var myprov = document.getElementById("prov");				//LOOKS UP id="prov"
+				
+				function test(id, str_desc)
+				{
+					if (id.value == "" || id.value == "nil")
+					{
+						alert(str_desc);
+						id.style.backgroundColor = "#ff6666";
+						status = false;
+					}
+				}
+				test(myfname, "The FIRST NAME box is not filled in correctly");
+				test(mylname, "The LAST NAME box is not filled in correctly");
+				test(myaddr1, "The ADDRESS1 box is not filled in correctly");
+				test(myaddr2, "The ADDRESS2 box is not filled in correctly");
+				test(mycity, "The CITY box is not filled in correctly");
+				
+				test(myprov, "Please select a PROVINCE from the pulldown");
+
+				
+				/* if (myfname.value == "")
 				{
 					alert("The FIRST NAME box is not filled in correctly");
-					myfname.style.backgroundColor = "red";
+					myfname.style.backgroundColor = "#ff6666";
 					status = false;
-				}
-				if (mylname.value == "")
+				} */
+				/* else
+				{
+					myfname.style.backgroundColor = initial";
+				} */
+				/* if (mylname.value == "")
 				{
 					alert("The LAST NAME box is not filled in correctly");
-					mylname.style.backgroundColor = "red";
+					mylname.style.backgroundColor = "#ff6666";
 					status = false;
-				}
-				if (myaddr1.value == "")
+				} */
+				/* if (myaddr1.value == "")
 				{
 					status = false;
 					alert("The ADDRESS1 box is not filled in correctly");
-					myaddr1.style.backgroundColor = "red";
+					myaddr1.style.backgroundColor = "#ff6666";
 					
-				}
-				if (myaddr2.value == "")
+				} */
+				/* if (myaddr2.value == "")
 				{
 					status = false;
 					alert("The ADDRESS2 box is not filled in correctly");
-					myaddr2.style.backgroundColor = "red";
-				}
-
-				<!-- CONFIRMATION -->
-				/*if (status)		//Only does function if STATUS is already TRUE
+					myaddr2.style.backgroundColor = "#ff6666";
+				} */
+				/* if (mycity.value == "")
 				{
-					return confirm ("Please CONFIRM to SUBMIT?");
-				}*/
-				return status;
-				/* else if (myaddrBox.value == "")
-				{
-					alert("The ADDRESS box is not filled in correctly");
-					myaddrBox.style.backgroundColor = "red";
 					status = false;
-				}
-				else if (myaddrSt.value == "")
-				{
-					alert("The ADDRESS box is not filled in correctly");
-					myaddrSt.style.backgroundColor = "red";
-					status = false;
+					alert("The CITY box is not filled in correctly");
+					mycity.style.backgroundColor = "#ff6666";
 				} */
 				
-				/*else
-				{
-					//alert("SUBMITTING");
-					return true;
-				}*/
-				//-------------
+				return status;
 			}
 		</script>
 	</head>
 		<body>
-			<header>
-				<img src="images/01bridge.jpg" id="header-left" alt="01bridge.jpg">
-				<img src="images/02sunset.jpg" id="header-right" alt="02sunset.jpg">
-				<img src="images/treelogo.gif" alt="treelogo.gif" width="161.8" height="100">
-				<h1>TRAVEL EXPERTS - Register<h1> 
+			<header>			
+				<img src="images/01bridge.jpg" id="header-left" alt="01bridge.jpg"/>
+				<img src="images/02sunset.jpg" id="header-right" alt="02sunset.jpg"/><!--  width="161.8" height="100" -->
+				
+				<!--LOGO-->
+				<img src="images/treelogo.gif" alt="treelogo.gif" width="161.8" height="100"/>
+				<h1>TRAVEL EXPERTS - Register</h1> <!-- TITLE TO THE LEFT OF LOGO? -->
 				<div id="slogan">love knows no borders</div>
 				
 			</header>
@@ -164,161 +174,160 @@
 				<a href="register.php" class="navbar">Register</a>
 				<a href="contact.php" class="navbar">Contact</a>
 			</nav>
-				
+			<main>
 				<form method="get" action="bouncer.php">
-				
-				<table>
-					<!-- NAME -->
-					<tr>
+					<table>
+						<!-- NAME -->
+						<tr>
+						
+							<td> First Name: </td>
+							<td> <input id="firstname" type="text" name="firstname" placeholder="Enter Firstname" onfocus="myinfoON('FirstName')" onfocusout="myinfoOFF('FirstName')" /></td> 	<!-- oninput="myvalidate()"  -->
+							<td id="FirstName"></td>
+							<!--USE EMPTY DATA TO SHOW CONFIRMATION <td id="fname"> </td> -->
+						</tr>
+						<tr>
+							<td> Last Name: </td>
+							<td> <input id="lastname" type="text" name="lastname" placeholder="Enter Lastname" onfocus="myinfoON('LastName')" onfocusout="myinfoOFF('LastName')" /></td>	<!-- oninput="myvalidate2()"  -->																								<!-- <td id="comment2"></td> -->
+							<td id="LastName"></td>
+						</tr>
+						
+						<!-- ADDRESS -->
+						<tr>
+							<td> Address: </td>
+							<td> <input id="addr1" type="text" name="address1" placeholder="PO Box# or Unit#" onfocus="myinfoON('Address1')" onfocusout="myinfoOFF('Address1')" /></td>
+							<td id="Address1"></td>
+						</tr>
+						<tr>
+							<td> </td>
+							<td> <input id="addr2" type="text" name="address2" placeholder="Street Address" onfocus="myinfoON('Address2')" onfocusout="myinfoOFF('Address2')" /></td>
+							<td id="Address2"></td>
+						</tr>
+						<tr>
+							<td> City: </td>
+							<td> <input id="city" type="text" name="city" placeholder="City" onfocus="myinfoON('City')" onfocusout="myinfoOFF('City')" />
+							<td id="City"></td>
+						</tr>
+						<tr>
+							<td> Province: </td>
+							<td>
+								<select id="prov" name="province">
+									<option value="nil">&lt;  Select Province  &gt;</option>
+									<option value="AB">Alberta</option>
+									<option value="BC">British Columbia</option>
+									<option value="MB">Manitoba</option>								
+									<option value="NB">New Brunswick</option>
+									<option value="NL">Newfoundland and Labrador</option>
+									<option value="NT">Northwest Territories</option>
+									<option value="NS">Nova Scotia</option>
+									<option value="NU">Nunavut</option>
+									<option value="ON">Ontario</option>
+									<option value="PE">Prince Edward Island</option>
+									<option value="QC">Quebec</option>
+									<option value="SK">Saskatchewan</option>
+									<option value="YT">Yukon</option>
+								</select>
+							</td>
+							<td id="Province"></td>
+						</tr>
+						<!-- POSTAL CODE -->
+						<tr>
+							<td> Postal Code: </td>
+							<td> <input type="text" id="postalcode" name="postalcode" placeholder="T2B 2J5" oninput="validate_postal_code()" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
+							<td id="PostalCode"></td>
+						</tr>
+	<!--day6-->					
+						<tr>
+						<!-- onfocus="document.getElementById("fn").style.visible = 'visible'" -->
+						<!-- or -->
+						<!-- onfocus="showHideInfo('fn', 'visible')" -->
+						<!-- onblur="showHideInfo('fn', 'hidden')" -->
+							<td> Postal Code/ZIP: </td>
+							<td> <input type="text" id="postalzipcode" name="postalzipcode" placeholder="T2B 2J5" oninput="validate_postal_code()" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
+							<td id="PostalZipCode"></td>
+						</tr>
+						
+						<!-- PHONE NUMBER -->
+						<tr>
+							<td> Phone: </td>
+							<td> <input type="text" name="phone" placeholder="403-555-5555" onfocus="myinfoON('Phone')" onfocusout="myinfoOFF('Phone')" />
+							<td id="Phone"></td>
+						</tr>
+					</table>
+					<hr />
+					<table>
+						<tr>
+							<td> Email: </td>
+							<td> <input type="text" name="email" placeholder="Enter Email"/> </td>
+						</tr>
 					
-						<td> First Name: </td>
-						<td> <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname" onfocus="myinfoON('FirstName')" onfocusout="myinfoOFF('FirstName')" /></td> 	<!-- oninput="myvalidate()"  -->
-						<td id="FirstName"></td>
-						<!--USE EMPTY DATA TO SHOW CONFIRMATION <td id="fname"> </td> -->
-					</tr>
-					<tr>
-						<td> Last Name: </td>
-						<td> <input type="text" id="lastname" name="lastname" placeholder="Enter Lastname" onfocus="myinfoON('LastName')" onfocusout="myinfoOFF('LastName')" /></td>	<!-- oninput="myvalidate2()"  -->																								<!-- <td id="comment2"></td> -->
-						<td id="LastName"></td>
-					</tr>
+						<tr>
+							<td><label for="pw">Password:</label></td>
+							<td><input type="password" name="pw" id="pw" placeholder="Enter Password" /></td>
+						</tr>
+						
+						<tr>
+							<td><label for="gender">Gender:</label></td>
+							<td><label for="gender">Male:</label></td>
+							<td><label for="gender">Female:</label></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><input type="radio" name="gender" id="male" value="male" /></td>
+							<td><input type="radio" name="gender" id="female" value="female" /></td> <!-- checked="checked" -->
+						</tr>
+						
+						<tr>
+							<td><label for="age">Age:</label></td>
+							<td><input type="number" name="age" id="age" min="18" max="100" /></td>
+							<td>Must be at least 18 years or older</td>
+						</tr>
+						
+						<tr>
+							<td><label for="form_num"></label></td>
+							<td><input type="hidden" name="form_num" id="form_num" value="form1" /></td>
+						</tr>
+						
+						<tr>
+							<td><label for="dest">Favorite Vacation Destination:</label></td>
+							<td>
+								<select id="dest" name="destination">
+									<option value="nil">&lt;  Pick a Destination  &gt;</option>
+									<option value="GR">Greenland</option>
+									<option value="HI">Hawaii</option>
+									<option value="PR">Paris</option>
+									<option value="UK">Ucluelet/Tofino</option>
+								</select>
+							</td>
+						</tr>
 					
-					<!-- ADDRESS -->
-					<tr>
-						<td> Address: </td>
-						<td> <input type="text" id="addr1" name="address1" placeholder="PO Box# or Unit#" onfocus="myinfoON('Address1')" onfocusout="myinfoOFF('Address1')" /></td>
-						<td id="Address1"></td>
-					</tr>
-					<tr>
-						<td> </td>
-						<td> <input type="text" id="addr2" name="address2" placeholder="Street Address" onfocus="myinfoON('Address2')" onfocusout="myinfoOFF('Address2')" /></td>
-						<td id="Address2"></td>
-					</tr>
-					<tr>
-						<td> City: </td>
-						<td> <input type="text" name="city" placeholder="City" onfocus="myinfoON('City')" onfocusout="myinfoOFF('City')" />
-						<td id="City"></td>
-					</tr>
-					<tr>
-						<td> Province: </td>
-						<td>
-							<select id="prov" name="province">
-								<option value="nil">&lt;  Select Province  &gt;</option>
-								<option value="AB">Alberta</option>
-								<option value="BC">British Columbia</option>
-								<option value="MB">Manitoba</option>								
-								<option value="NB">New Brunswick</option>
-								<option value="NL">Newfoundland and Labrador</option>
-								<option value="NT">Northwest Territories</option>
-								<option value="NS">Nova Scotia</option>
-								<option value="NU">Nunavut</option>
-								<option value="ON">Ontario</option>
-								<option value="PE">Prince Edward Island</option>
-								<option value="QC">Quebec</option>
-								<option value="SK">Saskatchewan</option>
-								<option value="YT">Yukon</option>
-							</select>
-						</td>
-					</tr>
-					<!-- POSTAL CODE -->
-					<tr>
-						<td> Postal Code: </td>
-						<td> <input type="text" id="postalcode" name="postalcode" placeholder="T2B 2J5" oninput="validate_postal_code()" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
-						<td id="PostalCode"></td>
-					</tr>
-<!--day6-->					
-					<tr>
-					<!-- onfocus="document.getElementById("fn").style.visible = 'visible'" -->
-					<!-- or -->
-					<!-- onfocus="showHideInfo('fn', 'visible')" -->
-					<!-- onblur="showHideInfo('fn', 'hidden')" -->
-						<td> Postal Code/ZIP: </td>
-						<td> <input type="text" id="postalzipcode" name="postalzipcode" placeholder="T2B 2J5" oninput="validate_postal_code()" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
-						<td id="PostalZipCode"></td>
-					</tr>
+						<tr>
+							<td><label for="about">Tell us about yourself</label></td>
+							<td><textarea name="about" id="about" rows="4" cols="40" wrap="hard" placeholder="tell us about yourself"/></textarea></td>
+						</tr>
 					
-					<!-- PHONE NUMBER -->
-					<tr>
-						<td> Phone: </td>
-						<td> <input type="text" name="phone" placeholder="403-555-5555" onfocus="myinfoON('Phone')" onfocusout="myinfoOFF('Phone')" />
-						<td id="Phone"></td>
-					</tr>
-				</table>
-				<hr />
-				<table>
-					<tr>
-						<td> Email: </td>
-						<td> <input type="text" name="email" placeholder="Enter Email"/> </td>
-					</tr>
-				
-					<tr>
-						<td><label for="pw">Password:</label></td>
-						<td><input type="password" name="pw" id="pw" placeholder="Enter Password" /></td>
-					</tr>
-					
-					<tr>
-						<td><label for="spam">Send me spam:</label></td>
-						<td><input type="checkbox" name="spam" id="spam" checked="unchecked" /></td>
-					</tr>
-					
-					<tr>
-						<td><label for="gender">Gender:</label></td>
-						<td><label for="gender">Male:</label></td>
-						<td><label for="gender">Female:</label></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td><input type="radio" name="gender" id="male" value="male" /></td>
-						<td><input type="radio" name="gender" id="female" value="female" /></td> <!-- checked="checked" -->
-					</tr>
-					
-					<tr>
-						<td><label for="age">Age:</label></td>
-						<td><input type="number" name="age" id="age" min="18" max="100" /></td>
-						<td>Must be at least 18 years or older</td>
-					</tr>
-					
-					<tr>
-						<td><label for="form_num"></label></td>
-						<td><input type="hidden" name="form_num" id="form_num" value="form1" /></td>
-					</tr>
-					
-					<tr>
-						<td><label for="dest">Favorite Vacation Destination:</label></td>
-						<td>
-							<select id="dest" name="destination">
-								<option value="nil">&lt;  Pick a Destination  &gt;</option>
-								<option value="GR">Greenland</option>
-								<option value="HI">Hawaii</option>
-								<option value="PR">Paris</option>
-								<option value="UK">Ucluelet/Tofino</option>
-							</select>
-						</td>
-					</tr>
-				
-					<tr>
-						<td><label for="about">Tell us about yourself</label></td>
-						<td><textarea name="about" id="about" rows="4" cols="40" wrap="hard" placeholder="tell us about yourself"/></textarea></td>
-					</tr>
-				
-					<tr>
-						<!-- <td> <input type="submit" value="Send" /> </td> -->
-						<!-- SUBMIT BUTTON -->
-						<td> <input type="submit" value="Send" onclick="return validate_send()" id="submit" /> </td>	
-						<!-- <td> <input type="reset" value="Reset" /> </td> -->
-						<!-- RESET BUTTON -->
-						<td> <input type="reset" value="Reset" onclick="return confirm('Are you sure you want to RESET this form?')" /> </td>
-					</tr>
-				</table>
+						<tr>
+							<!-- <td> <input type="submit" value="Send" /> </td> -->
+							<!-- SUBMIT BUTTON -->
+							<td> <input id="send" type="submit" value="Send" onclick="return validate_send()" /> </td>	
+							<!-- <td> <input type="reset" value="Reset" /> </td> -->
+							<!-- RESET BUTTON -->
+							<td> <input id="reset" type="reset" value="Reset" onclick="return confirm('Are you sure you want to RESET this form?')" /> </td>
+						</tr>
+						<tr>
+							<td><label for="spam">Send me spam:</label></td>
+							<td><input type="checkbox" name="spam" id="spam" /></td>
+						</tr>
+					</table>
 
-				<!-- MOVE DOWN TO HEADER -->
-				<a class="img-link" href="register.php" id="footer-left">
-					<img src="images/register.jpg" alt="register.jpg" width="100" height="100" />
-				</a>
-				<a class="img-link" href="contact.php" id="footer-left">
-					<img src="images/contact.jpg" alt="contact.jpg" width="100" height="100" />
-				</a>
-			</form>
-
+					<!-- MOVE DOWN TO HEADER -->
+					<a class="img-link" href="register.php" id="footer-left">
+						<img src="images/register.jpg" alt="register.jpg" width="100" height="100" />
+					</a>
+					<a class="img-link" href="contact.php" id="footer-left">
+						<img src="images/contact.jpg" alt="contact.jpg" width="100" height="100" />
+					</a>
+				</form>
+			</main>
 			<footer>
 				<h4>Register(php) - Copyright 2016 &copy;<h4>
 			</footer>
