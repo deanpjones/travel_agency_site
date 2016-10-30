@@ -33,6 +33,9 @@
 	h1 {
 		font-size: 2em;
 	}
+	#logo {
+		border: 2px solid black; 
+	}
 	#slogan {
 		color: #ff00ff;
 		padding: 0.1em;
@@ -60,7 +63,8 @@
 		border: 2px solid #ffffff; 
 	}
 	footer {
-		font-family: "Helvetica Rounded", "Arial Rounded MT Bold", Arial, sans-serif;
+		font-family: "Times New Roman", "Helvetica Rounded", "Arial Rounded MT Bold", Arial, sans-serif;
+		/* font-weight: normal; */
 	}
 	
 	main {
@@ -104,7 +108,26 @@
 		position: absolute;
 		height: 15%;
 		width: 15%;
-		top: 55%;
+		/* top: 90%; */
+		/* top: 100%; */
+		/* top: 110%; */
+		/* top: auto; */
+		/* top: initial; */
+		/* top: inherit; */
+		/* top: 1em; */
+		/* top: 1.5em; */
+		/* top: 2em; */
+		/* top:50px; */
+		/* top: 100px; */
+		/* top: 200px; */
+		/* display:inline; */
+		/* display:block; */
+		/* display:flex; */
+		/* display:inline-block; */
+		/* display:table; */
+		/* display:table-column; */
+		/* display:table-row; */
+		display:table-cell;
 		right: 2%;
 		color: white;
 		background-color: black;
@@ -113,10 +136,21 @@
 		height:100%;
 		width:100%;
 	}
+	.arr {
+		height: 100%;
+		width: 100%;
+		padding: 4px;
+	}
 	/* IMAGES-ARRAY(loadImages) LINKS TO RIGHT SIDE */
+	#img-table {
+		width:80%;
+		/* clear: left; */
+		clear: right;
+		/* clear: both; */
+	}
 	
 	img {
-		border: solid black 3px;
+		border: solid blue 1px;
 	}	
 	
 	p {
@@ -143,6 +177,7 @@
 	.img-link:hover {
 		opacity: 0.6;
 	}
+	
 	form {
 		padding: 1em;
 	}
@@ -175,6 +210,10 @@
 			background-color: #ffbf80;
 			/* font-weight: bolder; */
 		}
+		/* MAKE BUTTON HOVER */
+		/* button:hover {
+			opacity: 0.6;
+		} */
 		
 
 	#footer-left {
