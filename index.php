@@ -27,10 +27,13 @@
 		<style>
 			<!-- SEE STYLE.CSS FOR STYLES -->
 		</style>
+		<!--LOAD IMAGES SCRIPT-->
+		<script type="text/javascript" src="loadImages.js"></script>
 		<script>	
 //NEED TO FIX, THE IMAGES ARE ALL OVERLAPPING, 10X
 //?UNDEFINED TEXT AT TOP?
-			function loadImages()
+		
+			/*function loadImages()
 			{
 				var path2 = "images/";
 				var images2 = ["101starsky.jpg","102mountains.jpg","103ocean.jpg","104autumn.jpg",
@@ -54,7 +57,7 @@
 				imgArrayId.innerHTML = imgString;
 				//<a href='http://www.redhat.com' target="_blank"><img class="resize" src="images/101starsky.jpg" alt="101starsky.jpg" /></a>
 					//WRITES THE STRING, NEED LOOP.
-			}
+			}*/
 			
 		</script>
 	</head>
