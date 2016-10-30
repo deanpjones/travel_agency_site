@@ -2,12 +2,9 @@
 
 <!-- TO DO... -->
 	<!-- FIX REGISTER PAGE -->
-	
-	<!-- SCROLL THRU 6 PICTURES -->
-	<!-- FADE-IN LOGO ON MAIN PAGE ONLY -->
-	<!-- HOVER OVER FOR IMAGE LINKS, ENLARGE, SHOW GRAY OPACITY, THAT IT'S A LINK -->
-	
-	<!-- HOW TO ADD REFERENCES, FOR IMAGES COPIED? -->
+		<!-- COLUMNS FIXED -->
+		<!-- TOOL TIPS for contact links, etc. -->
+		<!-- FIX (RED if BLANK) BOX AFTER THE BOX IS RE-FILLED IN -->
 
 <html>
 	<head>	
@@ -29,44 +26,15 @@
 		</style>
 		<!--LOAD IMAGES SCRIPT-->
 		<script type="text/javascript" src="loadImages.js"></script>
-		<script>	
-//NEED TO FIX, THE IMAGES ARE ALL OVERLAPPING, 10X
-//?UNDEFINED TEXT AT TOP?
-		
-			/*function loadImages()
-			{
-				var path2 = "images/";
-				var images2 = ["101starsky.jpg","102mountains.jpg","103ocean.jpg","104autumn.jpg",
-					"105river.jpg","106ocean.jpg","107starsky.jpg","108ocean.jpg","109beach.jpg","110beach.jpg"];
-				var links2 = ["http://www.redhat.com", "http://www.redhat.com", "http://www.ucluelet-info.com", "http://www.redhat.com", "http://www.redhat.com",
-					"http://www.redhat.com", "http://www.redhat.com", "http://www.redhat.com", "http://www.redhat.com", "http://www.redhat.com"];
-				//var imgString;	//UNDEFINED
-				var imgString = "";	//NEED BLANK STRING TO START
-					console.log(images2.length);
-					console.log(links2.length);
-					//console.log(imgString.typeof)
-				imgArrayId = document.getElementById('img-array');	//GETS THE PARENT(ID)
-				//BUILD LOOP FOR IMAGES TO LOAD.
-				for(i=0; i<images2.length; i++)
-				{
-					//imgString = "<a href='" + links2[i] + "' target='_blank'>" + 			//DON'T USE (=) IT'S OVERWRITING
-					imgString += "<a href='" + links2[i] + "' target='_blank'>" + 
-						"<img class='resize' src='" + path2 + images2[i] + "' alt='" + images2[i] + "' /></a><br />";
-					console.log(imgString);
-				}
-				imgArrayId.innerHTML = imgString;
-				//<a href='http://www.redhat.com' target="_blank"><img class="resize" src="images/101starsky.jpg" alt="101starsky.jpg" /></a>
-					//WRITES THE STRING, NEED LOOP.
-			}*/
-			
-		</script>
 	</head>
 		<body>
 			<header>
 				<img src="images/01bridge.jpg" id="header-left" alt="01bridge.jpg"/>
 				<img src="images/02sunset.jpg" id="header-right" alt="02sunset.jpg"/><!--  width="161.8" height="100" -->
+				
+				<!--LOGO-->
 				<img src="images/treelogo.gif" alt="treelogo.gif" width="161.8" height="100"/>
-<!--FIX TAG-->				<h1>Welcome to TRAVEL EXPERTS<h1> <!-- TITLE TO THE LEFT OF LOGO? -->
+				<h1>Welcome to TRAVEL EXPERTS</h1> <!-- TITLE TO THE LEFT OF LOGO? -->
 				<div id="slogan">love knows no borders</div>
 				
 			</header>
