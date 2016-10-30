@@ -7,22 +7,22 @@
 		<meta name="Author" content="Dean Jones">
 		<meta name="Date" content="Oct.27, 2016">
 
-		<title> Travel Experts - Register</title>			
+		<title> Travel Experts - Register</title>
+
+		<!-- SEE STYLE.CSS FOR STYLES -->
 		<link rel="stylesheet" type="text/css" href="style.css">
 	<style>
-		<!-- SEE STYLE.CSS FOR STYLES -->
-<!--day6-->			
-		input[value='a']{
+		<!-- SEE STYLE.CSS FOR STYLES -->		
+		<!-- input[value='a']{
 			background-color: pink;
 		}
-<!--day6-->			
+		
 		.info {
 			position: absolute;
 			right:10%;
 			top:10%
 			width:50%;
-			
-		}
+		} -->
 	</style>
 	
 	<!-- SCRIPTS -->
@@ -163,7 +163,7 @@
 				<img src="images/02sunset.jpg" id="header-right" alt="02sunset.jpg"/><!--  width="161.8" height="100" -->
 				
 				<!--LOGO-->
-				<img src="images/treelogo.gif" alt="treelogo.gif" width="161.8" height="100"/>
+				<img id="logo" src="images/treelogo.gif" alt="treelogo.gif" width="161.8" height="100"/>
 				<h1>TRAVEL EXPERTS - Register</h1> <!-- TITLE TO THE LEFT OF LOGO? -->
 				<div id="slogan">love knows no borders</div>
 				
@@ -173,6 +173,7 @@
 				<a href="index.php" class="navbar">Home</a>
 				<a href="register.php" class="navbar">Register</a>
 				<a href="contact.php" class="navbar">Contact</a>
+				<a href="links.php" class="navbar">Links</a>
 			</nav>
 			<main>
 				<form method="get" action="bouncer.php">
@@ -329,7 +330,7 @@
 				</form>
 			</main>
 			<footer>
-				<h4>Register(php) - Copyright 2016 &copy;<h4>
+				<h4>Register - Travel Experts Inc. - Copyright 2016 &copy;<h4>
 			</footer>
 			
 	</body>
