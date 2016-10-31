@@ -8,6 +8,11 @@
 	<!-- RESET FOR STYLE.CSS? -->
 	<!-- TABLE BORDER, AND ALIGN -->
 	
+	<!-- TARGET? <a href... target="_blank" ??? -->
+	<!-- IMG-TABLE, move to *.js file -->
+	<!-- HEADER in DIV tags? -->
+	<!-- RESET.CSS -->
+	
 <html>
 	<head>	
 		<meta charset="UTF-8"/>
@@ -26,16 +31,9 @@
 		<script type="text/javascript" src="loadImages.js"></script>
 	</head>
 		<body>
-			<header>
-				<img src="images/01bridge.jpg" id="header-left" alt="01bridge.jpg"/>
-				<img src="images/02sunset.jpg" id="header-right" alt="02sunset.jpg"/><!--  width="161.8" height="100" -->
-				
-				<!--LOGO-->
-				<img id="logo" src="images/treelogo.gif" alt="treelogo.gif" width="161.8" height="100"/>
-				<h1>Welcome to TRAVEL EXPERTS</h1> 
-				<div id="slogan">love knows no borders</div>
-				
-			</header>
+			<!-- HEADER -->
+			<?php include_once 'header.php';?>
+
 			
 			<!-- <nav id="image_background"> -->
 			<nav>
@@ -110,9 +108,10 @@
 				
 			</main>
 			
-			<footer>
-				<h4>Home - Travel Experts Inc. - Copyright 2016 &copy;</h4>
+			<footer>		
+				<!-- FOOTER -->
+				<?php include_once 'footer.php';?>
+				<!--<h4>Home - Travel Experts Inc. - Copyright 2016 &copy;</h4>-->
 			</footer>
-
 	</body>
 </html>
