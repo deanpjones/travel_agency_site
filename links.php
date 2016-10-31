@@ -1,17 +1,17 @@
 <?php
 	/* VARIABLES */
 	
-	
-/* ??	WHY IS <br> TAG LOOPING ABOVE TABLE?? */
-		/* FUNCTIONS */
-		function print_table()
+	/* FUNCTIONS */
+		function table_links()
 		{
 			print("<table>");
 				for ($i = 1; $i <= 6; $i++) 
 				{
 					print("<tr>");
 						print("<td> Row#" . $i . " </td>");
-						print("<td> <a href=\"links-page" . $i . ".php\">Page" . $i . "</a> </td>");
+						#print("<td> <a href=\"links-page" . $i . ".php\">Page" . $i . "</a> </td>");		//ADDED TARGET
+						print("<td> <a href=\"links-page" . $i . ".php\" target='_blank' >Page" . $i . "</a> </td>");
+						#print("<td>$i</td><td><a href='page$i.php' >Page $i</a></td>"); 	#HARVEYS FORMAT, a bit shorter
 					print("</tr>");
 				}
 			print("</table><br />");
@@ -52,7 +52,7 @@
 				
 				<!-- RUN PRINT TABLE LOOP -->
 				<?php
-					print_table();
+					table_links();
 				?>
 				</article>
 				<!-- <table>
