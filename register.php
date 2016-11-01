@@ -1,3 +1,10 @@
+<?php
+	/* VARIABLES */
+	$page_desc = "Register";
+
+	/* FUNCTIONS */
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>	
