@@ -1,5 +1,8 @@
 	html {
 		height:100%;
+		/* -webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+				box-sizing: border-box; */
 	}
 	body {
 		min-height:100%;
@@ -75,21 +78,39 @@
 		background-color:black;
 		/* overflow:scroll; */
 	}
-	
+	/* ------- BANNER ------- */
+	#banner {
+		position: static;
+		width: 100%;
+		max-height: 1.2em;
+			/* height: 1.6em; */
+		font-size: 1em;
+		color: gray;
+		background-color: #ffccff;
+			/* background-image: url("images/texture.jpg"); */
+		text-align: center;
+		clear: both;
+		opacity: 0.8;
+		margin: 0;
+		border: 0;
+		/* border: 2px solid #ff00ff; */
+		padding: 0;
+	}
 	/*--------- NAVBAR STYLES ----------*/
 	nav {
 	text-indent: 1em;
     list-style-type: none;
 	background-color: #669999;
 	text-align: left;
-    padding: 3px;
 	font-family: "Helvetica Rounded", "Arial Rounded MT Bold", Arial, sans-serif;
-	border: 2px solid #ff00ff;
-	
-	/* IMAGE BACKGROUND */
-	background-image: url("images/texture.jpg");
-	opacity: 0.9;
-	/* See .navbar for (color:) */		
+		/* IMAGE BACKGROUND */
+		background-image: url("images/texture.jpg");
+		opacity: 0.9;
+		/* See .navbar for (color:) */	
+		margin: 0;
+		border: 2px solid #ff00ff;
+		padding: 0;	
+		padding: 2px;
 	}
 	.navbar {
 	padding-left: 1em;
