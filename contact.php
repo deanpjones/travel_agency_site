@@ -14,23 +14,11 @@
 	</style>
 	</head>
 		<body>
-			<header>
-				<img src="images/01bridge.jpg" id="header-left" alt="01bridge.jpg"/>
-				<img src="images/02sunset.jpg" id="header-right" alt="02sunset.jpg"/>
-				
-				<!--LOGO-->
-				<img id="logo" src="images/treelogo.gif" alt="treelogo.gif" width="161.8" height="100"/>
-				<h1>TRAVEL EXPERTS - Contact Us</h1> 
-				<div id="slogan">love knows no borders</div>
-				
-			</header>
+			<!-- HEADER -->
+			<?php include_once 'header.php';?>
 			
-			<nav class="image_background">
-				<a href="index.php" class="navbar">Home</a>
-				<a href="register.php" class="navbar">Register</a>
-				<a href="contact.php" class="navbar">Contact</a>
-				<a href="links.php" class="navbar">Links</a>
-			</nav>
+			<!-- NAVBAR -->
+			<?php include_once 'navbar.php';?>
 			<address>
 				<ul>
 					<b>CONTACT US</b>
@@ -69,8 +57,7 @@
 				</a>
 			</address>
 
-			<footer>
-				<h4>Contact Us - Travel Experts Inc. - Copyright 2016 &copy;</h4>
-			</footer>
+			<!-- FOOTER -->
+			<?php include_once 'footer.php';?>
 	</body>
 </html>
