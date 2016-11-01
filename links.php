@@ -1,8 +1,10 @@
 <?php
+	$page_desc = "Links";
+
+	include_once 'load_links.php';
+		#table_links	OLD FUNCTION
+		
 	/* VARIABLES */
-	include_once 'variables.php';
-		#table_links
-	
 	/* FUNCTIONS */
 
 ?>
