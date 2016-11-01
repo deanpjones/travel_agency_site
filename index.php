@@ -1,3 +1,12 @@
+<?php
+	/* VARIABLES */
+	$page_desc = "Home";
+	#$title_desc = "Travel Experts - Contact Us";
+	#NEED TO (REFERENCE) <head>
+
+	/* FUNCTIONS */
+?>
+
 <!DOCTYPE html>
 
 <!-- TO DO... -->
