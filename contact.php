@@ -1,3 +1,10 @@
+<?php
+	/* VARIABLES */
+	$page_desc = "Contact Us";
+
+	/* FUNCTIONS */
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>	
