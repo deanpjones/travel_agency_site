@@ -23,26 +23,24 @@
 		
 		<!-- SEE STYLE.CSS FOR STYLES -->
 		<link rel="stylesheet" type="text/css" href="style.css">				<!-- DEFAULT CSS -->
-		<title> Travel Experts - Home </title>		<!--TAB ON BROWSER-->		
+		<title> Travel Experts - Home </title>									<!--TAB ON BROWSER-->		
 		<style>
 			<!-- SEE STYLE.CSS FOR STYLES -->
 		</style>
 		<!--LOAD IMAGES SCRIPT-->
 		<script type="text/javascript" src="loadImages.js"></script>
 	</head>
-		<body>
+	<body>
 			<!-- HEADER -->
 			<?php include_once 'header.php';?>
-
 			
-			<!-- <nav id="image_background"> -->
-			<nav>
-				<a href="index.php" class="navbar">Home</a>
-				<a href="register.php" class="navbar">Register</a>
-				<a href="contact.php" class="navbar">Contact</a>
-				<a href="links.php" class="navbar">Links</a>
-			</nav>
+			<!-- NAVBAR -->
+			<?php include_once 'navbar.php';?>
 			
+			<!-- BANNER -->
+			<div id="banner">
+				<?php include_once 'banner.php';?>
+			</div>
 			<main>
 				
 				<article>
@@ -107,11 +105,8 @@
 				</div>
 				
 			</main>
-			
-			<footer>		
-				<!-- FOOTER -->
-				<?php include_once 'footer.php';?>
-				<!--<h4>Home - Travel Experts Inc. - Copyright 2016 &copy;</h4>-->
-			</footer>
+				
+			<!-- FOOTER -->
+			<?php include_once 'footer.php';?>
 	</body>
 </html>
