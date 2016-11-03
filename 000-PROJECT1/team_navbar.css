@@ -1,0 +1,29 @@
+/* NAVBAR STYLES */
+/* Dean Jones, Nov.2, 2016 */
+	nav {
+	text-indent: 1em;
+    list-style-type: none;
+	background-color: #669999;
+	text-align: left;
+	font-family: "Helvetica Rounded", "Arial Rounded MT Bold", Arial, sans-serif;
+		/* IMAGE BACKGROUND */
+		background-image: url("images/texture.jpg");
+		opacity: 0.9;
+		/* See .navbar for (color:) */	
+		margin: 0;
+		border: 2px solid #ff00ff;
+		padding: 0;	
+		padding: 2px;
+	}
+	.navbar {
+	padding-left: 1em;
+	padding-right: 1em;
+	color: #ffffff;
+	}
+	/* Hover Control */
+	.navbar:hover { 
+		background-color: #ff00ff;
+		/* FLICKERS font-size: 1.1em; */
+	}
+
+	

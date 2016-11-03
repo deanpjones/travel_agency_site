@@ -1,0 +1,27 @@
+	html {
+		height:100%;
+	}
+	body {
+		min-height:100%;
+		width:100%;
+		background-color: black;
+		margin: 0;
+		border: 0;
+		padding: 0;
+		color: black;
+		background-color: #ccffcc;
+		background: linear-gradient(black, white);
+	}
+
+	main {
+/* 		position:static;
+		top:120px;
+		height:50%; */
+		width:100%;								/* RIGHT SIDE OF SCREEN IS NO BACKGROUND COLOR? */
+		background-color:black;
+		/* overflow:scroll; */
+	}
+
+
+
+

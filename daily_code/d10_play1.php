@@ -15,17 +15,6 @@
 	}
 	print("test: " . test(0, 1));
 
-if (condition) {
-	# code...
-} else {
-	# code...
-}
-
-
-	foreach ($variable as $key => $value) {
-		# code...
-	}
-
 ?>
 <!DOCTYPE html>
 <html>
