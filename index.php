@@ -32,12 +32,15 @@
 		
 		<!-- SEE STYLE.CSS FOR STYLES -->
 		<link rel="stylesheet" type="text/css" href="style.css">				<!-- DEFAULT CSS -->
-		<title> Travel Experts - Home </title>									<!--TAB ON BROWSER-->		
+										<!--TAB ON BROWSER-->		
 		<style>
 			<!-- SEE STYLE.CSS FOR STYLES -->
 		</style>
-		<!--LOAD IMAGES SCRIPT-->
+		
+		<!-- JAVASCRIPT - LOAD IMAGES -->
 		<script type="text/javascript" src="loadImages.js"></script>
+		
+		<title> Travel Experts - Home </title>	
 	</head>
 	<body>
 			<!-- HEADER -->
