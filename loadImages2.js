@@ -14,7 +14,7 @@ function loadImages2()
 
 					//ADD THUMBNAILS, WITH HOVER TO MAKE (ONE) TABLE CELL SHOW FULL SIZE VIEW.
 					//
-					document.write("<table border='1'>");
+					document.write("<table id='main-img' border='0'>");
 
 					for (var j=0; j<images.length; j++)
 					{	

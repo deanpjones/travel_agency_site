@@ -258,6 +258,15 @@
 							<td> <input id="phone" type="text" name="phone" placeholder="403-555-5555" oninput="validate_phone()" onfocus="myinfoON('Phone')" onfocusout="myinfoOFF('Phone')" />
 							<td id="Phone"></td>
 						</tr>
+						<tr>
+							<!--- BUTTONS --->
+							<!-- <td> <input type="submit" value="Send" /> </td> -->
+							<!-- SUBMIT BUTTON -->
+							<td> <input id="send" type="submit" value="Send" onclick="return validate_send()" /> </td>	
+							<!-- <td> <input type="reset" value="Reset" /> </td> -->
+							<!-- RESET BUTTON -->
+							<td> <input id="reset" type="reset" value="Reset" onclick="return confirm('Are you sure you want to RESET this form?')" /> </td>
+						</tr>
 					</table>
 					<hr />
 					<table>
@@ -311,28 +320,22 @@
 							<td><textarea name="about" id="about" rows="4" cols="40" wrap="hard" placeholder="tell us about yourself"/></textarea></td>
 						</tr>
 					
-						<tr>
-							<!-- <td> <input type="submit" value="Send" /> </td> -->
-							<!-- SUBMIT BUTTON -->
-							<td> <input id="send" type="submit" value="Send" onclick="return validate_send()" /> </td>	
-							<!-- <td> <input type="reset" value="Reset" /> </td> -->
-							<!-- RESET BUTTON -->
-							<td> <input id="reset" type="reset" value="Reset" onclick="return confirm('Are you sure you want to RESET this form?')" /> </td>
-						</tr>
+
 						<tr>
 							<td><label for="spam">Send me spam:</label></td>
 							<td><input type="checkbox" name="spam" id="spam" /></td>
 						</tr>
 					</table>
-
-					<!-- MOVE DOWN TO HEADER -->
+				</form>
+									<!-- MOVE DOWN TO HEADER -->
+					<article>
 					<a class="img-link" href="register.php" id="footer-left">
 						<img src="images/register.jpg" alt="register.jpg" width="100" height="100" />
 					</a>
 					<a class="img-link" href="contact.php" id="footer-left">
 						<img src="images/contact.jpg" alt="contact.jpg" width="100" height="100" />
 					</a>
-				</form>
+					</article>
 			</main>
 			
 			<!-- FOOTER -->

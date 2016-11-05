@@ -163,6 +163,18 @@
 		color: white;
 		background-color: black;
 	}
+	#main-img {
+		border-radius: 37px;
+		box-shadow: 2px 3px 65px 2px #041140 inset, 2px -2px 50px 0 #9c7896 inset;
+		height: 15%;
+		width: 15%;
+		display: table-cell;
+		color: white;
+		background-color: black;
+		border: 2px solid black;	
+		font-size: 16px;
+		
+	}
 	.resize {
 		height:100%;
 		width:100%;
@@ -174,6 +186,7 @@
 	}
 	/* IMAGES-ARRAY(loadImages) LINKS TO RIGHT SIDE */
 	#img-table {
+		text-align: center;
 		border: 2px solid black;	
 		padding: 2px;
 		width:80%;
@@ -183,10 +196,10 @@
 	}
 	
 	img {
-		border: solid blue 1px;
+		border: solid grey 1px;
 	}	
 	td {
-		/* border: 2px solid black; */
+		text-align: left;
 	}
 	
 	p {
@@ -200,12 +213,16 @@
 	}
 	article, address {
 		border-radius: 6px;
-		box-shadow: 2px 3px 50px 2px #041140 inset, 2px -2px 50px 0 #9c7896 inset;
-		margin-left: 0;
-		border-left: 1px solid gray;
-		padding: 2em;
+		box-shadow: 2px 3px 50px 2px rgba(14, 29, 82, 0.77) inset, 2px -2px 50px 0 rgba(213, 222, 239, 0.31) inset;
+		/* margin: 10px; */
+		/* margin-top: 10px; */
+		/* margin-right: 10px; */
+		/* margin-bottom: 10px; */
+		/* margin-left: 10px; */
+		border-left: 1px solid #c7a4a4;
+		padding: 1.6em;
 		color: black;
-		background-color: gray;
+		background-color: #bbcfe2;
 		overflow: hidden;
 		font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
 		font-size: 1.2em;
@@ -215,32 +232,48 @@
 	.img-link:hover {
 		opacity: 0.6;
 	}
-	
+	#agent-login {
+		border-radius: 20px;
+		box-shadow: 2px 3px 50px 2px #041140 inset, 2px -2px 50px 0 #9c7896 inset;
+		/* width: 100%; */
+		padding: 2em;
+		background-color: #9fc4e2;
+		font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+		font-size: 14px;
+		color: black;
+		border: 2px solid #112865;
+		empty-cells: show;
+		table-layout: auto;
+	}
 	form {
 		padding: 1em;
 	}
 		table {
-			width:100%;
-			padding: 2em;
-			background-color: #66a3ff;
-			font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
-			font-size: 1.1em;
-			color: black;
-			border: 2px solid blue;
-			empty-cells: show;
-			table-layout:fixed;
+		border-radius: 20px;
+		box-shadow: 2px 3px 50px 2px #041140 inset, 2px -2px 50px 0 #9c7896 inset;
+		width: 100%;
+		padding: 2em;
+		background-color: #9fc4e2;
+		font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+		font-size: 14px;
+		color: black;
+		border: 2px solid #112865;
+		empty-cells: show;
+		table-layout: fixed;
 		}
 		#send {
-			font-size: 1.1em;
+			border-radius: 20px;
+			box-shadow: 3px -4px 50px 1px rgba(4, 17, 64, .4) inset, 6px -2px 50px 0 rgba(253, 133, 252, 0) inset;
+			width: 81px;
+			font-size: 18px;
 			color: black;
-			background-color: #ffbf80;
-			/* font-weight: bolder; */
 		}
 		#reset {
-			font-size: 1.1em;
+			border-radius: 20px;
+			box-shadow: 3px -4px 50px 1px rgba(4, 17, 64, .4) inset, 6px -2px 50px 0 rgba(253, 133, 252, 0) inset;
+			width: 81px;
+			font-size: 18px;
 			color: black;
-			background-color: #ffbf80;
-			/* font-weight: bolder; */
 		}
 	#footer-left {
 		float: left;

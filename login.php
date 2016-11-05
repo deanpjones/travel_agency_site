@@ -1,6 +1,9 @@
 <?php
 		#GLOBAL VARIABLES
 		require("variables.php");
+		/* VARIABLES */
+		$page_desc = "Agent Login";
+		
 		#LOAD FUNCTIONS
 		require("functions.php");
 		
@@ -53,7 +56,7 @@
 		
 <!--------- CHANGE WHERE THE php GOES ------->		
 		<form method="GET" action="login2.php">
-			<table  style="width:40%" align="center" >
+			<table id="agent-login" style="width:40%" align="center" >
 				<tr>
 				<td><h3>Agent Login</h3></td>
 				<td></td>
@@ -98,6 +101,8 @@
 		?>
 		</article>
 		</main>
+		<!-- FOOTER -->
+		<?php include_once 'footer.php';?>
 	</body>
 </html>
 
