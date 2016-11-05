@@ -4,7 +4,7 @@
 	/*
 	UPDATE `customers` SET `CustomerId`=[value-1],`CustFirstName`=[value-2],`CustLastName`=[value-3],`CustAddress`=[value-4],`CustCity`=[value-5],`CustProv`=[value-6],`CustPostal`=[value-7],`CustCountry`=[value-8],`CustHomePhone`=[value-9],`CustBusPhone`=[value-10],`CustEmail`=[value-11],`AgentId`=[value-12] WHERE 1
 	*/
-
+	var_dump($_REQUEST);
 	#------------------
 	#SESSION	
 	session_start();

@@ -55,7 +55,7 @@
 		
 		
 <!--------- CHANGE WHERE THE php GOES ------->
-		<form method="GET" action="d12_customerupdate.php">
+		<form method="GET" action="login.php">
 			<select name="CustomerId">			<!-- PRIMARY KEY REFERENCE -->
 				<?php
 					#DB CONNECT

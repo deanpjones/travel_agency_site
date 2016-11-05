@@ -52,7 +52,7 @@
 
 		
 <!--------- CHANGE WHERE THE php GOES ------->		
-		<form method="GET" action="d12_customerupdate.php">
+		<form method="GET" action="login2.php">
 			<table  style="width:40%" align="center" >
 				<tr>
 				<td><h3>Agent Login</h3></td>
@@ -84,14 +84,17 @@
 		print($users[0]);
 		#print($users[1]);
 		#print_r(array_keys($$users));
+		
+		var_dump($_REQUEST);
 		?>
 		<?php
-		$loginfile = fopen("login.ini", "w") or die("Unable to LOGIN.INI!");
-		$txt = "Mickey Mouse\n";
-		fwrite($loginfile, $txt);
-		$txt = "Minnie Mouse\n";
-		fwrite($loginfile, $txt);
-		fclose($loginfile);
+		#CREATE A FILE
+			$loginfile = fopen("login.ini", "w") or die("Unable to LOGIN.INI!");
+			$txt = "Mickey Mouse\n";
+			fwrite($loginfile, $txt);
+			$txt = "Minnie Mouse\n";
+			fwrite($loginfile, $txt);
+			fclose($loginfile);
 		?>
 		</article>
 		</main>

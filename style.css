@@ -14,7 +14,7 @@
 	}
 	header, footer {
 		position: static;
-		width: 100%;
+		/* width: 100%; */
 		height: 50%;
 		padding: 1em;
 		color: white;
@@ -31,6 +31,20 @@
 	}
 	header {
 		font-family: "Jokerman", "Helvetica Rounded", "Arial Rounded MT Bold", Arial, sans-serif;
+	}
+	#mheader {
+		/* background-image: url("images/banner.PNG"); */
+		position: static;
+		width: 100%;
+		height: 50%;
+		padding: 1em;
+		font-family: "Jokerman", "Helvetica Rounded", "Arial Rounded MT Bold", Arial, sans-serif;
+		color: white;
+		background-color: black;
+		font-size: 1em;
+		text-align: center;
+		/* text-shadow: 2px 2px #ccccb3; */
+		clear: both;
 	}
 	/* love knows no borders */
 	h1 {
@@ -108,8 +122,7 @@
 		opacity: 0.9;
 		/* See .navbar for (color:) */	
 		margin: 0;
-		border: 2px solid #ff00ff;
-		padding: 0;	
+		border: 2px solid #ff00ff;	
 		padding: 2px;
 	}
 	.navbar {
@@ -129,25 +142,6 @@
 		position: absolute;
 		height: 15%;
 		width: 15%;
-		/* top: 90%; */
-		/* top: 100%; */
-		/* top: 110%; */
-		/* top: auto; */
-		/* top: initial; */
-		/* top: inherit; */
-		/* top: 1em; */
-		/* top: 1.5em; */
-		/* top: 2em; */
-		/* top:50px; */
-		/* top: 100px; */
-		/* top: 200px; */
-		/* display:inline; */
-		/* display:block; */
-		/* display:flex; */
-		/* display:inline-block; */
-		/* display:table; */
-		/* display:table-column; */
-		/* display:table-row; */
 		display:table-cell;
 		right: 2%;
 		color: white;
@@ -164,6 +158,8 @@
 	}
 	/* IMAGES-ARRAY(loadImages) LINKS TO RIGHT SIDE */
 	#img-table {
+		border: 2px solid black;	
+		padding: 2px;
 		width:80%;
 		/* clear: left; */
 		clear: right;
@@ -173,6 +169,9 @@
 	img {
 		border: solid blue 1px;
 	}	
+	td {
+		/* border: 2px solid black; */
+	}
 	
 	p {
 		clear: left;
@@ -212,12 +211,6 @@
 			border: 2px solid blue;
 			empty-cells: show;
 			table-layout:fixed;
-			/* min-height:100%; */
-			/* border-collapse: collapse; */
-			/* border: 0; */
-			/* border-left: 1px solid gray; */
-			/* overflow: hidden; */
-			/* clear: right; */
 		}
 		#send {
 			font-size: 1.1em;
@@ -231,12 +224,6 @@
 			background-color: #ffbf80;
 			/* font-weight: bolder; */
 		}
-		/* MAKE BUTTON HOVER */
-		/* button:hover {
-			opacity: 0.6;
-		} */
-		
-
 	#footer-left {
 		float: left;
 		width: 100px;

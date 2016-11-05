@@ -1,4 +1,18 @@
 <?php
+	#--------------------------------------
+	#SESSION (HOW TO KNOW IF USER IS LOGGED IN?)
+		#PUT ON ANY PAGE THAT YOU (REQUIRE LOGIN)
+		#SCRIPT_NAME...
+		#HOW TO (DELETE SESSION), need plugin on CHROME
+		
+	/* session_start();
+	if (isset($_SESSION["loggedin"]))		#IF (LOGIN NOT SET) GO TO LOGIN PAGE
+	{
+		#$_SESSION["scriptname"] = 					#??		echo $_SERVER['SCRIPT_NAME'];
+		header("Location:d13_login.php");
+	} */
+	#-------------------------------------
+	
 	/* VARIABLES */
 	$page_desc = "Home";
 	#$title_desc = "Travel Experts - Contact Us";
@@ -39,6 +53,7 @@
 		
 		<!-- JAVASCRIPT - LOAD IMAGES -->
 		<script type="text/javascript" src="loadImages.js"></script>
+		<script type="text/javascript" src="loadImages2.js"></script>
 		
 		<title> Travel Experts - Home </title>	
 	</head>
@@ -73,7 +88,7 @@
 				<div id="img-array">
 					Click below
 					<script>
-						loadImages();	//LOAD FUNCTION.
+						loadImages();	//LOAD IMAGE (LINKS) RIGHT-PAGE
 					</script>
 						<!-- Click below -->
 						<!-- <a href='http://www.redhat.com' target="_blank"><img class="resize" src="images/101starsky.jpg" alt="101starsky.jpg" /></a> -->
@@ -81,38 +96,7 @@
 				</div>
 				<div id="img-table">
 				<script>
-					//------------------------------------
-					//------------------------------------
-					//IMAGES from Isleofskye.tumblr.com
-					var images = ["01bridge_sm.jpg", "02sunset_sm.jpg", "03lake_sm.jpg", "04waterfall_sm.jpg", "05arctic_sm.jpg", "06river_sm.jpg"];
-					var img_desc = ["A cyclist on a beautiful bridge on Minnow Lake.", 
-									"A sunset at dawn in Hawaii.", 
-									"Church of St. John in Newfoundland.", 
-									"A glorious waterfall along Johnson's Trail.", 
-									"Visit the stunning arctic.", 
-									"A more extreme adventure with these rapids."
-									];
-
-					//ADD THUMBNAILS, WITH HOVER TO MAKE (ONE) TABLE CELL SHOW FULL SIZE VIEW.
-					//
-					document.write("<table border='1'>");
-
-					for (var j=0; j<images.length; j++)
-					{	
-						document.write("<tr>");
-
-							document.write("<td><img src='images/" + images[j] + "'></td>");
-							document.write("<td>" + img_desc[j] + "</td>");
-						document.write("</tr>");
-					}
-					document.write("</table>");
-					
-					function displayImage(index)
-					{
-						var img = document.getElentById("myimg");
-						img.src = myimages[index];
-					}
-
+					loadImages2();		//LOAD IMAGE (TABLE) LEFT-PAGE
 				</script>
 				</div>
 				

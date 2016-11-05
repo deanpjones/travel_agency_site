@@ -1,4 +1,5 @@
 <?php
+	var_dump($_REQUEST);
 	#------------------
 	#SESSION	
 	session_start();
@@ -46,15 +47,9 @@ header("Location: d12_customerlist.php");
 				$stmt = mysqli_prepare($dbh, $sql_prepared);
 				mysqli_stmt_bind_param($stmt, "i", $_REQUEST["CustomerId"]);
 				mysqli_execute($stmt);
-				#mysqli_stmt_execute($stmt);
-				#???	$row = array();
-				#mysqli_stmt_bind_result($stmt, $row);		#???
-				#mysqli_stmt_bind_assoc($stmt, $row);
 				mysqli_stmt_bind_result($stmt, $custid, $fname, $lname, $address, $city, $prov, $postal, $country,
 											$homephone, $busphone, $email, $agentid );
 
-											
-											
 				if(mysqli_stmt_fetch($stmt))
 				{
 					//do nothing at this point

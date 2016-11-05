@@ -36,7 +36,7 @@
 		<script>
 			function myinfoON(y)
 			{
-				document.getElementById(y).innerHTML = "Please fill in the <strong>" + y + "</strong> box.";
+				document.getElementById(y).innerHTML = "Please fix the <strong>" + y + "</strong> box.";
 				//document.getElementById("info").innerHTML = "Please fill in the address box";
 
 			}
@@ -47,6 +47,26 @@
 			}
 			
 			//VALIDATE FOR PHONE# NUMBER OF DIGITS AND DASH?
+			function validate_phone()
+			{
+				var status = true;
+				var myphone = document.getElementById("phone");					//LOOKS UP id="phone"
+				var regexp = /^\d\d\d[-]\d\d\d[-]\d\d\d\d$/;		
+				if (regexp.test(myphone.value))
+				{
+						myphone.style.color = "black";
+						status = true;
+						console.log("status: " + status);
+						console.log("text" + myphone.value);
+					}
+					else
+					{
+						myphone.style.color = "red";
+						status = false;
+						console.log("status: " + status);
+						console.log("text" + myphone.value);
+					}
+			}
 			//VALIDATION FOR POSTAL CODE FORMAT (CHANGES TEXT TO RED IF INCORRECT)
 			function validate_postal_code()
 			{
@@ -58,7 +78,6 @@
 				mypcode.value = mypcode.value.toUpperCase().trim();				//convert to UPPERCASE AND TRIM SPACES
 				if (regexp.test(mypcode.value))									//TEST method OF REGEXP in IF-statement								
 					{
-						
 						mypcode.style.color = "black";
 						status = true;
 						console.log("status: " + status);
@@ -84,44 +103,46 @@
 				console.log(/[a]+/g.exec('deaaan apple ask'));
 			*/		
 			
-<!-- day6 -->
-			function showHideInfo (id, visCode)
-			{
-				document.getElementById(id).style.visibility = visCode;
-			}
 		</script>
 		<script>		
+
 			//VALIDATION FOR SUBMIT
 			function validate_send()
 			{
 				//CHECK AGAINST ALL FIELDS NEXT
 				//PUT UP RED X, OR RED BORDER AROUND THE FIELD THAT NEED FILLING IN?
-				var status = true;
+				
 				var myfname = document.getElementById("firstname");			//LOOKS UP id="firstname"
 				var mylname = document.getElementById("lastname");			//LOOKS UP id="lastname"
 				var myaddr1 = document.getElementById("addr1");				//LOOKS UP id="addr1"
 				var myaddr2 = document.getElementById("addr2");				//LOOKS UP id="addr2"
 				var mycity = document.getElementById("city");				//LOOKS UP id="city"
-				
 				/* PROVINCE PULLDOWN */
 				var myprov = document.getElementById("prov");				//LOOKS UP id="prov"
+				var mycode = document.getElementById("postalcode");			//LOOKS UP id="postalcode"
+				var myphone = document.getElementById("phone");				//LOOKS UP id="phone"
 				
+				var status = true;
+				//TEST FUNCTION
 				function test(id, str_desc)
 				{
 					if (id.value == "" || id.value == "nil")
 					{
 						alert(str_desc);
-						id.style.backgroundColor = "#ff6666";
+						id.style.border = "2px solid red";
+						id.style.backgroundColor = "#F2C9CC"; /*ff6666*/
 						status = false;
+						
 					}
 				}
 				test(myfname, "The FIRST NAME box is not filled in correctly");
 				test(mylname, "The LAST NAME box is not filled in correctly");
 				test(myaddr1, "The ADDRESS1 box is not filled in correctly");
-				test(myaddr2, "The ADDRESS2 box is not filled in correctly");
 				test(mycity, "The CITY box is not filled in correctly");
-				
+				/* PROVINCE PULLDOWN */
 				test(myprov, "Please select a PROVINCE from the pulldown");
+				test(mycode, "The POSTAL CODE box is not filled in correctly");
+				test(myphone, "The PHONE# box is not filled in correctly");
 
 				
 				/* if (myfname.value == "")
@@ -175,7 +196,6 @@
 					<table>
 						<!-- NAME -->
 						<tr>
-						
 							<td> First Name: </td>
 							<td> <input id="firstname" type="text" name="firstname" placeholder="Enter Firstname" onfocus="myinfoON('FirstName')" onfocusout="myinfoOFF('FirstName')" /></td> 	<!-- oninput="myvalidate()"  -->
 							<td id="FirstName"></td>
@@ -193,11 +213,11 @@
 							<td> <input id="addr1" type="text" name="address1" placeholder="PO Box# or Unit#" onfocus="myinfoON('Address1')" onfocusout="myinfoOFF('Address1')" /></td>
 							<td id="Address1"></td>
 						</tr>
-						<tr>
+						<!--<tr>
 							<td> </td>
 							<td> <input id="addr2" type="text" name="address2" placeholder="Street Address" onfocus="myinfoON('Address2')" onfocusout="myinfoOFF('Address2')" /></td>
 							<td id="Address2"></td>
-						</tr>
+						</tr> -->
 						<tr>
 							<td> City: </td>
 							<td> <input id="city" type="text" name="city" placeholder="City" onfocus="myinfoON('City')" onfocusout="myinfoOFF('City')" />
@@ -228,24 +248,14 @@
 						<!-- POSTAL CODE -->
 						<tr>
 							<td> Postal Code: </td>
-							<td> <input type="text" id="postalcode" name="postalcode" placeholder="T2B 2J5" oninput="validate_postal_code()" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
+							<td> <input id="postalcode" type="text" name="postalcode" placeholder="T2B 2J5" oninput="validate_postal_code()" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
 							<td id="PostalCode"></td>
 						</tr>
-	<!--day6-->					
-						<tr>
-						<!-- onfocus="document.getElementById("fn").style.visible = 'visible'" -->
-						<!-- or -->
-						<!-- onfocus="showHideInfo('fn', 'visible')" -->
-						<!-- onblur="showHideInfo('fn', 'hidden')" -->
-							<td> Postal Code/ZIP: </td>
-							<td> <input type="text" id="postalzipcode" name="postalzipcode" placeholder="T2B 2J5" oninput="validate_postal_code()" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
-							<td id="PostalZipCode"></td>
-						</tr>
-						
 						<!-- PHONE NUMBER -->
 						<tr>
 							<td> Phone: </td>
-							<td> <input type="text" name="phone" placeholder="403-555-5555" onfocus="myinfoON('Phone')" onfocusout="myinfoOFF('Phone')" />
+							<!--<td> <input id="phone" type="text" name="phone" placeholder="403-555-5555" onfocus="myinfoON('Phone')" onfocusout="myinfoOFF('Phone')" />-->
+							<td> <input id="phone" type="text" name="phone" placeholder="403-555-5555" oninput="validate_phone()" onfocus="myinfoON('Phone')" onfocusout="myinfoOFF('Phone')" />
 							<td id="Phone"></td>
 						</tr>
 					</table>

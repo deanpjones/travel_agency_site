@@ -1,4 +1,5 @@
 <?php
+var_dump($_REQUEST);
 		#GLOBAL VARIABLES
 		require("variables.php");
 		#LOAD FUNCTIONS
