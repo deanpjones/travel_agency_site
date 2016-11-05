@@ -59,7 +59,18 @@
 	</head>
 	<body>
 			<!-- HEADER -->
-			<?php include_once 'header.php';?>
+			
+					<header>
+						<img id="header-left" src="images/01bridge.jpg" alt="01bridge.jpg"/>
+						<img id="header-right" src="images/02sunset.jpg" alt="02sunset.jpg"/><!--  width="161.8" height="100" -->
+
+						<!--LOGO-->
+						<img id="logo" src="images/superman.jpg" alt="treelogo.gif" width="161.8" height="100"/>
+						<div class="box"><h1><b></b>Welcome to TRAVEL EXPERTS</h1> </div>
+						<div id="slogan">love knows no borders</div>
+						
+					</header>
+				
 			
 			<!-- NAVBAR -->
 			<?php include_once 'navbar.php';?>
@@ -97,7 +108,6 @@
 					loadImages2();		//LOAD IMAGE (TABLE) LEFT-PAGE
 				</script>
 				</div>
-				
 			</main>
 			<!-- FOOTER -->
 			<?php include_once 'footer.php';?>

@@ -31,7 +31,7 @@ function loadImages()
 							"<img class='resize' src='" + path2 + images2[i] + "' alt='" + images2[i] + "' /></a><br />";*/
 							
 						imgString += "<div id='arr'" + i + " class='arr'><a href='" + links2[i] + "' target='_blank'>" + 
-							"<img class='resize' src='" + path2 + images2[i] + "' alt='" + images2[i] + "' /></a></div>";	
+							"<img class='resize' src='" + path2 + images2[i] + "' alt='" + images2[i] + "' style='cursor:pointer;' title='" + links2[i] + "' /></a></div>";	
 							
 						//------------	
 						console.log(imgString);
