@@ -191,6 +191,13 @@
 			
 			<!-- NAVBAR -->
 			<?php include_once 'navbar.php';?>
+						
+			<!-- LOGINBAR -->
+			<?php include_once 'loginbar.php';?>
+			
+			<!-- BANNER -->
+			<div id="banner"><?php include_once 'banner.php';?></div>
+			
 			<main>
 				<form method="get" action="bouncer.php">
 					<table>
@@ -262,10 +269,10 @@
 							<!--- BUTTONS --->
 							<!-- <td> <input type="submit" value="Send" /> </td> -->
 							<!-- SUBMIT BUTTON -->
-							<td> <input id="send" type="submit" value="Send" onclick="return validate_send()" /> </td>	
+							<td> <input id="send" class="button" type="submit" value="Send" onclick="return validate_send()" /> </td>	
 							<!-- <td> <input type="reset" value="Reset" /> </td> -->
 							<!-- RESET BUTTON -->
-							<td> <input id="reset" type="reset" value="Reset" onclick="return confirm('Are you sure you want to RESET this form?')" /> </td>
+							<td> <input id="reset" class="button" type="reset" value="Reset" onclick="return confirm('Are you sure you want to RESET this form?')" /> </td>
 						</tr>
 					</table>
 					<hr />

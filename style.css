@@ -113,7 +113,7 @@
 		max-height: 1.2em;
 			/* height: 1.6em; */
 		font-size: 1em;
-		color: gray;
+		color: #4c4444;
 		background-color: #ffccff;
 			/* background-image: url("images/texture.jpg"); */
 		text-align: center;
@@ -142,16 +142,48 @@
 		/* font-size: 1.0em; */
 	}
 	.navbar {
-	padding-left: 1em;
-	padding-right: 1em;
-	color: #ffffff;
+		padding-left: 1em;
+		padding-right: 1em;
+		color: #ffffff;
 	}
 	/* Hover Control */
 	.navbar:hover { 
-		background-color: #ff00ff;
+		background-color: #9c7896;
+		/* background-color: #ff00ff; */
+		border-radius: 4px;
 		/* FLICKERS font-size: 1.1em; */
 	}
-	/*--------- NAVBAR STYLES ----------*/
+	/*--------- LOGINBAR ----------*/
+	#loginbar {
+		position: relative;
+		float: right;
+		border-radius: 2px;
+		box-shadow: 2px 3px 65px 2px #8a6699 inset, 2px -2px 50px 0 rgba(247, 231, 244, 0) inset;
+		color: white;
+		/* list-style-type: none; */
+		background-color: rgba(176, 191, 191, 0.22);
+		text-align: right;
+		/* font-family: "Helvetica Rounded", "Arial Rounded MT Bold", Arial, sans-serif; */
+		/* background-image: url(images/texture.jpg); */
+		opacity: .8;
+		margin: 0;
+		border: 0px solid #7b6060;
+		/* padding: 8px; */
+		/* font-size: 1.0em; */
+		/* width: 20%; */
+		/* display: table-cell; */
+
+	}
+	.loginbar {
+		border-radius: 6px;
+		/* box-shadow: 2px 3px 65px 2px #041140 inset, 2px -2px 50px 0 #9c7896 inset; */
+		color: white;
+		text-indent: 1em;
+		text-align: center;
+		padding-right: initial;
+		/* background-color: #669999; */
+	}
+	
 	
 	/* IMAGES-ARRAY(loadImages) LINKS TO RIGHT SIDE */
 	#img-array {
@@ -232,6 +264,9 @@
 	.img-link:hover {
 		opacity: 0.6;
 	}
+	.arr:hover {
+		opacity: 0.6;
+	}
 	#agent-login {
 		border-radius: 20px;
 		box-shadow: 2px 3px 50px 2px #041140 inset, 2px -2px 50px 0 #9c7896 inset;
@@ -267,6 +302,13 @@
 			width: 81px;
 			font-size: 18px;
 			color: black;
+		}
+		.button:hover {
+			opacity: 0.6;
+		}
+		a:hover {
+			color:white;
+			opacity: 0.6;
 		}
 		#reset {
 			border-radius: 20px;

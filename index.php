@@ -64,6 +64,9 @@
 			<!-- NAVBAR -->
 			<?php include_once 'navbar.php';?>
 			
+			<!-- LOGINBAR -->
+			<?php include_once 'loginbar.php';?>
+			
 			<!-- BANNER -->
 			<div id="banner"><?php include_once 'banner.php';?></div>
 			
