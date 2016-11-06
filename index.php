@@ -54,7 +54,7 @@
 		<!-- JAVASCRIPT - LOAD IMAGES -->
 		<script type="text/javascript" src="loadImages.js"></script>
 		<script type="text/javascript" src="loadImages2.js"></script>
-		
+
 		<title> Travel Experts - Home </title>	
 	</head>
 	<body>
@@ -93,8 +93,10 @@
 					</script>
 						<!-- Click below -->
 						<!-- <a href='http://www.redhat.com' target="_blank"><img class="resize" src="images/101starsky.jpg" alt="101starsky.jpg" /></a> -->
-						<!-- <a href='http://www.redhat.com' target="_blank"><img class="resize" src="images/102mountains.jpg" alt="102mountains.jpg" /></a> -->
+						<!--<a onclick="open_tab()" target="_blank"><img class="resize" src="images/102mountains.jpg" alt="102mountains.jpg" /></a>-->
+					<a onclick="open_tab()" target="_blank"><img class="resize" src="images/treelogo.jpg" alt="102mountains.jpg" /></a>
 				</div>
+				
 				<div id="img-table">
 				<script>
 					loadImages2();		//LOAD IMAGE (TABLE) LEFT-PAGE

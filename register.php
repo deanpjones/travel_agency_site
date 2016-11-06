@@ -199,6 +199,7 @@
 			<div id="banner"><?php include_once 'banner.php';?></div>
 			
 			<main>
+				<article>
 				<form method="get" action="bouncer.php">
 					<table>
 						<!-- NAME -->
@@ -334,15 +335,15 @@
 						</tr>
 					</table>
 				</form>
-									<!-- MOVE DOWN TO HEADER -->
-					<article>
-					<a class="img-link" href="register.php" id="footer-left">
-						<img src="images/register.jpg" alt="register.jpg" width="100" height="100" />
-					</a>
-					<a class="img-link" href="contact.php" id="footer-left">
-						<img src="images/contact.jpg" alt="contact.jpg" width="100" height="100" />
-					</a>
-					</article>
+				
+				<!-- PICTURE LINKS -->
+				<a class="img-link" href="register.php" id="footer-left">
+					<img src="images/register.jpg" alt="register.jpg" width="100" height="100" />
+				</a>
+				<a class="img-link" href="contact.php" id="footer-left">
+					<img src="images/contact.jpg" alt="contact.jpg" width="100" height="100" />
+				</a>
+				</article>
 			</main>
 			
 			<!-- FOOTER -->

@@ -1,5 +1,5 @@
 <?php
-	$page_desc = "Links";
+	$page_desc = "Travel Links";
 
 	include_once 'load_links.php';
 		#table_links	OLD FUNCTION
@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
 	<head>	
-		<title> My PHP Template </title>		<!--TAB ON BROWSER-->
+		<title> Travel Links </title>		<!--TAB ON BROWSER-->
 		
 		<!--STYLE DEFINITION-->
 		<link rel="stylesheet" type="text/css" href="style.css">				<!-- DEFAULT CSS -->
@@ -32,7 +32,7 @@
 			
 			<main>
 				<article>
-					<p color="blue">Links Page</p>
+					<p color="blue">Travel Links</p>
 					<!-- RUN PRINT TABLE LOOP -->
 					<?php
 						load_links();		#NEW LINKS FUNCTION.

@@ -157,12 +157,13 @@
 	#loginbar {
 		position: relative;
 		float: right;
-		border-radius: 2px;
+		width: 12%;
+		text-align: left;
+		border-radius: 10px;
 		box-shadow: 2px 3px 65px 2px #8a6699 inset, 2px -2px 50px 0 rgba(247, 231, 244, 0) inset;
 		color: white;
 		/* list-style-type: none; */
 		background-color: rgba(176, 191, 191, 0.22);
-		text-align: right;
 		/* font-family: "Helvetica Rounded", "Arial Rounded MT Bold", Arial, sans-serif; */
 		/* background-image: url(images/texture.jpg); */
 		opacity: .8;
@@ -170,9 +171,7 @@
 		border: 0px solid #7b6060;
 		/* padding: 8px; */
 		/* font-size: 1.0em; */
-		/* width: 20%; */
 		/* display: table-cell; */
-
 	}
 	.loginbar {
 		border-radius: 6px;
