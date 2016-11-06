@@ -1,4 +1,7 @@
 <?php
+	#VARIABLES
+	require('variables.php');
+
 	#TABLE LINKS (links.php)
 	function table_links()
 		{
@@ -18,7 +21,8 @@
 	#CREATE AN ASSOCIATIVE ARRAY
 	function load_links()
 		{
-			$array_links = array(
+				global $array_links;
+			/* $array_links = array(
 				"Sky News"=>"http://www.skynews.ca/this-weeks-sky",
 				"Endless Nature"=>"http://endlessnature.org/", 
 				"West Coast Dream - Ucluelet Canada"=>"http://www.ucluelet-info.com", 
@@ -29,7 +33,7 @@
 				"Ocean Tours"=>"http://www.oceanstravel.ca/", 
 				"Beautiful Hawaii"=>"http://www.gohawaii.com/", 
 				"Down under in Austrailia"=>"http://www.australia.com/en-ca"
-			);
+			); */
 			print("<table>");
 				foreach($array_links as $x => $x_value) 
 				{
