@@ -282,6 +282,9 @@
 	form {
 		padding: 1em;
 	}
+	input {
+		font-size: 14px;
+	}
 		table {
 		border-radius: 20px;
 		box-shadow: 2px 3px 50px 2px #041140 inset, 2px -2px 50px 0 #9c7896 inset;

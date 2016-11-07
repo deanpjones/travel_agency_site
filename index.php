@@ -42,19 +42,16 @@
 		<meta name="Description" content="Travel Agency Project - Home"/>
 		<meta name="Keywords" content="travel, destination, html, css, php">
 		<meta name="Author" content="Dean Jones"/>
-		<meta name="Date" content="Oct.27, 2016"/>
+		<meta name="Date" content="Nov.14, 2016"/>
 		
 		<!-- SEE STYLE.CSS FOR STYLES -->
 		<link rel="stylesheet" type="text/css" href="style.css">				<!-- DEFAULT CSS -->
-										<!--TAB ON BROWSER-->		
-		<style>
-			<!-- SEE STYLE.CSS FOR STYLES -->
-		</style>
-		
+
 		<!-- JAVASCRIPT - LOAD IMAGES -->
 		<script type="text/javascript" src="loadImages.js"></script>
 		<script type="text/javascript" src="loadImages2.js"></script>
 
+		<!--TAB ON BROWSER-->
 		<title> Travel Experts - Home </title>	
 	</head>
 	<body>
@@ -77,14 +74,14 @@
 					<p>Travel all over the world! Visit Hawaii, Austrailia, or even the West Coast of Canada!</p>
 					<p>Book your destination <acronym title="as soon as possible">ASAP</acronym>!</p>
 				
-					<!-- MOVE DOWN TO HEADER -->
-					
+					<!-- PICTURE LINKS -->
 					<a class="img-link" href="register.php">
 						<img src="images/register.jpg" alt="register.jpg" width="100" height="100" style="cursor:pointer;" title="Click for Register" />
 					</a>
 					<a class="img-link" href="contact.php">
 						<img src="images/contact.jpg" alt="contact.jpg" width="100" height="100" style="cursor:pointer;" title="Click for Contacts" />
 					</a>
+					
 				</article>	
 				<div id="img-array">
 					Click below

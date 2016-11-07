@@ -42,5 +42,21 @@
 					print("</tr>");
 				}
 			print("</table><br />");
+			
+				/* <table>
+						<tr>
+							<td> Row#1 </td>
+							<td> <a href="links-page1.php">Page1</a> </td>
+						</tr>
+						<tr>
+							<td> Row#2 </td>
+							<td> <a href="links-page2.php">Page2</a> </td>
+						</tr>
+						<tr>
+							<td> Row#3 </td>
+							<td> <a href="links-page3.php">Page3</a> </td>
+						</tr>
+
+				</table> */
 		}
 ?>

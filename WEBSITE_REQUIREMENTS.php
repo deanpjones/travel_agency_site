@@ -75,9 +75,17 @@ x 			-loop to go to (REAL sites, instead of dummy page1.php, etc.)
 x 			-chop out (header, footer, and navbar) to (SEPARATE *.PHP files)
 x 			-reference (USE REQUIRE)(include or require) these on each page.
 
-D10-PHP
+D10-PHP (CUSTOMER NEW)
 	1.	functions.php
-			-function (recieve ASSOCIATIVE ARRAY of Agent data) from MYSQL DATABASE
+			-function (receive ASSOCIATIVE ARRAY of CUSTOMER data) from MYSQL DATABASE
+				-customer_form.php (FORM, fill in data to INSERT)(click SEND)
+				-customer_tester.php (VALIDATES)
+				-customer_func_insert.php 
+D11-PHP (AGENT UPDATE?)
+D12-PHP (LOGIN)
+D13-PHP (OBJECT ORIENTED AGENT...)
+D14-PHP (EXPLORE Bootstrap, Angular, and JSON)(not due, just play)
+				
 
 
 		

@@ -4,6 +4,7 @@
 		#LOAD FUNCTIONS
 		require("functions.php");
 
+		var_dump($_REQUEST);
 		#******************************************************************
 		#******************************************************************
 		#VALIDATE (INSERT DATA)
@@ -26,7 +27,8 @@
 		
 		if (!isset($_REQUEST['CustFirstName']))
 		{
-			header("Location: form_custinsert.php");					#POINTS THEM TO ANOTHER PAGE
+			/* header("Location: form_custinsert.php"); */					#POINTS THEM TO ANOTHER PAGE
+			header("Location: customer_form.php");
 		}
 		else
 		{

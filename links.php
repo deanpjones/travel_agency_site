@@ -12,10 +12,17 @@
 <!DOCTYPE html>
 <html>
 	<head>	
-		<title> Travel Links </title>		<!--TAB ON BROWSER-->
+		<meta charset="UTF-8"/>
+		<meta name="Description" content="Travel Agency Project - Home"/>
+		<meta name="Keywords" content="travel, destination, html, css, php">
+		<meta name="Author" content="Dean Jones"/>
+		<meta name="Date" content="Nov.14, 2016"/>
 		
 		<!--STYLE DEFINITION-->
 		<link rel="stylesheet" type="text/css" href="style.css">				<!-- DEFAULT CSS -->
+		
+		<!--TAB ON BROWSER-->
+		<title> Travel Links </title>		
 	</head>
 		<body>	
 			<!-- HEADER -->
@@ -38,22 +45,16 @@
 						load_links();		#NEW LINKS FUNCTION.
 						#table_links();		#WILL BE REPLACED BY OTHER LOOP?
 					?>
+					
+					<!-- PICTURE LINKS -->
+					<a class="img-link" href="register.php">
+						<img src="images/register.jpg" alt="register.jpg" width="100" height="100" style="cursor:pointer;" title="Click for Register" />
+					</a>
+					<a class="img-link" href="contact.php">
+						<img src="images/contact.jpg" alt="contact.jpg" width="100" height="100" style="cursor:pointer;" title="Click for Contacts" />
+					</a>
 				</article>
-				<!-- <table>
-						<tr>
-							<td> Row#1 </td>
-							<td> <a href="links-page1.php">Page1</a> </td>
-						</tr>
-						<tr>
-							<td> Row#2 </td>
-							<td> <a href="links-page2.php">Page2</a> </td>
-						</tr>
-						<tr>
-							<td> Row#3 </td>
-							<td> <a href="links-page3.php">Page3</a> </td>
-						</tr>
 
-				</table> -->
 			</main>
 			
 			<!-- FOOTER -->

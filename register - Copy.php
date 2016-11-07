@@ -21,7 +21,7 @@
 		<script>
 			function myinfoON(y)
 			{
-				document.getElementById(y).innerHTML = "Please enter the <strong>" + y + "</strong>.";
+				document.getElementById(y).innerHTML = "Please fix the <strong>" + y + "</strong> box.";
 				//document.getElementById("info").innerHTML = "Please fill in the address box";
 
 			}
@@ -32,10 +32,10 @@
 			}
 			
 			//VALIDATE FOR PHONE# NUMBER OF DIGITS AND DASH?
-			function validate_phone(phoneId)
+			function validate_phone()
 			{
 				var status = true;
-				var myphone = document.getElementById(phoneId);					//LOOKS UP id="phone"
+				var myphone = document.getElementById("phone");					//LOOKS UP id="phone"
 				var regexp = /^\d\d\d[-]\d\d\d[-]\d\d\d\d$/;		
 				if (regexp.test(myphone.value))
 				{
@@ -105,10 +105,7 @@
 				/* PROVINCE PULLDOWN */
 				var myprov = document.getElementById("prov");				//LOOKS UP id="prov"
 				var mycode = document.getElementById("postalcode");			//LOOKS UP id="postalcode"
-				var mycountry = document.getElementById("country");			//LOOKS UP id="country"
-				var myhphone = document.getElementById("hphone");			//LOOKS UP id="hphone"
-				var mybphone = document.getElementById("bphone");			//LOOKS UP id="bphone"
-				var myemail = document.getElementById("email");				//LOOKS UP id="email"
+				var myphone = document.getElementById("phone");				//LOOKS UP id="phone"
 				
 				var status = true;
 				//TEST FUNCTION
@@ -123,7 +120,6 @@
 						
 					}
 				}
-				/* ALERTS IF BOX ISN'T FILLED IN WHEN SUBMITTING */
 				test(myfname, "The FIRST NAME box is not filled in correctly");
 				test(mylname, "The LAST NAME box is not filled in correctly");
 				test(myaddr1, "The ADDRESS1 box is not filled in correctly");
@@ -131,11 +127,9 @@
 				/* PROVINCE PULLDOWN */
 				test(myprov, "Please select a PROVINCE from the pulldown");
 				test(mycode, "The POSTAL CODE box is not filled in correctly");
-				test(mycountry, "The COUNTRY box is not filled in correctly");
-				test(myhphone, "The PHONE box is not filled in correctly");
-				test(mybphone, "The PHONE box is not filled in correctly");
-				test(myemail, "The EMAIL box is not filled in correctly");
+				test(myphone, "The PHONE# box is not filled in correctly");
 
+				
 				/* if (myfname.value == "")
 				{
 					alert("The FIRST NAME box is not filled in correctly");
@@ -195,34 +189,36 @@
 			<main>
 				<article>
 				<form method="get" action="bouncer.php">
-					<table id="tbl-register">
+					<table>
 						<!-- NAME -->
-						<th align="left">Customer Registration</th>
 						<tr>
 							<td> First Name: </td>
-							<td> <input id="firstname" type="text" name="firstname" placeholder="Firstname" onfocus="myinfoON('FirstName')" onfocusout="myinfoOFF('FirstName')" /></td> 	<!-- oninput="myvalidate()"  -->
+							<td> <input id="firstname" type="text" name="firstname" placeholder="Enter Firstname" onfocus="myinfoON('FirstName')" onfocusout="myinfoOFF('FirstName')" /></td> 	<!-- oninput="myvalidate()"  -->
 							<td id="FirstName"></td>
 							<!--USE EMPTY DATA TO SHOW CONFIRMATION <td id="fname"> </td> -->
 						</tr>
 						<tr>
 							<td> Last Name: </td>
-							<td> <input id="lastname" type="text" name="lastname" placeholder="Lastname" onfocus="myinfoON('LastName')" onfocusout="myinfoOFF('LastName')" /></td>	<!-- oninput="myvalidate2()"  -->																								<!-- <td id="comment2"></td> -->
+							<td> <input id="lastname" type="text" name="lastname" placeholder="Enter Lastname" onfocus="myinfoON('LastName')" onfocusout="myinfoOFF('LastName')" /></td>	<!-- oninput="myvalidate2()"  -->																								<!-- <td id="comment2"></td> -->
 							<td id="LastName"></td>
 						</tr>
-					
+						
 						<!-- ADDRESS -->
 						<tr>
 							<td> Address: </td>
-							<td> <input id="addr1" type="text" name="address1" placeholder="444 Road SW" onfocus="myinfoON('Address')" onfocusout="myinfoOFF('Address')" /></td>
-							<td id="Address"></td>
+							<td> <input id="addr1" type="text" name="address1" placeholder="PO Box# or Unit#" onfocus="myinfoON('Address1')" onfocusout="myinfoOFF('Address1')" /></td>
+							<td id="Address1"></td>
 						</tr>
-						<!-- CITY -->
+						<!--<tr>
+							<td> </td>
+							<td> <input id="addr2" type="text" name="address2" placeholder="Street Address" onfocus="myinfoON('Address2')" onfocusout="myinfoOFF('Address2')" /></td>
+							<td id="Address2"></td>
+						</tr> -->
 						<tr>
 							<td> City: </td>
 							<td> <input id="city" type="text" name="city" placeholder="City" onfocus="myinfoON('City')" onfocusout="myinfoOFF('City')" />
 							<td id="City"></td>
 						</tr>
-						<!-- PROVINCE (SELECT) -->
 						<tr>
 							<td> Province: </td>
 							<td>
@@ -248,32 +244,15 @@
 						<!-- POSTAL CODE -->
 						<tr>
 							<td> Postal Code: </td>
-							<td> <input id="postalcode" type="text" name="postalcode" placeholder="T2B2J5" oninput="validate_postal_code()" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
+							<td> <input id="postalcode" type="text" name="postalcode" placeholder="T2B 2J5" oninput="validate_postal_code()" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
 							<td id="PostalCode"></td>
 						</tr>
-						<!-- COUNTRY -->
+						<!-- PHONE NUMBER -->
 						<tr>
-							<td> Country: </td>
-							<td> <input id="country" type="text" name="country" placeholder="Country" onfocus="myinfoON('Country')" onfocusout="myinfoOFF('Country')" />
-							<td id="Country"></td>
-						</tr>
-						<!-- HOME PHONE NUMBER -->
-						<tr>
-							<td> Home Phone: </td>
-							<td> <input id="hphone" type="text" name="hphone" placeholder="403-555-5555" oninput="validate_phone('hphone')" onfocus="myinfoON('HomePhone')" onfocusout="myinfoOFF('HomePhone')" />
-							<td id="HomePhone"></td>
-						</tr>
-						<!-- BUSINESS PHONE NUMBER -->
-						<tr>
-							<td> Business Phone: </td>
-							<td> <input id="bphone" type="text" name="bphone" placeholder="403-555-5555" oninput="validate_phone('bphone')" onfocus="myinfoON('BusPhone')" onfocusout="myinfoOFF('BusPhone')" />
-							<td id="BusPhone"></td>
-						</tr>
-						<!-- EMAIL -->
-						<tr>
-							<td> Email: </td>
-							<td> <input id="email" type="text" name="email" placeholder="name.last@email.com" onfocus="myinfoON('Email')" onfocusout="myinfoOFF('Email')" /> </td>
-							<td id="Email"></td>
+							<td> Phone: </td>
+							<!--<td> <input id="phone" type="text" name="phone" placeholder="403-555-5555" onfocus="myinfoON('Phone')" onfocusout="myinfoOFF('Phone')" />-->
+							<td> <input id="phone" type="text" name="phone" placeholder="403-555-5555" oninput="validate_phone()" onfocus="myinfoON('Phone')" onfocusout="myinfoOFF('Phone')" />
+							<td id="Phone"></td>
 						</tr>
 						<tr>
 							<!--- BUTTONS --->
@@ -287,7 +266,10 @@
 					</table>
 					<hr />
 					<table>
-						
+						<tr>
+							<td> Email: </td>
+							<td> <input type="text" name="email" placeholder="Enter Email"/> </td>
+						</tr>
 					
 						<tr>
 							<td><label for="pw">Password:</label></td>
@@ -336,7 +318,7 @@
 					
 
 						<tr>
-							<td><label for="spam">Sign-up for newsletters:</label></td>
+							<td><label for="spam">Send me spam:</label></td>
 							<td><input type="checkbox" name="spam" id="spam" /></td>
 						</tr>
 					</table>
