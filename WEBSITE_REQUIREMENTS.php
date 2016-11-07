@@ -52,7 +52,8 @@ D7-JAVASCRIPT
 	1.	index.html
 x 		-add image array (right) with URL link
 x		-open link (to new window)
-//?		-set timer to close window after (10s)
+	2.	loadImages.js
+XXX(DONE)		-set timer to close window after (10s)
 //OPTIONAL, have image move across screen, bounce away from pointer
 
 D8-PHP
