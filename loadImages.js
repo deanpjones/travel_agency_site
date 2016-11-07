@@ -21,25 +21,25 @@ function loadImages()
 					console.log(links2.length);
 					//console.log(imgString.typeof)
 					
-					//OPEN AND CLOSE WINDOW
-					//---------------------------
-					function open_tab(mylink)
-					{
-						var mytab = window.open(mylink);
-							setTimeout(function(){ mytab.close(); }, 10000);				//CLOSES window AFTER 10s
-						//return false;
-					}
-					//---------------------------
+
 					
 				imgArrayId = document.getElementById('img-array');							//GETS THE PARENT(ID)
 				//BUILD LOOP FOR IMAGES TO LOAD.
 					for(i=0; i<images2.length; i++)
 					{
-						imgString += "<a onclick='return open_tab(&apos;" + links2[i] + "&apos;)'" + " target='_blank'>" +
+					/* imgString += "<a onclick='return open_tab(&apos;" + links2[i] + "&apos;)'" + " target='_blank'>" +
 									//<a onclick="open_tab('http://www.gohawaii.com/')" target="_blank">						
 							"<img class='resize' src='" + path2 + images2[i] + "' /></a>";
-							//<img class="resize" src="images/102mountains.jpg" alt="102mountains.jpg" /></a>
+							//<img class="resize" src="images/102mountains.jpg" alt="102mountains.jpg" /></a> */	
 							
+						//*************************************************************************************************************
+						//imgString += "<div id='arr'" + i + " class='arr'><img class='resize' onclick=\"open_tab('" + links2[i] + "')\" src='" + path2 + images2[i] + "' alt='" + images2[i] + "' /></div>";
+						imgString += "<div id='arr'" + i + " class='arr'><img class='resize' onclick=\"open_tab('" + links2[i] + "')\" src='" + path2 + images2[i] + "' alt='" + images2[i] + "' style='cursor:pointer;' title='" + links2[i] + "' /></div>";
+						//*************************************************************************************************************
+						//<img class="resize" onclick="open_tab('http://www.redhat.com')" src="images/101starsky.jpg" alt="101starsky.jpg" />
+							
+						//imgString += "<div id='arr'" + i + " class='arr'><a href='" + links2[i] + "' target='_blank'>" + 
+						//	"<img class='resize' src='" + path2 + images2[i] + "' alt='" + images2[i] + "' style='cursor:pointer;' title='" + links2[i] + "' /></a></div>";	
 						
 						//------------	
 						console.log(imgString);

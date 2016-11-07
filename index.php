@@ -51,6 +51,21 @@
 		<script type="text/javascript" src="loadImages.js"></script>
 		<script type="text/javascript" src="loadImages2.js"></script>
 
+		<script>
+				//OPEN WINDOW (TIMEOUT AFTER 5 SECONDS)
+				//---------------------------
+				function open_tab(x)
+				{
+					/* var x = 'http://www.redhat.com'; */
+					/* console.log(x); */
+					
+					 var win = window.open(x);
+					 /* var win = window.open("http://www.redhat.com"); */	
+						setTimeout(function(){win.close()},2000);	//CLOSES window AFTER 10s
+				}
+				//---------------------------
+		</script>
+		
 		<!--TAB ON BROWSER-->
 		<title> Travel Experts - Home </title>	
 	</head>
@@ -86,12 +101,11 @@
 				<div id="img-array">
 					Click below
 					<script>
-						loadImages();	//LOAD IMAGE (LINKS) RIGHT-PAGE
+						loadImages();	//LOAD IMAGE (LINKS) RIGHT-PAGE						
 					</script>
 						<!-- Click below -->
 						<!-- <a href='http://www.redhat.com' target="_blank"><img class="resize" src="images/101starsky.jpg" alt="101starsky.jpg" /></a> -->
-						<!--<a onclick="open_tab()" target="_blank"><img class="resize" src="images/102mountains.jpg" alt="102mountains.jpg" /></a>-->
-					<a onclick="open_tab()" target="_blank"><img class="resize" src="images/treelogo.jpg" alt="102mountains.jpg" /></a>
+						<!--<img class="resize" onclick="open_tab('http://www.redhat.com')" src="images/101starsky.jpg" alt="101starsky.jpg" />-->
 				</div>
 				
 				<div id="img-table">
