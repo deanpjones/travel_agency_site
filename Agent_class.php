@@ -1,6 +1,8 @@
 <?php
 class Agent
 {
+	#include ("Agent_class.php")
+	
 	#VARIABLES (MAKE PRIVATE) AND ACCESS THEM THROUGH THE GET-METHOD
 		private $AgentId;
 		private $AgtFirstName;
@@ -12,7 +14,37 @@ class Agent
 		private $AgencyId;
 		private $AgtUserId;
 		private $AgtPassword;
+		
+		#USE TO BUILD ($sql QUERY)
+		private $colnames;
+		private $colvalues;
 	# AgentId, AgtFirstName, AgtMiddleInitial, AgtLastName, AgtBusPhone, AgtEmail, AgtPosition, AgencyId, AgtUserId, AgtPassword
+	
+	#LOAD-DATA FUNCTION (use to send information to MYSQL)
+	public function loadData($data_array)
+	{
+		#AgentId, is AUTONUMBERED
+		$this->AgtFirstName = $data_array["AgtFirstName"];
+		$this->AgtMiddleInitial = $data_array["AgtMiddleInitial"];
+		$this->AgtLastName = $data_array["AgtLastName"];
+		$this->AgtBusPhone = $data_array["AgtBusPhone"];
+		$this->AgtEmail = $data_array["AgtEmail"];
+		$this->AgtPosition = $data_array["AgtPosition"];
+		$this->AgencyId = $data_array["AgencyId"];
+		$this->AgtUserId = $data_array["AgtUserId"];
+		$this->AgtPassword = $data_array["AgtPassword"];
+	}
+	#BUILDS A STRING OF (COLUMN NAMES)(to put into $sql)
+	public function getColNames()
+	{
+		
+	}
+	#BUILDS A STRING OF (COLUMN VALUES)(to put into $sql)
+	public function getColValues()
+	{
+		
+	}
+
 	
 	#TO-STRING (ARRAY OF ALL PROPERTIES)
 	public __toString()
@@ -44,19 +76,21 @@ class Agent
 			$agent_array['AgtPassword'] = "pass1"; */
 	}
 	#---------------------------------
-	#CONSTRUCTOR
-	public __construct()
-	{
-		/* $AgentId; (NOT REQUIRED, AUTONUMBER) */
-		$AgtFirstName = "Clark";
-		$AgtMiddleInitial = "S.";
-		$AgtLastName = "Kent";
-		$AgtBusPhone = "(403) 272-7272";
-		$AgtEmail = "clark.kent@travelexperts.com";
-		$AgtPosition = "Junior Agent";
-		$AgencyId = "1";
-		$AgtUserId = "user1";
-		$AgtPassword = "pass1";
+	#CONSTRUCTOR (runs when created an OBJECT)
+		#SET DEFAULTS
+	public function __construct($agentId=0, $agtFirstName="", $agtMiddleInitial="", $agtLastName="", 
+									$agtBusPhone="", $agtEmail="", $agtPosition="", $agencyId=0, $agtUserId="", $agtPassword="")
+	{		
+		$this->AgentId = $agentId;
+		$this->AgtFirstName = $agtFirstName;
+		$this->setAgtMiddleInitial = $agtMiddleInitial;
+		$this->AgtLastName = $agtLastName;
+		$this->AgtBusPhone = $agtBusPhone;
+		$this->AgtEmail = $agtEmail;
+		$this->AgtPosition = $agtPosition;
+		$this->AgencyId = $agencyId;
+		$this->AgtUserId = $agtUserId;
+		$this->AgtPassword = $agtPassword;
 	}
 	#---------------------------------
 	#GET-METHOD
