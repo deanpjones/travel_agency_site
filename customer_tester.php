@@ -4,7 +4,7 @@
 		#LOAD FUNCTIONS
 		require("functions.php");
 
-		var_dump($_REQUEST);
+		#var_dump($_REQUEST);
 		#******************************************************************
 		#******************************************************************
 		#VALIDATE (INSERT DATA)
