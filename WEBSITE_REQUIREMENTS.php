@@ -28,7 +28,57 @@ x 		-borders
 x 		-input tags (using a light color background)
 x		-main page (set a background image for the entire page)
 
+D4-JAVASCRIPT
+	1.	register.html
+x 		-setup form for customers (name, address, etc.)
+x 		-add confirmation alert when submitting
+x 		-add reset button alert, (are you sure?)
 
+D5-JAVASCRIPT
+	1.	index.html
+x 		-add table array (left) (image and description)(javascript)
+//OPTIONAL, extra challenge (mouseover on desc to show image?)
 	
+D6-JAVASCRIPT
+	1.	register.html
+x 		-on form (add onfocus) that will add (description to right with instructions)
+//?			-asked to use <p> to be added, instead I've pre-added a <td> and fill in the value with (innerHTML)
+//?				-use visibility settings to (hide or show) appropriate paragraph
+x 		-validation function
+			-validate postal code (regular expression)
+			-validate each field... before submitting
+
+D7-JAVASCRIPT	
+	1.	index.html
+x 		-add image array (right) with URL link
+x		-open link (to new window)
+//?		-set timer to close window after (10s)
+//OPTIONAL, have image move across screen, bounce away from pointer
+
+D8-PHP
+	1.	index.php, register.php, contacts.php, links.php
+x		-rename 3 files (to *.php)
+x 		-add links.php (reference to it)
+x 			-loop (links to other sites)
+x			-PageNo. for row, (use test pages page1.php, page2.php, page3.php, etc.)
+
+D9-PHP
+	1.	index.php, variables.php
+ 	2.	banner.php, 
+x 			-(shows MESSAGE Good Morning!)
+//OPTIONAL, customize page for time of day or year?
+	3.	variables.php
+x			-create file
+x 			-create (array of URLs) that point to sites (MOVE array from load_links.php)
+x 			-loop to go to (REAL sites, instead of dummy page1.php, etc.)
+	4. 	index.php, register.php, contacts.php, links.php
+x 			-chop out (header, footer, and navbar) to (SEPARATE *.PHP files)
+x 			-reference (USE REQUIRE)(include or require) these on each page.
+
+D10-PHP
+	1.	functions.php
+			-function (recieve ASSOCIATIVE ARRAY of Agent data) from MYSQL DATABASE
+
+
 		
 ?>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>	
+	<link rel="stylesheet" type="text/css" href="circle.css">			
+</head>
+<body>
+
+	<div class="circle">
+	<img src="contact.jpg" width="50" height="50" />
+	</div>
+	
+<canvas id="myCanvas" width="300" height="300" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+function mycir(x, y, radius, n1, d1, n2, d2, cw)
+{
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(x, y, radius, n1/d1 * Math.PI * 2, n2/d2 * Math.PI * 2, cw);
+ctx.stroke();
+}
+mycir(100, 100, 50, 0,4, 1,4, false);
+mycir(150, 150, 50, 2,4, 3,4, false);
+
+mycir(100, 100, 50, 1,4, 2,4, false);
+mycir(50, 150, 50, 3,4, 4,4, false);
+
+mycir(100, 100, 50, 3,4, 4,4, false);
+mycir(150, 50, 50, 1,4, 2,4, false);
+
+mycir(50, 50, 50, 0,4, 1,4, false);
+mycir(100, 100, 50, 2,4, 3,4, false);
+
+</script>
+
+</body>
+</html>
