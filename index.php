@@ -22,20 +22,6 @@
 ?>
 
 <!DOCTYPE html>
-
-<!-- TO DO... -->
-	<!-- FIX REGISTER PAGE -->
-		<!-- COLUMNS FIXED -->
-		<!-- TOOL TIPS for contact links, etc. -->
-		<!-- FIX (RED if BLANK) BOX AFTER THE BOX IS RE-FILLED IN -->
-	<!-- RESET FOR STYLE.CSS? -->
-	<!-- TABLE BORDER, AND ALIGN -->
-	
-	<!-- TARGET? <a href... target="_blank" ??? -->
-	<!-- IMG-TABLE, move to *.js file -->
-	<!-- HEADER in DIV tags? -->
-	<!-- RESET.CSS -->
-	
 <html>
 	<head>	
 		<meta charset="UTF-8"/>
@@ -61,7 +47,7 @@
 					
 					 var win = window.open(x);
 					 /* var win = window.open("http://www.redhat.com"); */	
-						setTimeout(function(){win.close()},2000);	//CLOSES window AFTER 10s
+						setTimeout(function(){win.close()},5000);				//CLOSES window AFTER 5 SECONDS
 				}
 				//---------------------------
 		</script>

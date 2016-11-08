@@ -25,6 +25,7 @@
 			return true;
 		}
 		
+		#IF (CUSTOMER NAME, IS NOT SET?)
 		if (!isset($_REQUEST['CustFirstName']))
 		{
 			/* header("Location: form_custinsert.php"); */					#POINTS THEM TO ANOTHER PAGE
@@ -37,8 +38,8 @@
 								"AgtEmail"=>"jon.doe@gmail.com", "AgtPosition"=>"Junior Agent", "AgencyId"=>"1"); */
 								
 				#PHP VALIDATION	
-				#if (true)		#validate()		CREATE VALIDATE FUNCTION (replace with TRUE)
-				if (validate())					#VALIDATE TEST
+				if (true)		#validate()		CREATE VALIDATE FUNCTION (replace with TRUE)
+				#if (validate())					#VALIDATE TEST
 				{
 						#if (insertData($agent_array, "agents"))
 						if (insertData($_REQUEST, "customers"))

@@ -44,10 +44,10 @@
 							`CustProv`, `CustPostal`, `CustCountry`, `CustHomePhone`, `CustBusPhone`, `CustEmail`, `AgentId`
 					-->
 
-				<h1>Customer Data</h1>
+				<h1>TEST2 Customer Data</h1>
 				<!--<form method="get" action="tester_cust.php">-->
 				<!--TESTING tester_cust(testing).php -->
-				<form method="post" action="customer_tester.php"> 
+				<form method="post" action="customer_tester2.php"> 
 					<table>
 						<tr>
 							<td>First Name: </td><td><input type="text" name="CustFirstName" /><br /></td>

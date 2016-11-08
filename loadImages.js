@@ -1,3 +1,8 @@
+//DEAN JONES
+//NOV.07, 2016
+//LOADIMAGES.JS
+//LOADS IMAGES ON RIGHT SIDE OF (INDEX.PHP) WITH LINKS TO PAGE THAT TAB OPENS (AND TIMES OUT CLOSES)
+
 function loadImages()
 			{
 				var path2 = "images/";
@@ -21,7 +26,6 @@ function loadImages()
 					console.log(links2.length);
 					//console.log(imgString.typeof)
 					
-
 					
 				imgArrayId = document.getElementById('img-array');							//GETS THE PARENT(ID)
 				//BUILD LOOP FOR IMAGES TO LOAD.
@@ -45,24 +49,5 @@ function loadImages()
 						console.log(imgString);
 					}
 				imgArrayId.innerHTML = imgString;
-				
-					//-------------------------------------
-					//(old)BUILD LOOP FOR IMAGES TO LOAD.
-					
-					//for(i=0; i<images2.length; i++)
-					//{
-						//imgString = "<a href='" + links2[i] + "' target='_blank'>" + 		//DON'T USE (=) IT'S OVERWRITING
-						//------------
-						/*imgString += "<a href='" + links2[i] + "' target='_blank'>" + 
-							"<img class='resize' src='" + path2 + images2[i] + "' alt='" + images2[i] + "' /></a><br />";*/
-							
-					//	imgString += "<div id='arr'" + i + " class='arr'><a href='" + links2[i] + "' target='_blank'>" + 
-					//		"<img class='resize' src='" + path2 + images2[i] + "' alt='" + images2[i] + "' style='cursor:pointer;' title='" + links2[i] + "' /></a></div>";	
-							
-						//------------	
-					//	console.log(imgString);
-					//}
-					//<a href='http://www.redhat.com' target="_blank"><img class="resize" src="images/101starsky.jpg" alt="101starsky.jpg" /></a>
-					//-------------------------------------
-					
+
 			}

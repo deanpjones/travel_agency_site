@@ -22,7 +22,8 @@
 				fwrite($file, mysqli_connect_error() . "\n");	#WRITES TO FILE
 				fclose($file);									#CLOSES FILE
 				exit;											#MAKES SURE IT DOESN'T CONTINUE WITHOUT A CONNECTION
-				return false;	#???RETURN FALSE?
+				#return false;	#???RETURN FALSE?
+				return $dbh;
 			}
 				/* 	  $dbh = mysqli_connect($host, $user, $password, $database);
 					if (!$dbh)
@@ -82,7 +83,7 @@
 			{
 				print(mysqli_error($dbh));
 			}
-	  
+			return $dbh;
 		#------------------
 		#DB CLOSE
 		db_close();
@@ -117,7 +118,7 @@
 		
 		#SQL (INSERT) QUERY
 		$sql = "INSERT INTO $table ($colnames) VALUES ($colvalues);";
-			//print($sql);
+		print($sql);
 	
 				/* 		#GET ROW DATA
 				$agent_array = array("AgtFirstName"=>"Jon", "AgtMiddleInitial"=>"D", "AgtLastName"=>"Doe", "AgtBusPhone"=>"(403) 123-4564", 
@@ -132,6 +133,7 @@
 		#-------------------------------------------------------------
 		#VALIDATE QUERY
 		global $dbh;
+		print($_REQUEST['CustFirstName']);
 		$result = mysqli_query($dbh, $sql);
 			if (!$result)
 			{
