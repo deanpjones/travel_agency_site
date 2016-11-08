@@ -19,91 +19,7 @@
 		
 		<!-- SCRIPTS -->
 		<script>
-
-			function myinfoON(y)
-			{
-				document.getElementById(y).innerHTML = "Please enter the <strong>" + y + "</strong>.";
-				//document.getElementById("info").innerHTML = "Please fill in the address box";
-
-			}
-			function myinfoOFF(x)
-			{
-				document.getElementById(x).innerHTML = "";
-				//document.getElementById("info").innerHTML = "";
-			}
-			
-			//DEFAULT STATUS
-			var status = false;
-				
-					//**********************************************
-					//VALIDATE FOR PHONE# NUMBER OF DIGITS AND DASH?
-					function validate_phone(phoneId)
-					{
-						var status = true;
-						var myphone = document.getElementById(phoneId);					//LOOKS UP id="phone"
-						var regexp = /^\d\d\d[-]\d\d\d[-]\d\d\d\d$/;		
-						if (regexp.test(myphone.value))
-						{
-								myphone.style.color = "black";
-								status = true;
-									//console.log("status: " + status);
-									//console.log("text" + myphone.value);
-							}
-							else
-							{
-								myphone.style.color = "red";
-								status = false;
-									//console.log("status: " + status);
-									//console.log("text" + myphone.value);
-							}
-						console.log("phone validation: " + status);
-						return status;
-					}
-					//VALIDATE FOR PHONE#
-					//**********************************************
-					
-					//**********************************************
-					//VALIDATION FOR POSTAL CODE FORMAT (CHANGES TEXT TO RED IF INCORRECT)
-					function validate_postal_code()
-					{
-						var status = true;
-						var mypcode = document.getElementById("postalcode");			//LOOKS UP id="postalcode"
-						//var regexp = /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/i;					//PATTERN TO MATCH (/i leave off because we want capitalized)
-						var regexp = /^[a-z]\d[a-z]\s?\d[a-z]\d$/i;						//HARVEY's version (\s? difference on SPACE)
-						//mypcode.value.toUpperCase();									//?CHANGE TEXT TO UPPERCASE?
-						mypcode.value = mypcode.value.toUpperCase().trim();				//convert to UPPERCASE AND TRIM SPACES
-						if (regexp.test(mypcode.value))									//TEST method OF REGEXP in IF-statement								
-							{
-								mypcode.style.color = "black";
-								status = true;
-										//console.log("status: " + status);
-										//console.log("text" + mypcode.value);
-							}
-							else
-							{
-								mypcode.style.color = "red";
-								status = false;
-										//console.log("status: " + status);
-										//console.log("text" + mypcode.value);
-							}
-						console.log("postal code validation: " + status);
-						return status;
-						//document.getElementById("postalcode").innerHTML = n2;
-						//console.log(postalcode.name[0]);
-					}
-					//VALIDATION FOR POSTAL CODE 
-					//**********************************************
-						
-			//********************************************************
-			//********************************************************
-			//VALIDATION FOR SUBMIT
-			function validate_send()
-			{					
-				//**********************************************
-				//VALIDATION (ALL OTHER FIELDS)
-					
-				//CHECK AGAINST ALL FIELDS NEXT
-				//PUT UP RED X, OR RED BORDER AROUND THE FIELD THAT NEED FILLING IN?				
+				//VARIABLES, ID'S
 				var myfname = document.getElementById("firstname");			//LOOKS UP id="firstname"
 				var mylname = document.getElementById("lastname");			//LOOKS UP id="lastname"
 				var myaddr1 = document.getElementById("addr1");				//LOOKS UP id="addr1"
@@ -115,45 +31,175 @@
 				var mycountry = document.getElementById("country");			//LOOKS UP id="country"
 				var myhphone = document.getElementById("hphone");			//LOOKS UP id="hphone"
 				var mybphone = document.getElementById("bphone");			//LOOKS UP id="bphone"
-				var myemail = document.getElementById("email");				//LOOKS UP id="email"				
+				var myemail = document.getElementById("email");				//LOOKS UP id="email"
 				
-					//**************
-					//TEST FUNCTION
-					function test(id, str_desc)
-					{
-						if (id.value == "" || id.value == "nil")
-						{
-							alert(str_desc);
-							id.style.border = "2px solid red";
-							id.style.backgroundColor = "#F2C9CC"; /*ff6666*/
-							status = false;
-						}
-						return status;
-					}
-					//TEST FUNCTION
-					//**************
-					
-					/* ALERTS IF BOX ISN'T FILLED IN WHEN SUBMITTING */
-					test(myfname, "The FIRST NAME box is not filled in correctly");
-					test(mylname, "The LAST NAME box is not filled in correctly");
-					test(myaddr1, "The ADDRESS1 box is not filled in correctly");
-					test(mycity, "The CITY box is not filled in correctly");
-					/* PROVINCE PULLDOWN */
-					test(myprov, "Please select a PROVINCE from the pulldown");
-					test(mycode, "The POSTAL CODE box is not filled in correctly");
-					test(mycountry, "The COUNTRY box is not filled in correctly");
-					test(myhphone, "The PHONE box is not filled in correctly");
-					test(mybphone, "The PHONE box is not filled in correctly");
-					test(myemail, "The EMAIL box is not filled in correctly");
-				//VALIDATION (ALL OTHER FIELDS)
-				//**********************************************
-				
-				console.log("final validation: " + status);
-				return status;
+			function myinfoON(y)
+			{
+				document.getElementById(y).innerHTML = "Please enter the <strong>" + y + "</strong>.";
+				//document.getElementById("info").innerHTML = "Please fill in the address box";
+
 			}
-			//VALIDATION FOR SUBMIT
-			//********************************************************
-			//********************************************************			
+			function myinfoOFF(x)
+			{
+				document.getElementById(x).innerHTML = "";
+				//document.getElementById("info").innerHTML = "";
+			}
+
+					//**********************************************
+					//VALIDATION FOR POSTAL CODE FORMAT (CHANGES TEXT TO RED IF INCORRECT)
+					function validate_postal_code()
+					{						
+						var mypcode = document.getElementById("postalcode");			//LOOKS UP id="postalcode"
+						//var regexp = /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/i;					//PATTERN TO MATCH (/i leave off because we want capitalized)
+						var regexp = /^[a-z]\d[a-z]\s?\d[a-z]\d$/i;						//HARVEY's version (\s? difference on SPACE)
+						//mypcode.value.toUpperCase();									//?CHANGE TEXT TO UPPERCASE?
+						mypcode.value = mypcode.value.toUpperCase().trim();				//convert to UPPERCASE AND TRIM SPACES
+						if (regexp.test(mypcode.value))									//TEST method OF REGEXP in IF-statement								
+							{
+								mypcode.style.color = "black";
+								pcode_status = true;
+										console.log("pcode_status: " + pcode_status);
+										//console.log("text" + mypcode.value);
+							}
+							else
+							{
+								mypcode.style.color = "red";
+								pcode_status = false;
+										console.log("pcode_status: " + pcode_status);
+										//console.log("text" + mypcode.value);
+							}
+						console.log("postal code validation: " + pcode_status);
+						return pcode_status;
+						//document.getElementById("postalcode").innerHTML = n2;
+						//console.log(postalcode.name[0]);
+					}
+					//VALIDATION FOR POSTAL CODE 
+					//**********************************************
+					
+					
+					//**********************************************
+					//VALIDATE FOR PHONE# NUMBER OF DIGITS AND DASH?
+					function validate_phone(phoneId)
+					{						
+						var myphone = document.getElementById(phoneId);					//LOOKS UP id="phone"
+						var regexp = /^\d\d\d[-]\d\d\d[-]\d\d\d\d$/;		
+						if (regexp.test(myphone.value))
+						{
+								myphone.style.color = "black";
+								phone_status = true;
+									console.log("phone_status: " + phone_status);
+									//console.log("text" + myphone.value);
+							}
+							else
+							{
+								myphone.style.color = "red";
+								phone_status = false;
+									console.log("phone_status: " + phone_status);
+									//console.log("text" + myphone.value);
+							}
+						console.log("phone validation: " + phone_status);
+						return phone_status;
+					}
+					//VALIDATE FOR PHONE#
+					//**********************************************			
+
+			function validateForm() 
+			{
+				var x1 = document.forms["cust_form"]["CustFirstName"];
+				var x2 = document.forms["cust_form"]["CustLastName"];
+				var x3 = document.forms["cust_form"]["CustAddress"];
+				var x4 = document.forms["cust_form"]["CustCity"];				
+				var x5 = document.forms["cust_form"]["CustProv"];
+				var x6 = document.forms["cust_form"]["CustPostal"];				
+				var x7 = document.forms["cust_form"]["CustCountry"];
+				var x8 = document.forms["cust_form"]["CustHomePhone"];
+				var x9 = document.forms["cust_form"]["CustBusPhone"];
+				var x10 = document.forms["cust_form"]["CustEmail"];
+				
+				
+				if (x1.value == null || x1.value == "") 
+				{
+					//x1.style.border = "2px solid red";
+					//document.getElementById("firstname").style.border = "2px solid red";
+					//document.getElementById("firstname").style.backgroundColor = "#F2C9CC";
+					x1.style.border = "2px solid red";
+					x1.style.backgroundColor = "#F2C9CC";
+					alert("FIRST NAME must be filled out");
+					return false;
+				}
+				else if (x2.value == null || x2.value == "") 
+				{
+					x2.style.border = "2px solid red";
+					x2.style.backgroundColor = "#F2C9CC";
+					alert("LAST NAME must be filled out");
+					return false;
+				}
+				else if (x3.value == null || x3.value == "") 
+				{
+					x3.style.border = "2px solid red";
+					x3.style.backgroundColor = "#F2C9CC";
+					alert("ADDRESS must be filled out");
+					return false;
+				}
+				else if (x4.value == null || x4.value == "") 
+				{
+					x4.style.border = "2px solid red";
+					x4.style.backgroundColor = "#F2C9CC";
+					alert("CITY must be filled out");
+					return false;
+				}
+				else if (x5.value == null || x5.value == "nil") //VALUE TO "nil"
+				{
+					x5.style.border = "2px solid red";
+					x5.style.backgroundColor = "#F2C9CC";
+					alert("PROVINCE must be filled out");
+					return false;
+				}
+				else if (x6.value == null || x6.value == "") 
+				{
+					x6.style.border = "2px solid red";
+					x6.style.backgroundColor = "#F2C9CC";
+					alert("POSTAL CODE must be filled out");
+					return false;
+				}
+				else if (x7.value == null || x7.value == "") 
+				{
+					x7.style.border = "2px solid red";
+					x7.style.backgroundColor = "#F2C9CC";
+					alert("COUNTRY must be filled out");
+					return false;
+				}
+				//------------------
+				//PHONE VALIDATION
+				else if (x8.value == null || x8.value == "") 
+				{
+					x8.style.border = "2px solid red";
+					x8.style.backgroundColor = "#F2C9CC";
+					alert("HOME PHONE must be filled out");
+					return false;
+				}
+				else if (x9.value == null || x9.value == "") 
+				{
+					x9.style.border = "2px solid red";
+					x9.style.backgroundColor = "#F2C9CC";
+					alert("WORK PHONE must be filled out");
+					return false;
+				}
+				//------------------
+				else if (x10.value == null || x10.value == "") 
+				{
+					x10.style.border = "2px solid red";
+					x10.style.backgroundColor = "#F2C9CC";
+					alert("EMAIL must be filled out");
+					return false;
+				}
+				//FINAL TEST PASS TO DATABASE
+//SEND TO SUCCESSFUL PAGE!
+				else
+				{
+					return true;
+				}
+			}			
 		</script>
 		
 		<!--TAB ON BROWSER-->
@@ -178,8 +224,8 @@
 					`CustomerId`, `CustFirstName`, `CustLastName`, `CustAddress`, `CustCity`, 
 							`CustProv`, `CustPostal`, `CustCountry`, `CustHomePhone`, `CustBusPhone`, `CustEmail`, `AgentId`
 					-->
-				
-				<form method="post" action="customer_tester2.php">
+				<!--ADDED (ONSUBMIT) TO FORM, instead of SEND BUTTON -->
+				<form method="post" name="cust_form" action="customer_tester2.php" onsubmit="return validateForm()">
 					<table id="tbl-register">
 						<!-- NAME -->
 						<th align="left">Customer Registration2 *** latest ***</th>
@@ -264,7 +310,8 @@
 							<!--- BUTTONS --->
 							<!-- <td> <input type="submit" value="Send" /> </td> -->
 							<!-- SUBMIT BUTTON -->
-							<td> <input id="send" class="button" type="submit" value="Send" onclick="return validate_send()" /> </td>	
+							<!-- <td> <input id="send" class="button" type="submit" value="Send" onclick="return validate_send()" /> </td>	 -->
+							<td> <input id="send" class="button" type="submit" value="Send" /> </td>
 							<!-- <td> <input type="reset" value="Reset" /> </td> -->
 							<!-- RESET BUTTON -->
 							<td> <input id="reset" class="button" type="reset" value="Reset" onclick="return confirm('Are you sure you want to RESET this form?')" /> </td>
