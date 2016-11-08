@@ -160,13 +160,22 @@
 					alert("PROVINCE must be filled out");
 					return false;
 				}
-				else if (x6.value == null || x6.value == "") 
-				{
-					x6.style.border = "2px solid red";
-					x6.style.backgroundColor = "#F2C9CC";
-					alert("POSTAL CODE must be filled out");
-					return false;
-				}
+					//POSTAL CODE
+					else if (x6.value == null || x6.value == "") 
+					{
+						x6.style.border = "2px solid red";
+						x6.style.backgroundColor = "#F2C9CC";
+						alert("POSTAL CODE must be filled out");
+						return false;
+					}
+					else if(!validate_postal_code())
+					{
+						x6.style.border = "2px solid red";
+						x6.style.backgroundColor = "#F2C9CC";
+						alert("POSTAL CODE failed validation (eg.T2B2J5)");
+						return false;
+					}
+					//---------------
 				else if (x7.value == null || x7.value == "") 
 				{
 					x7.style.border = "2px solid red";
@@ -175,7 +184,7 @@
 					return false;
 				}
 				//------------------
-				//PHONE VALIDATION
+				//HOME PHONE isNULL
 				else if (x8.value == null || x8.value == "") 
 				{
 					x8.style.border = "2px solid red";
@@ -183,6 +192,17 @@
 					alert("HOME PHONE must be filled out");
 					return false;
 				}
+					//HOME PHONE VALIDATION
+					else if(!validate_phone('hphone'))
+						{
+							x6.style.border = "2px solid red";
+							x6.style.backgroundColor = "#F2C9CC";
+							alert("HOME PHONE failed validation (eg.403-555-5555)");
+							return false;
+						}
+				//----------------
+				//------------------
+				//WORK PHONE isNULL
 				else if (x9.value == null || x9.value == "") 
 				{
 					x9.style.border = "2px solid red";
@@ -190,6 +210,14 @@
 					alert("WORK PHONE must be filled out");
 					return false;
 				}
+					//WORK PHONE VALIDATION
+					else if(!validate_phone('bphone'))
+						{
+							x6.style.border = "2px solid red";
+							x6.style.backgroundColor = "#F2C9CC";
+							alert("WORK PHONE failed validation (eg.403-555-5555)");
+							return false;
+						}
 				//------------------
 				else if (x10.value == null || x10.value == "") 
 				{
