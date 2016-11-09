@@ -2,15 +2,135 @@
 	#---------------------------------------------
 	#Dean Jones
 	#Nov.08, 2016
-	#CUSTOMER INSERT DATA FORM
+	#CUSTOMER UPDATE (AGENT ONLY) FORM
 	#-------------------------
 	#SUPPORTING FILES
-		#CUSTOMER_FORM_REGISTER.PHP		(customer insert data form)
-		#CUSTOMER_TESTER.PHP			(tester)
-		#CUSTOMER_FORM_SUCCESSFUL.PHP	(if validated)
+		#CUSTOMER_FORM_UPDATE.PHP				(customer UPDATE data form)
+		#CUSTOMER_TESTER_UPDATE.PHP				(tester)
+		#CUSTOMER_FORM_UPDATE_SUCCESSFUL.PHP	(if validated)
 	#---------------------------------------------
 	/* VARIABLES */
-	$page_desc = "Customer Register";
+	$page_desc = "Customer Update (Agent Only)";
+	
+	//GLOBAL VARIABLES
+	include("variables.php");
+
+		#--------------------------------------------------------------------------------------------------------
+		#--------------------------------------------------------------------------------------------------------
+		#PREPOPULATE FORM DATA FROM SQL
+			#-------------------------------------------------------------
+			#DB CONNECT
+				global $host, $user, $password, $database;
+				$dbh = mysqli_connect($host, $user, $password, $database);
+					#ERROR IF DATABASE DOESN'T CONNECT
+					if(!$dbh)											#IF (NOT CONNECTED) TO DATABASE
+					{
+						#CREATE A (LOG FILE)
+						$file = fopen("log/errorlog.txt", "a");			#OPENS FILE (OR CREATES)(TO APPEND)
+						fwrite($file, mysqli_connect_error() . "\n");	#WRITES TO FILE
+						fclose($file);									#CLOSES FILE
+						exit;											#MAKES SURE IT DOESN'T CONTINUE WITHOUT A CONNECTION
+					}
+					else
+					{
+						print("*** SQL DATABASE CONNECTED ***<br />");
+					}
+						/* 	 $dbh = mysqli_connect($host, $user, $password, $database);
+							if (!$dbh)
+							{
+							 print(mysqli_connect_error());
+							 return false;
+						} */			
+			#END DB CONNECT
+			#-------------------------------------------------------------
+			#GET QUERY OF (SELECTED CUSTOMER-ID (?))
+			$sql_prepared = "SELECT * from customers WHERE CustomerId=?";
+				#print($sql_prepared . "<br / >");
+				#-------------------------------------------------------------------
+				#PREPARED STATEMENT, TO INPUT INTO (?)
+				$stmt = mysqli_prepare($dbh, $sql_prepared);							//return, OBJECT or FALSE
+					#print("stmt is an object: " . is_object($stmt) . "<br />");
+					#var_dump($stmt);
+					#---
+					#BIND the (CustomerId VALUEorKEY to the ($stmt))
+					#mysqli_stmt_bind_param($stmt, 'i', $_REQUEST['CustomerId']); 		//FOR ALL VALUES
+					#TEST VARIABLE
+					$test = 104;
+					mysqli_stmt_bind_param($stmt, 'i', $test);							//Test CustomerId = 108, should return ROW (Judy Sethi)
+					var_dump(mysqli_stmt_bind_param($stmt, 'i', $test));				//TRUE
+				#-------------------------------------------------------------------
+				#EXECUTES SQL QUERY
+					mysqli_execute($stmt);
+					var_dump(mysqli_execute($stmt));									//TRUE
+				#--------------------------------
+				#BIND DATA TO (INPUT BOXES BELOW)
+					mysqli_stmt_bind_result($stmt, $custid, $fname, $lname, $address, $city, $prov, $postal, $country,
+												$homephone, $busphone, $email, $agentid );
+					#FETCH (ROW) VALUES 
+					#mysqli_stmt_fetch($stmt);
+					#RATHER TEST FETCH STATEMENT (IN CASE IT DOESN'T WORK)
+					if (!mysqli_stmt_fetch($stmt))
+					{
+						print("The SQL QUERY, did not work, values could not be FETCHED.");
+					}
+				#--------------------------------
+									#CREATE A PREPARED STATEMENT
+									/* if ($stmt = mysqli_prepare($dbh, "select * from customers where CustomerId=?")) {
+
+										# bind parameters for markers 
+										mysqli_stmt_bind_param($stmt, "i", $_REQUEST["CustomerId"]);
+
+										#EXECUTE SQL QUERY
+										mysqli_stmt_execute($stmt);
+
+										# bind result variables 
+										mysqli_stmt_bind_result($stmt, $custid, $fname, $lname, $address, $city, $prov, $postal, $country,
+												$homephone, $busphone, $email, $agentid );
+
+										# fetch value 
+										mysqli_stmt_fetch($stmt);
+
+										printf("Agent ID is: %s\n", $custid);
+
+										# close statement 
+										mysqli_stmt_close($stmt);
+									} */
+				
+				#harvs code
+				//$sql = "select * from customers where CustomerId=?";
+				//$stmt = mysqli_prepare($dbh, $sql);
+				//print($_REQUEST["CustomerId"]);
+				/* mysqli_stmt_bind_param($stmt, "i", $_REQUEST["CustomerId"]); */
+				//mysqli_stmt_bind_param($stmt, "i", $_REQUEST["CustomerId"]);
+				//mysqli_execute($stmt);
+				//mysqli_stmt_bind_result($stmt, $custid, $fname, $lname, $address, $city, $prov, $postal, $country, $homephone, $busphone, $email, $agentid);
+				//if (mysqli_stmt_fetch($stmt))
+				//{
+				 //do nothing at this point
+				//}
+				//else
+				//{
+				// print("Something went wrong");
+				//}
+				#--------------------------------
+				#TEST FOR ???
+					/* if(mysqli_stmt_fetch($stmt))
+					{
+						//do nothing at this point
+					}
+					else
+					{
+						print("asd;flkjasdf" . $_REQUEST["CustomerId"]);								//////////////////print(mysqli_stmt_fetch($stmt));
+						print("Something went wrong? Call IT.");
+					} */
+					
+			#------------------------
+			#DB CLOSE
+				mysqli_close($dbh);
+			#------------------------
+		#PREPOPULATE FORM DATA FROM SQL
+		#--------------------------------------------------------------------------------------------------------
+		#--------------------------------------------------------------------------------------------------------
 
 ?>
 
@@ -26,188 +146,8 @@
 		<!-- SEE STYLE.CSS FOR STYLES -->
 		<link rel="stylesheet" type="text/css" href="style.css">
 		
-		<!-- SCRIPTS -->
-		<script>
-				//VARIABLES, ID'S
-				var myfname = document.getElementById("firstname");			//LOOKS UP id="firstname"
-				var mylname = document.getElementById("lastname");			//LOOKS UP id="lastname"
-				var myaddr1 = document.getElementById("addr1");				//LOOKS UP id="addr1"
-				var myaddr2 = document.getElementById("addr2");				//LOOKS UP id="addr2"
-				var mycity = document.getElementById("city");				//LOOKS UP id="city"
-				var myprov = document.getElementById("prov");				//LOOKS UP id="prov"
-				var mycode = document.getElementById("postalcode");			//LOOKS UP id="postalcode"
-				var mycountry = document.getElementById("country");			//LOOKS UP id="country"
-				var myhphone = document.getElementById("hphone");			//LOOKS UP id="hphone"
-				var mybphone = document.getElementById("bphone");			//LOOKS UP id="bphone"
-				var myemail = document.getElementById("email");				//LOOKS UP id="email"
-				
-			function myinfoON(y)
-			{
-				document.getElementById(y).innerHTML = "Please enter the <strong>" + y + "</strong>.";
-				//document.getElementById("info").innerHTML = "Please fill in the address box";
-
-			}
-			function myinfoOFF(x)
-			{
-				document.getElementById(x).innerHTML = "";
-				//document.getElementById("info").innerHTML = "";
-			}
-
-					//**********************************************
-					//VALIDATION FOR POSTAL CODE FORMAT (CHANGES TEXT TO RED IF INCORRECT)
-					function validate_postal_code()
-					{						
-						var mypcode = document.getElementById("postalcode");			//LOOKS UP id="postalcode"
-						//var regexp = /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/i;					//PATTERN TO MATCH (/i leave off because we want capitalized)
-						var regexp = /^[a-z]\d[a-z]\s?\d[a-z]\d$/i;						//HARVEY's version (\s? difference on SPACE)
-						//mypcode.value.toUpperCase();									//?CHANGE TEXT TO UPPERCASE?
-						mypcode.value = mypcode.value.toUpperCase().trim();				//convert to UPPERCASE AND TRIM SPACES
-						if (regexp.test(mypcode.value))									//TEST method OF REGEXP in IF-statement								
-							{
-								mypcode.style.color = "black";
-								pcode_status = true;
-										console.log("pcode_status: " + pcode_status);
-										//console.log("text" + mypcode.value);
-							}
-							else
-							{
-								mypcode.style.color = "red";
-								pcode_status = false;
-										console.log("pcode_status: " + pcode_status);
-										//console.log("text" + mypcode.value);
-							}
-						console.log("postal code validation: " + pcode_status);
-						return pcode_status;
-						//document.getElementById("postalcode").innerHTML = n2;
-						//console.log(postalcode.name[0]);
-					}
-					//VALIDATION FOR POSTAL CODE 
-					//**********************************************
-					
-					
-					//**********************************************
-					//VALIDATE FOR PHONE# NUMBER OF DIGITS AND DASH?
-					function validate_phone(phoneId)
-					{						
-						var myphone = document.getElementById(phoneId);					//LOOKS UP id="phone"
-						var regexp = /^\d\d\d[-]\d\d\d[-]\d\d\d\d$/;		
-						if (regexp.test(myphone.value))
-						{
-								myphone.style.color = "black";
-								phone_status = true;
-									console.log("phone_status: " + phone_status);
-									//console.log("text" + myphone.value);
-							}
-							else
-							{
-								myphone.style.color = "red";
-								phone_status = false;
-									console.log("phone_status: " + phone_status);
-									//console.log("text" + myphone.value);
-							}
-						console.log("phone validation: " + phone_status);
-						return phone_status;
-					}
-					//VALIDATE FOR PHONE#
-					//**********************************************			
-
-			function validateForm() 
-			{
-				var x1 = document.forms["cust_form"]["CustFirstName"];
-				var x2 = document.forms["cust_form"]["CustLastName"];
-				var x3 = document.forms["cust_form"]["CustAddress"];
-				var x4 = document.forms["cust_form"]["CustCity"];				
-				var x5 = document.forms["cust_form"]["CustProv"];
-				var x6 = document.forms["cust_form"]["CustPostal"];				
-				var x7 = document.forms["cust_form"]["CustCountry"];
-				var x8 = document.forms["cust_form"]["CustHomePhone"];
-				var x9 = document.forms["cust_form"]["CustBusPhone"];
-				var x10 = document.forms["cust_form"]["CustEmail"];
-				
-				
-				if (x1.value == null || x1.value == "") 
-				{
-					x1.style.border = "2px solid red";
-					x1.style.backgroundColor = "#F2C9CC";
-					alert("FIRST NAME must be filled out");
-					return false;
-				}
-				else if (x2.value == null || x2.value == "") 
-				{
-					x2.style.border = "2px solid red";
-					x2.style.backgroundColor = "#F2C9CC";
-					alert("LAST NAME must be filled out");
-					return false;
-				}
-				else if (x3.value == null || x3.value == "") 
-				{
-					x3.style.border = "2px solid red";
-					x3.style.backgroundColor = "#F2C9CC";
-					alert("ADDRESS must be filled out");
-					return false;
-				}
-				else if (x4.value == null || x4.value == "") 
-				{
-					x4.style.border = "2px solid red";
-					x4.style.backgroundColor = "#F2C9CC";
-					alert("CITY must be filled out");
-					return false;
-				}
-				else if (x5.value == null || x5.value == "nil") //VALUE TO "nil"
-				{
-					x5.style.border = "2px solid red";
-					x5.style.backgroundColor = "#F2C9CC";
-					alert("PROVINCE must be filled out");
-					return false;
-				}
-				else if (x6.value == null || x6.value == "") 
-				{
-					x6.style.border = "2px solid red";
-					x6.style.backgroundColor = "#F2C9CC";
-					alert("POSTAL CODE must be filled out");
-					return false;
-				}
-				else if (x7.value == null || x7.value == "") 
-				{
-					x7.style.border = "2px solid red";
-					x7.style.backgroundColor = "#F2C9CC";
-					alert("COUNTRY must be filled out");
-					return false;
-				}
-				//------------------
-				//PHONE VALIDATION
-				else if (x8.value == null || x8.value == "") 
-				{
-					x8.style.border = "2px solid red";
-					x8.style.backgroundColor = "#F2C9CC";
-					alert("HOME PHONE must be filled out");
-					return false;
-				}
-				else if (x9.value == null || x9.value == "") 
-				{
-					x9.style.border = "2px solid red";
-					x9.style.backgroundColor = "#F2C9CC";
-					alert("WORK PHONE must be filled out");
-					return false;
-				}
-				//------------------
-				else if (x10.value == null || x10.value == "") 
-				{
-					x10.style.border = "2px solid red";
-					x10.style.backgroundColor = "#F2C9CC";
-					alert("EMAIL must be filled out");
-					return false;
-				}
-				//FINAL TEST PASS TO DATABASE
-				else
-				{
-					return true;
-				}
-			}			
-		</script>
-		
 		<!--TAB ON BROWSER-->
-		<title> Travel Experts - Register</title>
+		<title> Travel Experts - Customer Update</title>
 	</head>
 	<body>
 			<!-- HEADER -->
@@ -224,103 +164,58 @@
 			
 			<main>
 				<article>
-					<!--
-					`CustomerId`, `CustFirstName`, `CustLastName`, `CustAddress`, `CustCity`, 
-							`CustProv`, `CustPostal`, `CustCountry`, `CustHomePhone`, `CustBusPhone`, `CustEmail`, `AgentId`
-					-->
-				<!--ADDED (ONSUBMIT) TO FORM, instead of SEND BUTTON -->
-				<form method="post" name="cust_form" action="customer_tester.php" onsubmit="return validateForm()">
-					<table id="tbl-register">
-						<!-- NAME -->
-						<th align="left">Customer Registration</th>
+
+				<!-- UPDATE not INSERT SQL QUERY --->
+				<form method="get" action="customer_tester_update.php">
+					<table>
+						<th align="left">Customer Update *** working ***</th>
 						<tr>
-							<td> First Name: </td>
-							<td> <input id="firstname" type="text" name="CustFirstName" placeholder="Firstname" onfocus="myinfoON('FirstName')" onfocusout="myinfoOFF('FirstName')" /></td> 	<!-- oninput="myvalidate()"  -->
-							<td id="FirstName"></td>
-							<!--USE EMPTY DATA TO SHOW CONFIRMATION <td id="fname"> </td> -->
+							<td>CustomerId: </td><td><input type="text" name="CustomerId" value="<?php print($custid); ?>" readonly="readonly" /><br /></td>
 						</tr>
 						<tr>
-							<td> Last Name: </td>
-							<td> <input id="lastname" type="text" name="CustLastName" placeholder="Lastname" onfocus="myinfoON('LastName')" onfocusout="myinfoOFF('LastName')" /></td>	<!-- oninput="myvalidate2()"  -->																								<!-- <td id="comment2"></td> -->
-							<td id="LastName"></td>
-						</tr>
-					
-						<!-- ADDRESS -->
-						<tr>
-							<td> Address: </td>
-							<td> <input id="addr1" type="text" name="CustAddress" placeholder="444 Road SW" onfocus="myinfoON('Address')" onfocusout="myinfoOFF('Address')" /></td>
-							<td id="Address"></td>
-						</tr>
-						<!-- CITY -->
-						<tr>
-							<td> City: </td>
-							<td> <input id="city" type="text" name="CustCity" placeholder="City" onfocus="myinfoON('City')" onfocusout="myinfoOFF('City')" />
-							<td id="City"></td>
-						</tr>
-						<!-- PROVINCE (SELECT) -->
-						<tr>
-							<td> Province: </td>
-							<td>
-								<select id="prov" name="CustProv">
-									<option value="nil">&lt;  Select Province  &gt;</option>
-									<option value="AB">Alberta</option>
-									<option value="BC">British Columbia</option>
-									<option value="MB">Manitoba</option>								
-									<option value="NB">New Brunswick</option>
-									<option value="NL">Newfoundland and Labrador</option>
-									<option value="NT">Northwest Territories</option>
-									<option value="NS">Nova Scotia</option>
-									<option value="NU">Nunavut</option>
-									<option value="ON">Ontario</option>
-									<option value="PE">Prince Edward Island</option>
-									<option value="QC">Quebec</option>
-									<option value="SK">Saskatchewan</option>
-									<option value="YT">Yukon</option>
-								</select>
-							</td>
-							<td id="Province"></td>
-						</tr>
-						<!-- POSTAL CODE -->
-						<tr>
-							<td> Postal Code: </td>
-							<td> <input id="postalcode" type="text" name="CustPostal" placeholder="T2B2J5" oninput="validate_postal_code()" onfocus="myinfoON('PostalCode')" onfocusout="myinfoOFF('PostalCode')" />
-							<td id="PostalCode"></td>
-						</tr>
-						<!-- COUNTRY -->
-						<tr>
-							<td> Country: </td>
-							<td> <input id="country" type="text" name="CustCountry" placeholder="Country" onfocus="myinfoON('Country')" onfocusout="myinfoOFF('Country')" />
-							<td id="Country"></td>
-						</tr>
-						<!-- HOME PHONE NUMBER -->
-						<tr>
-							<td> Home Phone: </td>
-							<td> <input id="hphone" type="text" name="CustHomePhone" placeholder="403-555-5555" oninput="validate_phone('hphone')" onfocus="myinfoON('HomePhone')" onfocusout="myinfoOFF('HomePhone')" />
-							<td id="HomePhone"></td>
-						</tr>
-						<!-- BUSINESS PHONE NUMBER -->
-						<tr>
-							<td> Business Phone: </td>
-							<td> <input id="bphone" type="text" name="CustBusPhone" placeholder="403-555-5555" oninput="validate_phone('bphone')" onfocus="myinfoON('BusPhone')" onfocusout="myinfoOFF('BusPhone')" />
-							<td id="BusPhone"></td>
-						</tr>
-						<!-- EMAIL -->
-						<tr>
-							<td> Email: </td>
-							<td> <input id="email" type="text" name="CustEmail" placeholder="name.last@email.com" onfocus="myinfoON('Email')" onfocusout="myinfoOFF('Email')" /> </td>
-							<td id="Email"></td>
+							<td>First Name: </td><td><input type="text" name="CustFirstName" value="<?php print($fname); ?>" /><br /></td>
 						</tr>
 						<tr>
-							<!--- BUTTONS --->
-							<!-- <td> <input type="submit" value="Send" /> </td> -->
-							<!-- SUBMIT BUTTON -->
-							<!-- <td> <input id="send" class="button" type="submit" value="Send" onclick="return validate_send()" /> </td>	 -->
-							<td> <input id="send" class="button" type="submit" value="Send" /> </td>
-							<!-- <td> <input type="reset" value="Reset" /> </td> -->
-							<!-- RESET BUTTON -->
-							<td> <input id="reset" class="button" type="reset" value="Reset" onclick="return confirm('Are you sure you want to RESET this form?')" /> </td>
+							<td>Last Name: </td><td><input type="text" name="CustLastName" value="<?php print($lname); ?>" /><br /></td>
 						</tr>
+						<tr>
+							<td>Address: </td><td><input type="text" name="CustAddress" value="<?php print($address); ?>" /><br /></td>
+						</tr>
+						<tr>
+							<td>City: </td><td><input type="text" name="CustCity" value="<?php print($city); ?>" /><br /></td>
+						</tr>
+						<tr>
+							<td>Province:  </td><td><input type="text" name="CustProv" value="<?php print($prov); ?>" /><br /></td>
+						</tr>
+						<tr>
+							<td>Postal Code:  </td><td><input type="text" name="CustPostal" value="<?php print($postal); ?>" /><br /></td>
+						</tr>
+						<tr>
+							<td>Country:  </td><td><input type="text" name="CustCountry" value="<?php print($country); ?>" /><br /></td>
+						</tr>
+						<tr>
+							<td>Phone(home):  </td><td><input type="text" name="CustHomePhone" value="<?php print($homephone); ?>" /><br /></td>
+						</tr>
+						<tr>
+							<td>Phone(work):  </td><td><input type="text" name="CustBusPhone" value="<?php print($busphone); ?>" /><br /></td>
+						</tr>
+						<tr>
+							<td>Email:  </td><td><input type="text" name="CustEmail" value="<?php print($email); ?>" /><br /></td>
+						</tr>
+						<tr>
+							<td>AgentId:  </td><td><input type="text" name="AgentId" value="<?php print($agentid); ?>" /><br /></td>
+						</tr>
+						
+						<!-- OPTION SELECT... -->
+							
+						<tr>
+							<td></td><td><input type="submit" value="Save Changes" /><br /></td>
+							<!-- URL SENT ON PRESSING BUTTON
+									http://localhost/tester.php?AgtFirstName=&AgtMiddleInitial=&AgtLastName=&AgtBusPhone=&AgtEmail=&AgtPosition=&AgencyId=1 -->
+						</tr>
+
 					</table>
+					
 				</form>
 
 				<!-- PICTURE LINKS -->
