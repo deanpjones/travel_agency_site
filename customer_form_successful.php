@@ -6,13 +6,12 @@
 	#-------------------------
 	#SUPPORTING FILES
 		#CUSTOMER_FORM_REGISTER.PHP		(customer insert data form)
-		#CUSTOMER_TESTER.PHP			(tester)
+		#CUSTOMER_TESTER.PHP			(InsertData FUNCTION, not on FUNCTIONS.PHP)
 		#CUSTOMER_FORM_SUCCESSFUL.PHP	(if validated)
 	#---------------------------------------------
 	/* VARIABLES */
 	$page_desc = "Customer Register";
-
-
+	
 ?>
 
 <!DOCTYPE html>
@@ -54,23 +53,14 @@
 				<article>
 					<table>
 						<tr>
-							<td><h4 align="center" color="green">*** Registration - SUCCESSFUL! ***</h4></td>
+							<td><h4 align="center" color="green">*** Customer Registration - SUCCESSFUL! ***</h4></td>
 						</tr>
 					</table>
-					<!--<table id="tbl-register">
-						 NAME -->
-						
-						<!--<tr>
-							<div class="success"><td> Customer Registration </td></div>
-						</tr>
-					</table>-->
-
-				<!-- PICTURE LINKS -->
-				<br />
-				<a class="img-link" href="contact.php">
-					<img src="images/contact.jpg" alt="contact.jpg" width="100" height="100" style="cursor:pointer;" title="Click for Contacts" />
-				</a>
 					
+					<br />
+					<!-- IMAGE REGISTER LINK -->
+					<?php include_once 'link_register.php';?>
+
 				</article>
 			</main>
 			

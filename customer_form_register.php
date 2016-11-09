@@ -6,7 +6,7 @@
 	#-------------------------
 	#SUPPORTING FILES
 		#CUSTOMER_FORM_REGISTER.PHP		(customer insert data form)
-		#CUSTOMER_TESTER.PHP			(tester)
+		#CUSTOMER_TESTER.PHP			(InsertData FUNCTION, not on FUNCTIONS.PHP)
 		#CUSTOMER_FORM_SUCCESSFUL.PHP	(if validated)
 	#---------------------------------------------
 	/* VARIABLES */
