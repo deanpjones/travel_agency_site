@@ -20,7 +20,9 @@
 		#PREPOPULATE FORM DATA FROM SQL
 			#-------------------------------------------------------------
 			#DB CONNECT
-				global $host, $user, $password, $database;
+			include("db_connect.php");
+			
+				/* global $host, $user, $password, $database;
 				$dbh = mysqli_connect($host, $user, $password, $database);
 					#ERROR IF DATABASE DOESN'T CONNECT
 					if(!$dbh)											#IF (NOT CONNECTED) TO DATABASE
@@ -29,101 +31,61 @@
 						$file = fopen("log/errorlog.txt", "a");			#OPENS FILE (OR CREATES)(TO APPEND)
 						fwrite($file, mysqli_connect_error() . "\n");	#WRITES TO FILE
 						fclose($file);									#CLOSES FILE
-						exit;											#MAKES SURE IT DOESN'T CONTINUE WITHOUT A CONNECTION
+						exit();											#MAKES SURE IT DOESN'T CONTINUE WITHOUT A CONNECTION
 					}
 					else
 					{
-						print("*** SQL DATABASE CONNECTED ***<br />");
-					}
-						/* 	 $dbh = mysqli_connect($host, $user, $password, $database);
-							if (!$dbh)
-							{
-							 print(mysqli_connect_error());
-							 return false;
-						} */			
+						#print("*** SQL DATABASE CONNECTED ***<br />");
+						error_log("*** SQL DATABASE CONNECTED ***");
+					} */			
 			#END DB CONNECT
 			#-------------------------------------------------------------
 			#GET QUERY OF (SELECTED CUSTOMER-ID (?))
 			$sql_prepared = "SELECT * from customers WHERE CustomerId=?";
 				#print($sql_prepared . "<br / >");
+				error_log($sql_prepared);
 				#-------------------------------------------------------------------
 				#PREPARED STATEMENT, TO INPUT INTO (?)
 				$stmt = mysqli_prepare($dbh, $sql_prepared);							//return, OBJECT or FALSE
+					#ERROR_LOG
 					#print("stmt is an object: " . is_object($stmt) . "<br />");
 					#var_dump($stmt);
 					#---
+
+					#*********************************************
+					#*********************************************
+					#PASSED FROM (customer_form_list.php)
 					#BIND the (CustomerId VALUEorKEY to the ($stmt))
-					#mysqli_stmt_bind_param($stmt, 'i', $_REQUEST['CustomerId']); 		//FOR ALL VALUES
-					#TEST VARIABLE
-					$test = 104;
-					mysqli_stmt_bind_param($stmt, 'i', $test);							//Test CustomerId = 108, should return ROW (Judy Sethi)
-					var_dump(mysqli_stmt_bind_param($stmt, 'i', $test));				//TRUE
+					mysqli_stmt_bind_param($stmt, "i", $_REQUEST["CustomerId"]);
+					#*********************************************
+					#*********************************************
+						#-------------
+						#TEST...
+						#$test = 108;
+						#mysqli_stmt_bind_param($stmt, 'i', $test);							//Test CustomerId = 108, should return ROW (Judy Sethi)
+						#-------------
+						#ERROR_LOG
+						#error_log(var_dump(mysqli_stmt_bind_param($stmt, 'i', $test)));	//TRUE
 				#-------------------------------------------------------------------
 				#EXECUTES SQL QUERY
 					mysqli_execute($stmt);
-					var_dump(mysqli_execute($stmt));									//TRUE
+						#ERROR_LOG
+						#error_log(var_dump(mysqli_execute($stmt)));						//TRUE
 				#--------------------------------
 				#BIND DATA TO (INPUT BOXES BELOW)
 					mysqli_stmt_bind_result($stmt, $custid, $fname, $lname, $address, $city, $prov, $postal, $country,
 												$homephone, $busphone, $email, $agentid );
 					#FETCH (ROW) VALUES 
 					#mysqli_stmt_fetch($stmt);
-					#RATHER TEST FETCH STATEMENT (IN CASE IT DOESN'T WORK)
-					if (!mysqli_stmt_fetch($stmt))
-					{
-						print("The SQL QUERY, did not work, values could not be FETCHED.");
-					}
+						#or TEST FETCH STATEMENT (IN CASE IT DOESN'T WORK)
+						if (!mysqli_stmt_fetch($stmt))
+						{
+							#ERROR_LOG
+							#print("The SQL QUERY, did not work, values could not be FETCHED.");
+							error_log("The SQL QUERY, did not work, values could not be FETCHED.");
+						}
 				#--------------------------------
-									#CREATE A PREPARED STATEMENT
-									/* if ($stmt = mysqli_prepare($dbh, "select * from customers where CustomerId=?")) {
 
-										# bind parameters for markers 
-										mysqli_stmt_bind_param($stmt, "i", $_REQUEST["CustomerId"]);
-
-										#EXECUTE SQL QUERY
-										mysqli_stmt_execute($stmt);
-
-										# bind result variables 
-										mysqli_stmt_bind_result($stmt, $custid, $fname, $lname, $address, $city, $prov, $postal, $country,
-												$homephone, $busphone, $email, $agentid );
-
-										# fetch value 
-										mysqli_stmt_fetch($stmt);
-
-										printf("Agent ID is: %s\n", $custid);
-
-										# close statement 
-										mysqli_stmt_close($stmt);
-									} */
-				
-				#harvs code
-				//$sql = "select * from customers where CustomerId=?";
-				//$stmt = mysqli_prepare($dbh, $sql);
-				//print($_REQUEST["CustomerId"]);
-				/* mysqli_stmt_bind_param($stmt, "i", $_REQUEST["CustomerId"]); */
-				//mysqli_stmt_bind_param($stmt, "i", $_REQUEST["CustomerId"]);
-				//mysqli_execute($stmt);
-				//mysqli_stmt_bind_result($stmt, $custid, $fname, $lname, $address, $city, $prov, $postal, $country, $homephone, $busphone, $email, $agentid);
-				//if (mysqli_stmt_fetch($stmt))
-				//{
-				 //do nothing at this point
-				//}
-				//else
-				//{
-				// print("Something went wrong");
-				//}
-				#--------------------------------
-				#TEST FOR ???
-					/* if(mysqli_stmt_fetch($stmt))
-					{
-						//do nothing at this point
-					}
-					else
-					{
-						print("asd;flkjasdf" . $_REQUEST["CustomerId"]);								//////////////////print(mysqli_stmt_fetch($stmt));
-						print("Something went wrong? Call IT.");
-					} */
-					
 			#------------------------
 			#DB CLOSE
 				mysqli_close($dbh);
@@ -164,11 +126,11 @@
 			
 			<main>
 				<article>
-
-				<!-- UPDATE not INSERT SQL QUERY --->
-				<form method="get" action="customer_tester_update.php">
+															
+				<!-- UPDATE SQL QUERY --->
+				<form method="post" action="customer_tester_update.php">
 					<table>
-						<th align="left">Customer Update *** working ***</th>
+						<th align="left">Customer Update *** Edit Info ***</th>
 						<tr>
 							<td>CustomerId: </td><td><input type="text" name="CustomerId" value="<?php print($custid); ?>" readonly="readonly" /><br /></td>
 						</tr>
