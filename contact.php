@@ -76,10 +76,8 @@
 						</ul>
 					</p>
 					
-					<!-- MOVE DOWN TO HEADER -->
-					<a class="img-link" href="register.php">
-						<img src="images/register.jpg" alt="register.jpg" width="100" height="100" style="cursor:pointer;" title="Click for Register" />
-					</a>
+					<!-- IMAGE REGISTER LINK -->
+					<?php include_once 'link_register.php';?>
 					
 				</address>
 			</main>

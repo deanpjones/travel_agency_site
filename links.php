@@ -46,13 +46,11 @@
 						#table_links();		#WILL BE REPLACED BY OTHER LOOP?
 					?>
 					
-					<!-- PICTURE LINKS -->
-					<a class="img-link" href="register.php">
-						<img src="images/register.jpg" alt="register.jpg" width="100" height="100" style="cursor:pointer;" title="Click for Register" />
-					</a>
-					<a class="img-link" href="contact.php">
-						<img src="images/contact.jpg" alt="contact.jpg" width="100" height="100" style="cursor:pointer;" title="Click for Contacts" />
-					</a>
+					<!-- IMAGE REGISTER LINK -->
+					<?php include_once 'link_register.php';?>
+					<!-- IMAGE CONTACTS LINK -->
+					<?php include_once 'link_contacts.php';?>
+					
 				</article>
 
 			</main>
