@@ -2,7 +2,7 @@
 	#---------------------------------------------
 	#Dean Jones
 	#Nov.08, 2016
-	#CUSTOMER TESTER
+	#CUSTOMER TESTER (INSERT SQL DATA)
 	#-------------------------
 	#SUPPORTING FILES
 		#CUSTOMER_FORM_REGISTER.PHP		(customer insert data form)
