@@ -3,6 +3,15 @@ class Agent
 {
 	#include ("Agent_class.php")
 	
+	#TEST NEW OBJECT
+/* 		<?php
+			$x = new Agent();
+			
+			$x->setAgtFirstName("Dean");
+			echo $x->getAgtFirstName();
+		?> 
+*/
+		
 	#VARIABLES (MAKE PRIVATE) AND ACCESS THEM THROUGH THE GET-METHOD
 		private $AgentId;
 		private $AgtFirstName;
@@ -37,43 +46,29 @@ class Agent
 	#BUILDS A STRING OF (COLUMN NAMES)(to put into $sql)
 	public function getColNames()
 	{
-		
+		//IF WANT TO USE FOR $sql
 	}
 	#BUILDS A STRING OF (COLUMN VALUES)(to put into $sql)
 	public function getColValues()
 	{
-		
+		//IF WANT TO USE FOR $sql
 	}
 
 	
 	#TO-STRING (ARRAY OF ALL PROPERTIES)
-	public __toString()
+	public toString()
 	{
-		$agent_array = array();
-			$agent_array[getAgentId()];
-			$agent_array[getAgtFirstName()];
-			$agent_array[getAgtMiddleInitial()];
-			$agent_array[getAgtLastName()];
-			$agent_array[getAgtBusPhone()];
-			$agent_array[getAgtEmail()];
-			$agent_array[getAgtPosition()];
-			$agent_array[getAgencyId()];
-			$agent_array[getAgtUserId()];
-			$agent_array[getAgtPassword()];
-			
-		return $agent_array;
-			
-		/* $AgentId; (NOT REQUIRED, AUTONUMBER) */
-/* 		$agent_array = new Array();
-			$agent_array['AgtFirstName'] = "Clark";
-			$agent_array['AgtMiddleInitial'] = "S.";
-			$agent_array['AgtLastName'] = "Kent";
-			$agent_array['AgtBusPhone'] = "(403) 272-7272";
-			$agent_array['AgtEmail'] = "clark.kent@travelexperts.com";
-			$agent_array['AgtPosition'] = "Junior Agent";
-			$agent_array['AgencyId'] = "1";
-			$agent_array['AgtUserId'] = "user1";
-			$agent_array['AgtPassword'] = "pass1"; */
+      $mystring = "'" 
+			. $this->AgtFirstName . "', "
+			. "'" . $this->AgtMiddleInitial . "', "
+			. "'" . $this->AgtLastName . "', "
+			. "'" . $this->AgtBusPhone . "', "
+			. "'" . $this->AgtEmail . "', "
+			. "'" . $this->AgtPosition . "', "
+			. $this->AgencyId . ", "
+			. "'" . $this->AgtUserId . "', "
+			. "'" . $this->AgtPassword . "'";
+	   return $mystring;
 	}
 	#---------------------------------
 	#CONSTRUCTOR (runs when created an OBJECT)
