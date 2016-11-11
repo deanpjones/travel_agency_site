@@ -1,4 +1,13 @@
 <?php
+	#---------------------------------------------
+	#Dean Jones
+	#Nov.10, 2016
+	#AGENT CLASS
+	#-------------------------
+	#SUPPORTING FILES
+		#AGENT_TESTPAGE.PHP		(test page to test Agent_class.php)
+	#---------------------------------------------
+
 class Agent
 {
 	#include ("Agent_class.php")
@@ -56,20 +65,21 @@ class Agent
 
 	
 	#TO-STRING (ARRAY OF ALL PROPERTIES)
-	public toString()
+	public function __toString()
 	{
       $mystring = "'" 
-			. $this->AgtFirstName . "', "
-			. "'" . $this->AgtMiddleInitial . "', "
-			. "'" . $this->AgtLastName . "', "
-			. "'" . $this->AgtBusPhone . "', "
-			. "'" . $this->AgtEmail . "', "
-			. "'" . $this->AgtPosition . "', "
-			. $this->AgencyId . ", "
-			. "'" . $this->AgtUserId . "', "
-			. "'" . $this->AgtPassword . "'";
+			. $this->AgtFirstName . "', '"
+			. $this->AgtMiddleInitial . "', '"
+			. $this->AgtLastName . "', '"
+			. $this->AgtBusPhone . "', '"
+			. $this->AgtEmail . "', '"
+			. $this->AgtPosition . "', "
+			. $this->AgencyId . ", '"
+			. $this->AgtUserId . "', '"
+			. $this->AgtPassword . "'";
 	   return $mystring;
 	}
+	# AgentId, AgtFirstName, AgtMiddleInitial, AgtLastName, AgtBusPhone, AgtEmail, AgtPosition, AgencyId, AgtUserId, AgtPassword
 	#---------------------------------
 	#CONSTRUCTOR (runs when created an OBJECT)
 		#SET DEFAULTS
@@ -118,7 +128,7 @@ class Agent
 	#SET-METHOD
 	public function setAgtMiddleInitial($agtMiddleInitial)
 	{
-		$this->setAgtMiddleInitial = $agtMiddleInitial;
+		$this->AgtMiddleInitial = $agtMiddleInitial;
 	}
 	#---------------------------------
 	#GET-METHOD
