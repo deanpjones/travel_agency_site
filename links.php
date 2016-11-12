@@ -1,4 +1,12 @@
 <?php
+	#---------------------------------------------
+	#Dean Jones
+	#Nov.08, 2016
+	#LINKS.PHP (LINKS PAGE)
+	#-------------------------
+	#SUPPORTING FILES
+		#LOAD_LINKS.PHP		(javascript function to load the links on this page)
+	#---------------------------------------------
 	$page_desc = "Travel Links";
 
 	include_once 'load_links.php';
