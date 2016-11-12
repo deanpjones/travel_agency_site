@@ -1,7 +1,8 @@
 <?php
 	session_start();
 	#ONLOAD...
-	include_once('login_reset.php');
+	#???PROBLEM IT'S LOOPING EVERY TIME...
+	#include_once('login_reset.php');
 
 	#---------------------------------------------
 	#Dean Jones
