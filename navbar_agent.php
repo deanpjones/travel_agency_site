@@ -1,4 +1,13 @@
-	<!-- <nav id="image_background"> -->
+<?php
+	#---------------------------------------------
+	#Dean Jones
+	#Nov.02, 2016
+	#NAVBAR_AGENT.PHP (AGENT NAVBAR for agents only, need to be logged in)
+	#-------------------------
+	#SUPPORTING FILES
+		#(...all main AGENT pages, home, customerupadte, agentregister, agentupdate, AgentClassTESTPAGE)
+	#---------------------------------------------
+?>
 	<nav>
 		<a href="index.php" class="navbar" style="cursor:pointer;" title="Home Page">Home</a>
 		<a href="customer_form_list.php" class="navbar" style="cursor:pointer;" title="Customer Update Info">Customer Update</a>

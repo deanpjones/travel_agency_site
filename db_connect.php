@@ -1,4 +1,12 @@
 <?php
+	#---------------------------------------------
+	#Dean Jones
+	#Nov.08 2016
+	#DB_CONNECT.PHP (SHORTER VERSION TO CALL, haven't got all redundencies yet...)
+	#-------------------------
+	#SUPPORTING FILES
+		#...(whereever connecting to SQL)
+	#---------------------------------------------
 
 	//GLOBAL VARIABLES
 	include("variables.php");

@@ -1,3 +1,8 @@
+//DEAN JONES
+//NOV.07, 2016
+//LOADIMAGES2.JS
+//LOADS IMAGES ON LEFT SIDE OF (INDEX.PHP) (WITHOUT LINKS)
+
 function loadImages2()
 			{
 					//------------------------------------

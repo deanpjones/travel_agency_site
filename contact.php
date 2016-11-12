@@ -1,4 +1,12 @@
 <?php
+	#---------------------------------------------
+	#Dean Jones
+	#Nov.05 2016
+	#CONTACTS.PHP (CONTACTS LIST, phone and email...)
+	#-------------------------
+	#SUPPORTING FILES
+		#...
+	#---------------------------------------------
 	/* VARIABLES */
 	$page_desc = "Contact Us";
 

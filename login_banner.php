@@ -1,5 +1,4 @@
 <?php
-	#DON'T ADD!!, it is already on (login3.php), session_start();
 	#---------------------------------------------
 	#Dean Jones
 	#Nov.11, 2016
@@ -10,6 +9,9 @@
 		#LOGIN_CHECK3.php 	(validation for username and login)
 		#LOGIN_BANNER.php	(banner to display login info)
 	#---------------------------------------------
+	
+	#DON'T ADD!!, it is already on (login3.php), session_start();
+	
 		#TEST TO SEE $_SESSION ARRAY
 		#print_r($_SESSION);
 

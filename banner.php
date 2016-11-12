@@ -1,6 +1,14 @@
 
 	
 <?php
+	#---------------------------------------------
+	#Dean Jones
+	#Nov.05 2016
+	#BANNER.PHP (BANNER BELOW HEADER)
+	#-------------------------
+	#SUPPORTING FILES
+		#loads on main pages (index, customer register, contacts, links)
+	#---------------------------------------------
 	/* VARIABLES */
 	
 	/* FUNCTIONS */

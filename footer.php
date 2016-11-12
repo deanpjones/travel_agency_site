@@ -1,4 +1,12 @@
 <?php
+	#---------------------------------------------
+	#Dean Jones
+	#Nov.05 2016
+	#FOOTER.PHP (loads at bottom of every page)
+	#-------------------------
+	#SUPPORTING FILES
+		#...(all pages)
+	#---------------------------------------------
 	#FOOTER
 	#$page_desc = "";	#INCLUDE ON PAGE otherwise this will overwrite
 	

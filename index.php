@@ -1,24 +1,16 @@
 <?php
-	#--------------------------------------
-	#SESSION (HOW TO KNOW IF USER IS LOGGED IN?)
-		#PUT ON ANY PAGE THAT YOU (REQUIRE LOGIN)
-		#SCRIPT_NAME...
-		#HOW TO (DELETE SESSION), need plugin on CHROME
-		
-	/* session_start();
-	if (isset($_SESSION["loggedin"]))		#IF (LOGIN NOT SET) GO TO LOGIN PAGE
-	{
-		#$_SESSION["scriptname"] = 					#??		echo $_SERVER['SCRIPT_NAME'];
-		header("Location:d13_login.php");
-	} */
-	#-------------------------------------
+	#---------------------------------------------
+	#Dean Jones
+	#Nov.02, 2016
+	#INDEX.PHP (MAIN HOME PAGE)(was formerly index.html)
+	#-------------------------
+	#SUPPORTING FILES
+		#... (start connects to all pages)
+	#---------------------------------------------
 	
 	/* VARIABLES */
 	$page_desc = "Home";
-	#$title_desc = "Travel Experts - Contact Us";
-	#NEED TO (REFERENCE) <head>
 
-	/* FUNCTIONS */
 ?>
 
 <!DOCTYPE html>
