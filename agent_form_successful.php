@@ -34,7 +34,7 @@
 			<?php include_once 'header.php';?>
 			
 			<!-- NAVBAR -->
-			<?php include_once 'navbar.php';?>
+			<?php include_once 'navbar_agent.php';?>
 						
 			<!-- LOGINBAR -->
 			<?php include_once 'loginbar.php';?>
