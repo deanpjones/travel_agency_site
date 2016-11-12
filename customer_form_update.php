@@ -7,7 +7,7 @@
 	#SUPPORTING FILES
 		#CUSTOMER_FORM_UPDATE.PHP				(customer UPDATE data form)
 		#CUSTOMER_TESTER_UPDATE.PHP				(tester)
-		#CUSTOMER_FORM_UPDATE_SUCCESSFUL.PHP	(if validated)
+		#CUSTOMER_FORM_SUCCESSFUL.PHP			(if validated)
 	#---------------------------------------------
 	/* VARIABLES */
 	$page_desc = "Customer Update (Agent Only)";
@@ -21,24 +21,6 @@
 			#-------------------------------------------------------------
 			#DB CONNECT
 			include("db_connect.php");
-			
-				/* global $host, $user, $password, $database;
-				$dbh = mysqli_connect($host, $user, $password, $database);
-					#ERROR IF DATABASE DOESN'T CONNECT
-					if(!$dbh)											#IF (NOT CONNECTED) TO DATABASE
-					{
-						#CREATE A (LOG FILE)
-						$file = fopen("log/errorlog.txt", "a");			#OPENS FILE (OR CREATES)(TO APPEND)
-						fwrite($file, mysqli_connect_error() . "\n");	#WRITES TO FILE
-						fclose($file);									#CLOSES FILE
-						exit();											#MAKES SURE IT DOESN'T CONTINUE WITHOUT A CONNECTION
-					}
-					else
-					{
-						#print("*** SQL DATABASE CONNECTED ***<br />");
-						error_log("*** SQL DATABASE CONNECTED ***");
-					} */			
-			#END DB CONNECT
 			#-------------------------------------------------------------
 			#GET QUERY OF (SELECTED CUSTOMER-ID (?))
 			$sql_prepared = "SELECT * from customers WHERE CustomerId=?";
@@ -47,10 +29,6 @@
 				#-------------------------------------------------------------------
 				#PREPARED STATEMENT, TO INPUT INTO (?)
 				$stmt = mysqli_prepare($dbh, $sql_prepared);							//return, OBJECT or FALSE
-					#ERROR_LOG
-					#print("stmt is an object: " . is_object($stmt) . "<br />");
-					#var_dump($stmt);
-					#---
 
 					#*********************************************
 					#*********************************************
@@ -107,7 +85,7 @@
 
 		<!-- SEE STYLE.CSS FOR STYLES -->
 		<link rel="stylesheet" type="text/css" href="style.css">
-		
+				
 		<!--TAB ON BROWSER-->
 		<title> Travel Experts - Customer Update</title>
 	</head>
