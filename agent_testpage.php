@@ -32,14 +32,14 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		
 		<!--TAB ON BROWSER-->
-		<title> test</title>
+		<title>Agent CLASS TestPage</title>
 	</head>
 	<body>
 			<!-- HEADER -->
 			<?php include_once 'header.php';?>
 			
 			<!-- NAVBAR -->
-			<?php include_once 'navbar.php';?>
+			<?php include_once 'navbar_agent.php';?>
 						
 			<!-- LOGINBAR -->
 			<?php include_once 'loginbar.php';?>
