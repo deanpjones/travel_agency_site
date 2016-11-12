@@ -2,12 +2,11 @@
 	#---------------------------------------------
 	#Dean Jones
 	#Nov.08, 2016
-	#CUSTOMER REGISTER - SUCCESSFUL PAGE
+	#CUSTOMER UPDATE - SUCCESSFUL PAGE
 	#-------------------------
 	#SUPPORTING FILES
-		#CUSTOMER_FORM_REGISTER.PHP		(customer insert data form)
-		#CUSTOMER_TESTER.PHP			(InsertData FUNCTION, not on FUNCTIONS.PHP)
-		#CUSTOMER_FORM_SUCCESSFUL.PHP	(if validated)
+		#CUSTOMER_FORM_UPDATE.PHP		(customer UPDATE data form)
+		#CUSTOMER_TESTER_UPDATE.PHP				(tester)
 	#---------------------------------------------
 	/* VARIABLES */
 	$page_desc = "Customer Register";
@@ -26,13 +25,6 @@
 		<!-- SEE STYLE.CSS FOR STYLES -->
 		<link rel="stylesheet" type="text/css" href="style.css">
 		
-		<!-- SCRIPTS -->
-		<script type="text/javascript">
-			document.getElementById("buttonHome").onclick = function () {
-				location.href = "www.yoursite.com";
-			};
-		</script>
-		
 		<!--TAB ON BROWSER-->
 		<title> Travel Experts - Register</title>
 	</head>
@@ -41,7 +33,7 @@
 			<?php include_once 'header.php';?>
 			
 			<!-- NAVBAR -->
-			<?php include_once 'navbar.php';?>
+			<?php include_once 'navbar_agent.php';?>
 						
 			<!-- LOGINBAR -->
 			<?php include_once 'loginbar.php';?>
@@ -53,7 +45,7 @@
 				<article>
 					<table>
 						<tr>
-							<td><h4 align="center" color="green">*** Customer Registration - SUCCESSFUL! ***</h4></td>
+							<td><h4 align="center" color="green">*** Customer UPDATE - SUCCESSFUL! ***</h4></td>
 						</tr>
 					</table>
 					

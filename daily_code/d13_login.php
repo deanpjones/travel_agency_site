@@ -7,7 +7,7 @@
 	session_start();
 	#var_dump($x);
 	#var_dump($_SESSION);
-	require('header2.php');
+	include('header.php');
 	
 	if(isset($_SESSION["login_message"]))					#YES QUOTES, $_SESSION[login_message]
 	{

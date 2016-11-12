@@ -89,25 +89,44 @@ x 		-agent update
 x 		-links to navbar_agent
 //?		-agent insert (need to copy over...)
 	
-D12-PHP (AGENT LOGIN PAGE)
-	1. login.php
-x		-login link (below banner on right)
-x		-CHECKS VALIDATION (from SQL DATABASE)
-x			-user1
-x			-pass1
-//?		-FIX, isLoggedIn (YES/NO), isLogInValid (YES/NO)
-//?		-FIX, ifValid, 
-//?			-(start a SESSION)
-//?			-goto Agent page
-//?		-FIX, ifNotValid
-//?			-(ERROR, TRY AGAIN)
-			
 D13-PHP (CREATE A CLASS)
 	1. Agent_class_php
 x		-created PROPERTIES
 x 		-CONSTRUCTOR
 x		-toString (method to creat an ARRAY OF PROPERTIES)
 x		test it... (agent_testpage.php)
+	
+D12-PHP (AGENT LOGIN PAGE)
+	1. login.php
+x		-login link (below banner on right)
+x		-CHECKS VALIDATION (from SQL DATABASE)
+x			-user1
+x			-pass1
+x		-FIX, isLoggedIn (YES/NO), isLogInValid (YES/NO)
+x		-FIX, ifValid, 
+x			-(start a SESSION)
+x			-goto Agent page
+x		-FIX, ifNotValid
+x			-(ERROR, TRY AGAIN)
+
+LOGIN3.PHP
+x	-session_start();
+x 	-load proper navbar isLoggedIn true or false
+
+LOGIN_CHECK3.PHP
+x	-session_start();
+x 	-connect to SQL DB
+x 	-if... $_SESSION["isLoggedIn"] = true; else false...	
+
+LOGIN_BANNER.PHP
+x 	-FIXED LOGIC ON BOTH (login_check3.php and login_banner.php)
+//?	-trying to get the message, TRY AGAIN if they enter a bad USER OR PASS, not working?
+
+
+
+
+			
+
 
 
 				
