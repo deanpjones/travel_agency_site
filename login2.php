@@ -1,8 +1,8 @@
 <?php
 		#GLOBAL VARIABLES
-		require("variables.php");
-		#LOAD FUNCTIONS
-		require("functions.php");
+		include("variables.php");
+		#FUNCTIONS
+
 		
 				#-------------------------------
 				#DB CONNECT
@@ -55,7 +55,7 @@
 		
 		
 <!--------- CHANGE WHERE THE php GOES ------->
-		<form method="GET" action="login.php">
+		<form method="post" action="login.php">
 			<select name="CustomerId">			<!-- PRIMARY KEY REFERENCE -->
 				<?php
 					#DB CONNECT

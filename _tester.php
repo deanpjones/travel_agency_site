@@ -3,7 +3,6 @@
 		require("variables.php");
 		#LOAD FUNCTIONS
 		require("functions.php");
-		#include("d11_review.php");
 		#------FUNCTIONS.PHP update?------
 		
 		#VALIDATE

@@ -85,15 +85,24 @@ x		-customer_form_successful.php
 	
 D11-PHP (AGENT INSERT)
 	1. Add an AGENT to SQL DATABASE
+//?		-COPY FROM CUSTOMERS...
 	
 D12-PHP (AGENT LOGIN PAGE)
 	1. login.php
-x		-login link
-		-CHECKS VALIDATION (from SQL DATABASE)
-			-user1
-			-pass1
+x		-login link (below banner on right)
+//?		-CHECKS VALIDATION (from SQL DATABASE)
+//?			-user1
+//?			-pass1
+		-if bad (go to UNSUCCESSFUL OR TRY AGAIN)
+		-if yes (go to AGENT INSERT, OR AGENT UPDATE page)
 			
-D13-PHP (OBJECT ORIENTED AGENT...)
+D13-PHP (CREATE A CLASS)
+	1. Agent_class_php
+x		-created PROPERTIES
+x 		-CONSTRUCTOR
+x		-toString (method to creat an ARRAY OF PROPERTIES)
+x		test it... (agent_testpage.php)
+
 
 				
 
