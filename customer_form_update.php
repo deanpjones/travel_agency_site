@@ -7,7 +7,7 @@
 	#SUPPORTING FILES
 		#CUSTOMER_FORM_UPDATE.PHP				(customer UPDATE data form)
 		#CUSTOMER_TESTER_UPDATE.PHP				(tester)
-		#CUSTOMER_FORM_SUCCESSFUL.PHP			(if validated)
+		#CUSTOMER_UPDATE_SUCCESSFUL.PHP			(if validated)
 	#---------------------------------------------
 	/* VARIABLES */
 	$page_desc = "Customer Update (Agent Only)";

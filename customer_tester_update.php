@@ -7,7 +7,7 @@
 	#SUPPORTING FILES
 		#CUSTOMER_FORM_REGISTER.PHP		(customer insert data form)
 		#CUSTOMER_TESTER.PHP			(tester)
-		#CUSTOMER_FORM_SUCCESSFUL.PHP	(if validated)
+		#CUSTOMER_UPDATE_SUCCESSFUL.PHP	(if validated)
 	#---------------------------------------------
 	#VARIABLES
 	include('variables.php');
@@ -80,7 +80,7 @@
 	updateData($_REQUEST, "customers");
 	
 	#REDIRECT TO SUCCESSFUL PAGE
-	header("Location:customer_form_successful.php");
+	header("Location:customer_update_successful.php");
 	#**********************************
 	
 	#******************************************************************
