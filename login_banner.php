@@ -1,4 +1,5 @@
 <?php
+	#DON'T ADD!!, it is already on (login3.php), session_start();
 	#---------------------------------------------
 	#Dean Jones
 	#Nov.11, 2016
@@ -11,25 +12,35 @@
 	#---------------------------------------------
 		#TEST TO SEE $_SESSION ARRAY
 		#print_r($_SESSION);
-	if(isset($_SESSION["loginState"])) 
-	{
-		
-		if($_SESSION["loginState"] == "loggedNew")
+
+		#PRINT THE CORRECT BANNER
+		#print("*********************");
+
+		#print_r($_SESSION);
+		#$_SESSION["isLoggedIn"] == "false" && $_SESSION["isLoginValid"] == "false";
+		if($_SESSION["isLoggedIn"] == "false" && $_SESSION["isLoginValid"] == "false")
 		{
 			echo "--- Login below ---";
 		}
-		else if($_SESSION["loginState"] == "loggedIn")
+		#$_SESSION["isLoggedIn"] == "false" && $_SESSION["isLoginValid"] == "true";
+		elseif($_SESSION["isLoggedIn"] == "false" && $_SESSION["isLoginValid"] == "true")
 		{
-			printf("--- Login successful, welcome %s %s ---", $_SESSION["loginFirstName"], $_SESSION["loginLastName"]);
+			echo "--- Login below ---";
 		}
-		else if($_SESSION["loginState"] == "loggedInvalid")
+		#$_SESSION["isLoggedIn"] == "true" && $_SESSION["isLoginValid"] == "false";
+		elseif($_SESSION["isLoggedIn"] == "true" && $_SESSION["isLoginValid"] == "false")
 		{
 			echo "--- Your username and password is incorrect, please try again ---";
-		}	
-		else if($_SESSION["loginState"] == "loggedOut")
+		}
+		#$_SESSION["isLoggedIn"] == "true" && $_SESSION["isLoginValid"] == "true";		
+		elseif($_SESSION["isLoggedIn"] == "true" && $_SESSION["isLoginValid"] == "true")
 		{
-			echo "--- Logged out ---";
-		}			
-	}
+			printf("--- Login successful, welcome %s %s ---", $_SESSION["loginFirstName"], $_SESSION["loginLastName"]);
+		}		
+		else
+		{
+			#print_r(var_dump($_SESSION));
+			print_r($_SESSION);
+		}
 
 ?>
