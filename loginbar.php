@@ -1,4 +1,4 @@
 
 	<nav id="loginbar">
-		<a class="loginbar" href="login.php">Login</a>
+		<a class="loginbar" href="login3.php">Login</a>
 	</nav>
