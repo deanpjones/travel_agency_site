@@ -1,4 +1,12 @@
 <?php
+	#---------------------------------------------
+	#Dean Jones
+	#Nov.08, 2016
+	#LOAD_LINKS.PHP (JAVASCRIPT FUNCTION, that loops through creating links)
+	#-------------------------
+	#SUPPORTING FILES
+		#LINKS.PHP		(links page to show links to other websites)
+	#---------------------------------------------
 	#VARIABLES
 	require('variables.php');
 

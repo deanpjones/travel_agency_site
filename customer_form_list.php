@@ -15,8 +15,6 @@
 	//GLOBAL VARIABLES
 	include("variables.php");
 
-
-
 ?>
 
 <!DOCTYPE html>
