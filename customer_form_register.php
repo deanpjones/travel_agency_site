@@ -8,7 +8,7 @@
 		#CUSTOMER_FORM_REGISTER.PHP		(customer insert data form)
 		#FORM_VALIDATION.JS				(javascript validation)
 		#CUSTOMER_TESTER.PHP			(InsertData FUNCTION, not on FUNCTIONS.PHP)
-		#CUSTOMER_FORM_SUCCESSFUL.PHP	(if validated)
+		#CUSTOMER_REGISTER_SUCCESSFUL.PHP	(if validated)
 	#---------------------------------------------
 	/* VARIABLES */
 	$page_desc = "Customer Registration";
