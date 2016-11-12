@@ -47,27 +47,67 @@
 			
 					if($result)		#if $result QUERY is TRUE...
 					{
+						if($_REQUEST['AgtUserId'] == "" || $_REQUEST['AgtPassword'] == "")
+						{
+							#----------------------------------
+							$_SESSION["isLoggedIn"] = "false";
+							$_SESSION["isLoginValid"] = "false";
+							#----------------------------------
+							$_SESSION["loginFirstName"] = "";
+							$_SESSION["loginLastName"] = "";
+							header("Location: login3.php");
+							#$message = "user wrong and pass wrong";
+						}
+						elseif($user != $row_array[8] || $pass != $row_array[9])
+						{
+							#----------------------------------
+							$_SESSION["isLoggedIn"] = "true";
+							$_SESSION["isLoginValid"] = "false";
+							#----------------------------------
+							$_SESSION["loginFirstName"] = "";
+							$_SESSION["loginLastName"] = "";
+							header("Location: login3.php");
+							#$message = "user wrong and pass wrong";
+						}
+						elseif($user == $row_array[8] && $pass == $row_array[9])
+						{
+							#----------------------------------
+							$_SESSION["isLoggedIn"] = "true";
+							$_SESSION["isLoginValid"] = "true";
+							#----------------------------------
+							$_SESSION["loginFirstName"] = $row_array[1];		#append FIRSTNAME
+							$_SESSION["loginLastName"] = $row_array[3];			#append LASTNAME (don't use [2] it is middle initial)
+							#header("Location: login_successful.php");
+							header("Location: login3.php");
+							#$message = "user GOOD and pass GOOD";
+						}
+						/* 
 						#VALIDATION FOR LOGIN (IF MATCHED)
 						#if($user == $_REQUEST['AgtUserId'] && $pass == $_REQUEST['AgtPassword']) #incorrect, this is self referencing, will always be TRUE
 						if($user == $row_array[8] && $pass == $row_array[9])		#CORRECT WAY, $user is what is sent, $row_array[8] is value in SQL
 						{							
 							#printf("Welcome %s %s, how are you today?", $row_array[1], $row_array[2]);
 							print("Your username and password is VALID!");
-							$_SESSION["loginState"] = "loggedIn";
+							#----------------------------------
+							$_SESSION["isLoggedIn"] = true;
+							$_SESSION["isLoginValid"] = true;
+							#----------------------------------
 							$_SESSION["loginFirstName"] = $row_array[1];		#append FIRSTNAME
 							$_SESSION["loginLastName"] = $row_array[3];			#append LASTNAME (don't use [2] it is middle initial)
-							#header("Location: login_successful.php");
-							header("Location: login3.php");
+							header("Location: login_successful.php");
 						}
 						#VALIDATION FOR LOGIN (IF DID NOT MATCH)
 						else	#PICK LOGOUT
 						{
 							print("Your username and password IS INVALID!");
-							$_SESSION["loginState"] = "loggedInvalid";
+							#----------------------------------
+							$_SESSION["isLoggedIn"] = false;
+							$_SESSION["isLoginValid"] = false;
+							#----------------------------------
 							$_SESSION["loginFirstName"] = "";
 							$_SESSION["loginLastName"] = "";
 							header("Location: login3.php");
-						}
+						} */
 						
 					}
 			
