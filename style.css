@@ -153,6 +153,9 @@
 		border-radius: 4px;
 		/* FLICKERS font-size: 1.1em; */
 	}
+	#nav_greyout {
+		opacity: 0.5;
+	}
 	/*--------- LOGINBAR ----------*/
 	#loginbar {
 		position: relative;
